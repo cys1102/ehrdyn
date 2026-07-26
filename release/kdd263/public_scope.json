@@ -1,0 +1,7 @@
+{
+  "schema_version": "kdd263_public_scope_v1",
+  "public": ["source code", "frozen configs", "schemas", "synthetic fixtures", "controlled environments", "aggregate receipts", "checksums", "license notices"],
+  "credentialed": ["raw MIMIC-IV v3.1 constructor", "private role arrays", "source simulator training", "calibration", "checkpoint selection", "matched fitted evaluation"],
+  "excluded": ["MIMIC-IV source data", "patient/admission/stay identifiers", "row membership", "exact timestamps", "reconstructed arrays", "trained checkpoints", "logged trajectories", "MIMIC-derived result tables", "private paths", "credentials"],
+  "publication_gate": "complete_paper_bound_public_benchmark_artifact"
+}

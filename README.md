@@ -3,11 +3,13 @@
 EHRDyn-ICU is a frozen benchmark contract for recorded ICU trajectory
 forecasting and offline-RL readiness diagnostics.
 
-Version 2.0.2 adds a documented local constructor for authorized MIMIC-IV v3.1
+Version 2.0.3 is the paper-bound successor to immutable v2.0.2. It adds a
+documented local constructor for authorized MIMIC-IV v3.1
 users. It contains runtime code, task and configuration contracts, schemas,
 tiny synthetic fixtures, public tests, and the constructed-environment entrant
-workflow. It does not redistribute MIMIC-IV data, split membership, model
-checkpoints, or MIMIC-derived result tables.
+workflow, plus the source-model train/calibration split and paper-fitted
+simulator/matched-method route. It does not redistribute MIMIC-IV data, split
+membership, model checkpoints, or MIMIC-derived result tables.
 
 The canonical-v2 scientific scorer contract remains version 2.0.0. No cohort,
 task, schema, metric, tolerance, expected synthetic output, or API changed in
@@ -32,7 +34,12 @@ ehrdyn-icu verify-checksums --root .
 ```
 
 `ehrdyn-icu --version` reports the frozen benchmark contract identifier.
-Package metadata reports `2.0.2`.
+Package metadata reports `2.0.3`.
+
+The paper-bound route and its publication gate are documented in
+[PAPER_ARTIFACT.md](PAPER_ARTIFACT.md). The current terminal receipt is
+`stop_missing_frozen_paper_identity` until the submitted ResearchWiki commit is
+supplied.
 
 ## Credentialed MIMIC-IV construction
 

@@ -3,7 +3,7 @@ message: "If you use this repository, please cite the accompanying paper."
 title: "Benchmarking World-Model Components and Offline Reinforcement Learning under Partial Observability: A Multi-Cohort EHR Study"
 type: software
 date-released: 2026-07-25
-version: 2.0.2
+version: 2.0.3
 license: MIT
 authors:
   - family-names: Chung

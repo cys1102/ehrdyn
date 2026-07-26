@@ -1,0 +1,142 @@
+{
+  "experiment_id": "KDD248E4R5",
+  "version": "kdd248e4r5-tail-safe-time-marginal-delta-plugin-v1",
+  "parents": {
+    "e3r2_decision": "stop_kdd248e3r2_source_role_training_leakage_or_privacy_failure",
+    "e3r2_tree_sha256": "1673c7e946b03461233add3ff1500988182c0064dd06f3984dd69391b16aa065",
+    "e3r2a_decision": "complete_negative_kdd248e3r2_heldout_fidelity_or_family_stability_failure",
+    "e3r2a_tree_sha256": "40599d911662beb2874b212b15b91812b8b8a69f53ec92bd70f60e8922766885"
+  },
+  "prior_e4r": {
+    "decision": "stop_kdd248e4r4_identity_execution_or_privacy_failure",
+    "tree_sha256": "eb4e7b4a33251543e1ee413b4d292dbd360f0be55a3d5eedf8d67e67ab8ecc3c"
+  },
+  "origin_e4r": {
+    "decision": "complete_negative_kdd248e4r_development_fidelity_failure",
+    "tree_sha256": "3165647502e1008f8ade4a668b210dd90fd43d5d9cb9097ed5c7225147ab237e"
+  },
+  "public_constructor_commit": "79deff45c5d4e5349e4ce648e212e6fbce1a27bd",
+  "canonical_v2_config": "configs/kdd220m2_targeted_refresh_v1.json",
+  "e3c_contract_config": "configs/kdd248e3c_contract_repair_v1.json",
+  "nested_role_salt": "KDD248P2_SOURCE_SPLIT_V1",
+  "implementation_files": {
+    "full_episode": "kdd_benchmark_discovery/kdd248_full_episode.py",
+    "source_training": "kdd_benchmark_discovery/kdd248_source_training.py",
+    "e4r_runner": "kdd_benchmark_discovery/run_kdd248e4r_calibrated_plugin.py",
+    "focused_test": "tests/test_kdd248e4_calibrated_plugin.py"
+  },
+  "implementation_sha256": {
+    "full_episode": "262af9e5066744d5a280c5eb1b31e5c91105310af0b0686d4c5af1e72f69a76a",
+    "source_training": "73a762746a532122d1d8276e222866733b15c5803b8d6c2c1d58e8075a29e5ab",
+    "e4r_runner": "83bae0a8600f47d79ad45a7452f4078a1777201b9183883271a2461eb0227412",
+    "focused_test": "4ad0f78b861e8a5bf5491c29b95b5c3b71c7f49e58d9d0a5a0da07ef52a1ce27"
+  },
+  "task_map": {
+    "sepsis": "sepsis",
+    "respiratory_support": "respiratory",
+    "shock": "shock",
+    "aki": "aki",
+    "heart_failure": "heart_failure"
+  },
+  "task_shapes": {
+    "sepsis": [33, 25, 11],
+    "respiratory_support": [33, 25, 11],
+    "shock": [33, 25, 11],
+    "aki": [33, 4, 11],
+    "heart_failure": [33, 2, 11]
+  },
+  "selected_source_simulator": {
+    "sepsis": {
+      "source_family": "gaussian_recurrent",
+      "initialization_seed": 3411
+    },
+    "respiratory_support": {
+      "source_family": "gaussian_recurrent",
+      "initialization_seed": 3411
+    },
+    "shock": {
+      "source_family": "gaussian_recurrent",
+      "initialization_seed": 3411
+    },
+    "aki": {
+      "source_family": "gaussian_recurrent",
+      "initialization_seed": 3411
+    },
+    "heart_failure": {
+      "source_family": "gaussian_recurrent",
+      "initialization_seed": 3408
+    }
+  },
+  "selection_rule": "lowest_frozen_kdd248e3r2_validation_joint_loss_per_task_before_kdd248e4r_execution",
+  "rollout_weights": {
+    "learned_signal": 0.20,
+    "persistence": 0.55,
+    "correlated_calibration_innovation": "sqrt(1-learned_signal_squared-persistence_squared)"
+  },
+  "rollout_episodes": 4096,
+  "rollout_seed": 248410000,
+  "batch_size": 256,
+  "device": "cuda:1",
+  "predictive_mace_limit": 0.10,
+  "physical_range_absolute_tolerance": 0.00001,
+  "noninferiority_reference": "source_model_calibration_empirical_surface_compared_with_the_same_development_role",
+  "noninferiority_margins": {
+    "action_total_variation": 0.05,
+    "action_entropy_absolute_error": 0.10,
+    "missingness_absolute_error": 0.03,
+    "mean_horizon_absolute_error": 0.75,
+    "termination_absolute_error": 0.03,
+    "numeric_smd_median": 0.10,
+    "numeric_smd_p90": 0.25,
+    "pair_correlation_error_median": 0.10,
+    "pair_correlation_error_p90": 0.20
+  },
+  "task_gate": {
+    "primary_role": "historical_other",
+    "transition_metrics": [
+      "numeric_smd_median",
+      "numeric_smd_p90",
+      "pair_correlation_error_median",
+      "pair_correlation_error_p90"
+    ],
+    "minimum_transition_passes": 3,
+    "nuisance_metrics": [
+      "action_total_variation",
+      "action_entropy_absolute_error",
+      "missingness_absolute_error",
+      "mean_horizon_absolute_error",
+      "termination_absolute_error"
+    ],
+    "minimum_nuisance_passes": 4,
+    "all_structural_checks_required": true
+  },
+  "decision_tokens": {
+    "ready": "ready_for_kdd248c4r_and_kdd248a4r_data_fitted_plugin_evaluation",
+    "negative": "complete_negative_kdd248e4r5_development_fidelity_failure",
+    "stop": "stop_kdd248e4r5_identity_execution_or_privacy_failure"
+  },
+  "repair_scope": {
+    "physical_range": "ignore only absolute float reconstruction error at or below 1e-5",
+    "missingness": "fit current-mask initial and transition probabilities by relative time",
+    "learned_transition": "standardize the checkpoint-predicted next-minus-current transition on calibration data and preserve its weight at 0.20",
+    "recorded_action": "preserve the empirical action marginal separately at each observed relative time and carry the final observed marginal into any common-horizon tail"
+  },
+  "unchanged_scientific_surface": [
+    "cohort_membership",
+    "patient_roles",
+    "action_spaces",
+    "reward_proxies",
+    "source_checkpoint_selection",
+    "development_roles",
+    "rollout_episode_count",
+    "rollout_seeds",
+    "noninferiority_margins",
+    "task_pass_counts"
+  ],
+  "allowed_decisions": [
+    "ready_for_kdd248c4r_and_kdd248a4r_data_fitted_plugin_evaluation",
+    "complete_negative_kdd248e4r5_development_fidelity_failure",
+    "stop_kdd248e4r5_identity_execution_or_privacy_failure"
+  ],
+  "claim_boundary": "Development-benchmark validation of an observational, data-fitted plug-in simulator only. Historical-other is a model-level development holdout, not a project-wide untouched confirmatory cohort. No causal treatment response, clinical policy value, treatment recommendation, clinical validity, or deployment readiness is established."
+}

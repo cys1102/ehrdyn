@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import argparse
+import json
 import sys
 from collections.abc import Mapping
 from dataclasses import dataclass
@@ -75,6 +76,11 @@ class CliArgs(argparse.Namespace):
     ope_datasets: int = 64
     ope_episodes: int = 256
     aggregate_only: bool = False
+    fitted_mode: str = "dry-run"
+    constructor_root: Path = Path()
+    restricted_root: Path = Path()
+    device: str = "cpu"
+    pilot: bool = False
 
 
 def build_parser() -> argparse.ArgumentParser:
@@ -211,6 +217,21 @@ def build_parser() -> argparse.ArgumentParser:
         action="store_true",
         help="Write only the aggregate receipt and omit restricted modeling arrays.",
     )
+    fitted = commands.add_parser(
+        "fitted-simulator",
+        help="Train/calibrate/evaluate the paper-bound EHR-fitted simulator in caller-owned paths.",
+    )
+    _ = fitted.add_argument("--mode", dest="fitted_mode", choices=("dry-run", "train", "evaluate", "all"), default="dry-run")
+    _ = fitted.add_argument("--constructor-root", type=Path, required=True)
+    _ = fitted.add_argument("--restricted-root", type=Path)
+    _ = fitted.add_argument("--output", type=Path, required=True)
+    _ = fitted.add_argument("--device", default="cpu")
+    _ = fitted.add_argument("--pilot", action="store_true")
+    smoke = commands.add_parser(
+        "fitted-synthetic-smoke",
+        help="Run the complete fitted/matched/OPE workflow on synthetic fixtures only.",
+    )
+    _ = smoke.add_argument("--output", type=Path, required=True)
     return parser
 
 
@@ -318,6 +339,33 @@ def _dispatch(args: CliArgs) -> int:
                 "restricted_output_created": True,
             }
         )
+    elif args.command == "fitted-synthetic-smoke":
+        from .fitted.workflow import run_synthetic_smoke
+
+        _print_json(run_synthetic_smoke(args.output))
+    elif args.command == "fitted-simulator":
+        from .fitted.workflow import (
+            evaluate_credentialed,
+            train_credentialed,
+            validate_constructor_roles,
+        )
+
+        workflow_config = json.loads(
+            (Path(__file__).parent / "fitted" / "configs" / "kdd263_paper_fitted_workflow_v1.json").read_text(encoding="utf-8")
+        )
+        if args.fitted_mode == "dry-run":
+            _print_json(validate_constructor_roles(args.constructor_root, workflow_config))
+        else:
+            restricted = args.restricted_root
+            if restricted is None:
+                raise ReleaseContractError("--restricted-root is required for fitted training/evaluation")
+            if args.fitted_mode == "train":
+                _print_json(train_credentialed(args.constructor_root, restricted, args.output, args.device, args.pilot))
+            elif args.fitted_mode == "evaluate":
+                _print_json(evaluate_credentialed(args.constructor_root, restricted, args.output, args.device, args.pilot))
+            else:
+                _ = train_credentialed(args.constructor_root, restricted, args.output / "training_receipt.json", args.device, args.pilot)
+                _print_json(evaluate_credentialed(args.constructor_root, restricted, args.output / "evaluation", args.device, args.pilot))
     return 0
 
 

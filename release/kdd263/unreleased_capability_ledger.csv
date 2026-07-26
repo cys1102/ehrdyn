@@ -1,0 +1,2 @@
+capability_id,reason,status,substitution
+none,All required public executable surfaces are present in this successor worktree.,not_missing,none

@@ -1,0 +1,14 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "KDD263 simulator nested-role receipt",
+  "type": "object",
+  "required": ["schema_version", "split_contract", "tasks", "private_arrays_written", "row_level_fields_exported", "private_paths_exported"],
+  "properties": {
+    "schema_version": {"const": "kdd263_simulator_roles_v1"},
+    "split_contract": {"type": "object"},
+    "tasks": {"type": "array"},
+    "private_arrays_written": {"type": "boolean"},
+    "row_level_fields_exported": {"const": false},
+    "private_paths_exported": {"const": false}
+  }
+}

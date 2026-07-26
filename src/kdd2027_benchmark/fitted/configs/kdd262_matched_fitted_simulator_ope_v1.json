@@ -1,0 +1,173 @@
+{
+  "experiment_id": "KDD262",
+  "version": "matched-fitted-simulator-policy-ope-v1",
+  "e4r": {
+    "path": "results/kdd248e4r5_20260725_063356",
+    "decision": "ready_for_kdd248c4r_and_kdd248a4r_data_fitted_plugin_evaluation",
+    "result_tree_sha256": "4255b7e6c6d0093e4ebb22659201834ad148c0db5cfc8792a9a891c5f5ddbe20"
+  },
+  "e3c_contract_config": "configs/kdd248e3c_contract_repair_v1.json",
+  "task_shapes": {
+    "sepsis": [33, 25, 11],
+    "respiratory_support": [33, 25, 11],
+    "shock": [33, 25, 11],
+    "aki": [33, 4, 11],
+    "heart_failure": [33, 2, 11]
+  },
+  "common_methods": [
+    "fitted_behavior",
+    "supported_random",
+    "fixed_minimum",
+    "fixed_maximum",
+    "behavior_cloning",
+    "decision_transformer",
+    "discrete_bcq",
+    "discrete_cql",
+    "discrete_iql",
+    "spibb_style_count_blend_adapter",
+    "persistence_locf_plus_h4_support_only",
+    "hgb_residual_plus_h4_support_only",
+    "deterministic_grud_point_plus_h4_support_only",
+    "causal_transformer_plus_h4_support_only",
+    "categorical_rssm_plus_h4_support_only",
+    "single_gaussian_grud_plus_h4_support_only",
+    "matched_gaussian_ensemble_plus_h4_support_only"
+  ],
+  "fitted_specific_methods": [
+    "fitted_markov_q",
+    "conservative_markov_q"
+  ],
+  "controlled_only_not_applicable": [
+    "severity",
+    "history_only_true_model_planner",
+    "privileged_latent_state_oracle",
+    "observed_history_severity_rule"
+  ],
+  "model_free_methods": [
+    "behavior_cloning",
+    "decision_transformer",
+    "discrete_bcq",
+    "discrete_cql",
+    "discrete_iql",
+    "spibb_style_count_blend_adapter"
+  ],
+  "component_models": [
+    "persistence_locf",
+    "hgb_residual",
+    "deterministic_grud_point",
+    "causal_transformer",
+    "categorical_rssm",
+    "single_gaussian_grud",
+    "matched_gaussian_ensemble"
+  ],
+  "training_seeds": [3408, 3411, 3414],
+  "roles": {
+    "policy_train": {"episodes": 4096, "seed": 262100000},
+    "policy_validation": {"episodes": 2048, "seed": 262200000},
+    "context_fit": {"episodes": 2048, "seed": 262300000},
+    "direct_reference_a": {"episodes": 16384, "seed": 262400000},
+    "direct_reference_b": {"episodes": 16384, "seed": 262500000}
+  },
+  "task_seed_stride": 100003,
+  "policy_seed_stride": 1009,
+  "discount": 0.99,
+  "training": {
+    "batch_size": 256,
+    "bcq_behavior_threshold": 0.3,
+    "cql_alpha": 0.5,
+    "decision_transformer_context": 4,
+    "decision_transformer_target_return_quantile": 0.75,
+    "discount": 0.99,
+    "gradient_clip_norm": 5.0,
+    "hidden_dim": 32,
+    "iql_expectile": 0.7,
+    "iql_max_weight": 20.0,
+    "iql_temperature": 2.0,
+    "latent_dim": 24,
+    "learning_rate": 0.001,
+    "minimum_metric_improvement": 1e-05,
+    "probability_nll_floor_for_metric_only": 1e-08,
+    "sequence_batch_size": 256,
+    "soft_spibb_min_count": 20,
+    "soft_spibb_temperature": 1.0,
+    "weight_decay": 0.0001,
+    "staged_caps": [25, 50, 100, 200],
+    "minimum_epochs": 25,
+    "patience": 10,
+    "late_window": 10,
+    "policy_checkpoint_window": 5,
+    "relative_validation_improvement_threshold": 0.001,
+    "mean_validation_policy_jsd_threshold": 0.01
+  },
+  "planner": {
+    "name": "H4_support_only_sequence_categorical_CEM",
+    "horizon": 4,
+    "candidates": 64,
+    "cem_iterations": 3,
+    "elites": 8,
+    "smoothing": 0.2,
+    "prototype_count": 16,
+    "support_probability_floor": 1e-08,
+    "reward_model_max_iter": 50,
+    "planner_seed": 2623408,
+    "support_mask_every_step": true,
+    "execute_first_action_only": true,
+    "uncertainty_penalty": 0.0
+  },
+  "markov_q": {
+    "temperatures": [0.25, 0.5, 1.0],
+    "fitted_behavior_blend": 0.25,
+    "conservative_behavior_blend": 0.65
+  },
+  "ope": {
+    "estimators": ["IS", "WIS", "CWPDIS", "DR", "WDR", "FQE"],
+    "independent_datasets_per_task": 64,
+    "episodes_per_dataset": 256,
+    "dataset_seed_base": 262600000,
+    "dataset_task_stride": 100000,
+    "denominator": "crossfit_stronger",
+    "crossfit_folds": 5,
+    "denominator_pseudocount": 0.5,
+    "nuisance_pseudocount": 0.5,
+    "clip": null,
+    "bootstrap_replicates": 500,
+    "bootstrap_workers": 8,
+    "bootstrap_seed_base": 262700000,
+    "interval_level": 0.9,
+    "tie_tolerance": 1e-12
+  },
+  "normalization": {
+    "definition": "absolute difference between frozen minimum-action and maximum-action simulator references",
+    "minimum_range": 0.1
+  },
+  "direct_reference_gate": {
+    "maximum_standardized_replica_difference": 4.0,
+    "require_all_finite": true
+  },
+  "pilot_overrides": {
+    "tasks": ["sepsis"],
+    "role_episodes": {
+      "policy_train": 128,
+      "policy_validation": 64,
+      "context_fit": 64,
+      "direct_reference_a": 256,
+      "direct_reference_b": 256
+    },
+    "staged_caps": [2],
+    "minimum_epochs": 2,
+    "patience": 1,
+    "late_window": 2,
+    "policy_checkpoint_window": 2,
+    "relative_validation_improvement_threshold": 1.0,
+    "mean_validation_policy_jsd_threshold": 1.0,
+    "prototype_count": 4,
+    "candidates": 8,
+    "cem_iterations": 1,
+    "elites": 2,
+    "independent_datasets_per_task": 2,
+    "episodes_per_dataset": 32,
+    "bootstrap_replicates": 10,
+    "bootstrap_workers": 1
+  },
+  "claim_boundary": "The experiment compares fixed named policies and OPE estimators inside frozen observational EHR-fitted simulators. Simulator return is model-implied scenario evidence, not clinical policy value, a causal treatment effect, or external validation."
+}

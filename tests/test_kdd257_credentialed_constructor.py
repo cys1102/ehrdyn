@@ -22,6 +22,7 @@ from tests.test_kdd217ar3a import make_fixture
 
 TASKS = ("sepsis", "respiratory_support", "shock", "aki", "heart_failure")
 ROLES = ("train", "validation", "historical_other")
+SIMULATOR_ROLES = ("source_model_train", "source_model_calibration")
 RESTRICTED_KEYS = {
     "state_values",
     "state_masks",
@@ -63,7 +64,22 @@ class KDD257CredentialedConstructorTests(unittest.TestCase):
             self.assertEqual(output.stat().st_mode & 0o777, 0o700)
             private = output / "private_arrays"
             files = sorted(private.glob("*.restricted.npz"))
-            self.assertEqual(len(files), len(TASKS) * len(ROLES))
+            self.assertEqual(
+                len(files), len(TASKS) * (len(ROLES) + len(SIMULATOR_ROLES))
+            )
+            simulator_receipt = json.loads(
+                (output / "simulator_role_receipt.json").read_text()
+            )
+            self.assertEqual(
+                [row["task_id"] for row in simulator_receipt["tasks"]],
+                list(TASKS),
+            )
+            self.assertTrue(
+                all(
+                    row["subject_overlap"]["intersection_subjects"] == 0
+                    for row in simulator_receipt["tasks"]
+                )
+            )
             by_task = {row["task_id"]: row for row in receipt["tasks"]}
             for task in TASKS:
                 role_rows = {
@@ -84,6 +100,19 @@ class KDD257CredentialedConstructorTests(unittest.TestCase):
                             _array_digest(arrays["action_index"]),
                             role_rows[role]["digests"]["action_digest"],
                         )
+                nested_rows = next(
+                    row for row in simulator_receipt["tasks"] if row["task_id"] == task
+                )["roles"]
+                for role in SIMULATOR_ROLES:
+                    path = private / f"{task}.{role}.restricted.npz"
+                    self.assertEqual(path.stat().st_mode & 0o777, 0o600)
+                    with np.load(path, allow_pickle=False) as arrays:
+                        self.assertEqual(set(arrays.files), RESTRICTED_KEYS)
+                        nested = next(row for row in nested_rows if row["role"] == role)
+                        self.assertEqual(
+                            _array_digest(arrays["state_values"]),
+                            nested["digests"]["feature_digest"],
+                        )
 
     def test_aggregate_only_preserves_scientific_surface(self) -> None:
         with tempfile.TemporaryDirectory() as directory:
@@ -97,6 +126,7 @@ class KDD257CredentialedConstructorTests(unittest.TestCase):
                     write_private_arrays=False,
                 )
             self.assertFalse((aggregate / "private_arrays").exists())
+            self.assertTrue((aggregate / "simulator_role_receipt.json").is_file())
             self.assertEqual(
                 private_receipt["contracts"]["scientific_surface_sha256"],
                 aggregate_receipt["contracts"]["scientific_surface_sha256"],

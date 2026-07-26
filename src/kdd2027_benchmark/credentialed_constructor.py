@@ -1,9 +1,10 @@
 from __future__ import annotations
 
-import os
-import tempfile
 import importlib
+import hashlib
+import os
 import shutil
+import tempfile
 from contextlib import contextmanager
 from pathlib import Path
 from typing import Any, Iterator
@@ -24,6 +25,8 @@ core = importlib.import_module("kdd2027_benchmark.current_five_task.reconstruct"
 
 
 MIMIC_ROOT_ENV = "AUTHORIZED_MIMICIV_3_1_ROOT"
+SIMULATOR_ROLE_SALT = "KDD248P2_SOURCE_SPLIT_V1"
+SIMULATOR_ROLES = ("source_model_train", "source_model_calibration")
 
 
 @contextmanager
@@ -85,6 +88,7 @@ def construct_from_authorized_mimic(
         ) as directory:
             private_export = Path(directory) / "private_arrays"
             original_role_surface = core._role_surface
+            simulator_role_tasks: list[dict[str, Any]] = []
 
             def export_role_surface(
                 task: str,
@@ -112,6 +116,50 @@ def construct_from_authorized_mimic(
                         filled,
                         full_recency,
                         private_export,
+                    )
+                if role == "train":
+                    nested_transitions, nested_mean, nested_scale, separation = (
+                        _nested_simulator_roles(candidates, transitions, arrays)
+                    )
+                    nested_summaries = []
+                    for nested_role in SIMULATOR_ROLES:
+                        if write_private_arrays:
+                            private_export.mkdir(
+                                parents=True, exist_ok=True, mode=0o700
+                            )
+                            _write_role_arrays(
+                                task,
+                                nested_role,
+                                candidates,
+                                nested_transitions,
+                                actions,
+                                arrays,
+                                nested_mean,
+                                nested_scale,
+                                filled,
+                                full_recency,
+                                private_export,
+                            )
+                        nested_summaries.append(
+                            original_role_surface(
+                                task,
+                                nested_role,
+                                candidates,
+                                nested_transitions,
+                                actions,
+                                arrays,
+                                nested_mean,
+                                nested_scale,
+                                filled,
+                                full_recency,
+                            )
+                        )
+                    simulator_role_tasks.append(
+                        {
+                            "task_id": task,
+                            "roles": nested_summaries,
+                            "subject_overlap": separation,
+                        }
                     )
                 return original_role_surface(
                     task,
@@ -145,9 +193,105 @@ def construct_from_authorized_mimic(
                             os.chmod(path, 0o600)
             if write_private_arrays:
                 shutil.move(str(private_export), str(output / "private_arrays"))
+    write_canonical_json(
+        output / "simulator_role_receipt.json",
+        {
+            "schema_version": "kdd263_simulator_roles_v1",
+            "split_contract": {
+                "parent_role": "train",
+                "salt_sha256": hashlib.sha256(
+                    SIMULATOR_ROLE_SALT.encode("utf-8")
+                ).hexdigest(),
+                "source_model_train_buckets": "0-79",
+                "source_model_calibration_buckets": "80-99",
+                "hash_rule": "sha256(salt|subject_id)_mod_100",
+                "preprocessing_fit_role": "source_model_train",
+            },
+            "tasks": simulator_role_tasks,
+            "private_arrays_written": write_private_arrays,
+            "row_level_fields_exported": False,
+            "private_paths_exported": False,
+        },
+    )
     write_canonical_json(output / "source_encoding_view.json", encoding_counts)
+    os.chmod(output / "simulator_role_receipt.json", 0o600)
     os.chmod(output / "source_encoding_view.json", 0o600)
     return receipt
+
+
+def _nested_simulator_roles(
+    candidates: Any,
+    transitions: Any,
+    arrays: dict[str, np.ndarray],
+) -> tuple[Any, np.ndarray, np.ndarray, dict[str, int]]:
+    local = transitions.copy()
+    train = local["role"].eq("train")
+    candidate_subject = candidates.set_index("episode_idx")["subject_id"]
+    episode_ids = local.loc[train, "episode_idx"].astype(int)
+    subjects = episode_ids.map(candidate_subject).astype(int)
+    buckets = [
+        int.from_bytes(
+            hashlib.sha256(
+                f"{SIMULATOR_ROLE_SALT}|{subject}".encode("utf-8")
+            ).digest(),
+            "big",
+            signed=False,
+        )
+        % 100
+        for subject in subjects
+    ]
+    local.loc[train, "role"] = [
+        "source_model_train" if bucket <= 79 else "source_model_calibration"
+        for bucket in buckets
+    ]
+    train_rows = local["role"].eq("source_model_train")
+    episodes = local.loc[train_rows, "episode_idx"].to_numpy(int)
+    steps = local.loc[train_rows, "state_idx"].to_numpy(int)
+    raw = np.asarray(arrays["values"])[episodes, steps][
+        :, SAFE_FEATURE_INDICES
+    ].astype(np.float64)
+    observed = np.asarray(arrays["masks"])[episodes, steps][
+        :, SAFE_FEATURE_INDICES
+    ].astype(bool)
+    mean = np.zeros(len(SAFE_FEATURE_INDICES), dtype=np.float64)
+    scale = np.ones(len(SAFE_FEATURE_INDICES), dtype=np.float64)
+    for feature in range(len(SAFE_FEATURE_INDICES)):
+        values = raw[observed[:, feature], feature]
+        values = values[np.isfinite(values)]
+        if values.size:
+            mean[feature] = float(values.mean())
+            standard = float(values.std(ddof=0))
+            scale[feature] = (
+                standard
+                if np.isfinite(standard) and standard >= 1.0e-6
+                else 1.0
+            )
+    if not np.isfinite(mean).all() or not np.isfinite(scale).all():
+        raise ReleaseContractError("Nested-role preprocessing is nonfinite")
+    train_subjects = set(
+        local.loc[local["role"].eq("source_model_train"), "episode_idx"]
+        .astype(int)
+        .map(candidate_subject)
+        .astype(int)
+    )
+    calibration_subjects = set(
+        local.loc[local["role"].eq("source_model_calibration"), "episode_idx"]
+        .astype(int)
+        .map(candidate_subject)
+        .astype(int)
+    )
+    return (
+        local,
+        mean.astype(np.float32),
+        scale.astype(np.float32),
+        {
+            "source_model_train_subjects": len(train_subjects),
+            "source_model_calibration_subjects": len(calibration_subjects),
+            "intersection_subjects": len(
+                train_subjects.intersection(calibration_subjects)
+            ),
+        },
+    )
 
 
 def _write_role_arrays(

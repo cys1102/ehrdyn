@@ -1,0 +1,11 @@
+{
+  "schema_version": "kdd263_paper_snapshot_v1",
+  "submitted_researchwiki_commit": "146a02840570368ac7a3efd106cf10b0d3cbba91",
+  "manuscript_tex_sha256": "b6cd275fdb9c9d51a718710fe3e429faddd9b294287fdd832e5e15268d8135ad",
+  "appendix_tex_sha256": "0b5c2e9e30e499ea8c3e489e1949a488f83b9a0b6d73ab76426d7131bf7a8fa9",
+  "submitted_pdf_sha256": "8b9d56c1f0b0ae10dcec124f1a18a91ba69a730b7d9fdbfa1e37a5b6205d1757",
+  "paper_source_status": "exact_submitted_commit_verified_remote",
+  "publication_decision": "complete_paper_bound_public_benchmark_artifact",
+  "predecessor_tag": "v2.0.2",
+  "predecessor_source_commit": "8b33feae5ae403b9cfdfc0e278005e7a00470643"
+}

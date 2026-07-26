@@ -1,0 +1,9 @@
+capability_id,scope,entrypoint,config_or_schema,public_output_class,status,privacy_boundary
+constructor,credentialed,ehrdyn-icu construct-ehr,CREDENTIALED_CONSTRUCTOR.md;credentialed_aggregate_receipt.schema.json,aggregate receipt and caller-local restricted arrays,pass,raw MIMIC and row-level arrays never committed
+simulator_roles,credentialed,ehrdyn-icu fitted-simulator --mode dry-run,kdd263_paper_fitted_workflow_v1.json;simulator_role_receipt.schema.json,aggregate role and contract receipt,pass,subject IDs are used only in local construction
+ehr_scorer,public,ehrdyn-icu score-ehr-components,ehr_component_result.schema.json,aggregate scoring receipt,pass,synthetic/public submissions only
+fitted_training,credentialed,ehrdyn-icu fitted-simulator --mode train,kdd263_paper_fitted_workflow_v1.json,source checkpoint/profile hashes and local restricted artifacts,pass,trained checkpoints stay caller-local
+matched_workflow,credentialed,ehrdyn-icu fitted-simulator --mode evaluate,kdd262_matched_fitted_simulator_ope_v1.json,local aggregate audit tables,pass,MIMIC-derived result rows stay caller-local
+matched_synthetic,public,ehrdyn-icu fitted-synthetic-smoke,kdd263_fitted_smoke_receipt_v1,synthetic aggregate receipt,pass,no clinical data
+controlled_environment,public,ehrdyn-icu generate-full-suite,kdd198_v2_generator_contract.json,40-environment aggregate workflow,pass,no MIMIC data
+ope,credentialed_or_public_smoke,ehrdyn-icu fitted-simulator or fitted-synthetic-smoke,kdd262_matched_fitted_simulator_ope_v1.json,six-estimator aggregate audit,pass,credentialed results are caller-local

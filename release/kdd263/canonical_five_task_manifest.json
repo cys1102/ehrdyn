@@ -1,0 +1,22 @@
+{
+  "schema_version": "canonical-v2-five-task-manifest-v1",
+  "benchmark_version": "ehrdyn-icu-canonical-v2.0.0",
+  "canonical_contract_id": "ehrdyn-icu-five-task-constructor-v2-kdd220m1",
+  "constructor_source_commit": "79deff45c5d4e5349e4ce648e212e6fbce1a27bd",
+  "constructor_source_sha256": "914356315ba3a489b6d97f5b2770b3c87e1b770e3ff735a6198a9a064f69592f",
+  "lineage_source_sha256": "08d65ba14a0ad7df9afd6805c4fa04ed3fadc888bb822c1f12ce77336fcbc020",
+  "scientific_refresh_authority_commit": "f2c6d770e41c284895050c46ef521dbba17d42d4",
+  "constructor_aggregate_scientific_surface_sha256": "e759eae39d308312bf9beeea0248dba20d580a7765e26b2dda2383a55ba299d9",
+  "scientific_surface_sha256": "848be7b3103f6272c020e4ba1a7c23fe278c51bfd4aaf2d7ad53a171569a5505",
+  "original_r2_tree_sha256": "110dbae9f23ed42a7c4f518591c81126c54ec51d81474d6519eb08a2166eff93",
+  "feature_order_sha256": "2843f8071d1ef4df81db613af2ffc8510060ca0c604a30d94da352e84957167b",
+  "role_assignment_sha256": "da30bcd94094c9f249b0e4ff309336a69a9c6eca7a240604180894f8fa951f5f",
+  "tasks": [
+    {"task_id": "sepsis", "subjects": 21072, "episodes": 25304, "decisions": 202025, "action_count": 25, "maximum_recursive_horizon": 11},
+    {"task_id": "respiratory_support", "subjects": 20604, "episodes": 23928, "decisions": 139185, "action_count": 25, "maximum_recursive_horizon": 10},
+    {"task_id": "shock", "subjects": 43564, "episodes": 58240, "decisions": 455242, "action_count": 25, "maximum_recursive_horizon": 11},
+    {"task_id": "aki", "subjects": 19403, "episodes": 25037, "decisions": 214356, "action_count": 4, "maximum_recursive_horizon": 11},
+    {"task_id": "heart_failure", "subjects": 25826, "episodes": 29665, "decisions": 233986, "action_count": 2, "maximum_recursive_horizon": 10}
+  ],
+  "privacy": "aggregate_only_no_row_membership"
+}

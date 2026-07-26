@@ -1,0 +1,114 @@
+{
+  "schema_version": "kdd263_paper_fitted_workflow_v1",
+  "source_commit": "225b92b820ed3c27c1dd7a9ac7fa1011b350ec0d",
+  "source_modules": {
+    "source_training": "kdd248_source_training.py",
+    "full_episode": "kdd248_full_episode.py",
+    "matched_workflow": "run_kdd262_matched_fitted_simulator_ope.py"
+  },
+  "tasks": [
+    "sepsis",
+    "respiratory_support",
+    "shock",
+    "aki",
+    "heart_failure"
+  ],
+  "task_shapes": {
+    "sepsis": [33, 25, 11],
+    "respiratory_support": [33, 25, 11],
+    "shock": [33, 25, 11],
+    "aki": [33, 4, 11],
+    "heart_failure": [33, 2, 11]
+  },
+  "reward_channels": {
+    "sepsis": "terminal_discharge_origin_90d_proxy",
+    "respiratory_support": "resp_meddreamer_spo2_mbp",
+    "shock": "shock_next_mbp_component",
+    "aki": "terminal_discharge_origin_90d_proxy",
+    "heart_failure": "terminal_discharge_origin_90d_proxy"
+  },
+  "source_model": {
+    "family": "gaussian_recurrent",
+    "candidate_seeds": [3408, 3411, 3414],
+    "frozen_selected_seed": {
+      "sepsis": 3411,
+      "respiratory_support": 3411,
+      "shock": 3411,
+      "aki": 3411,
+      "heart_failure": 3408
+    },
+    "nested_role_salt": "KDD248P2_SOURCE_SPLIT_V1",
+    "fit_role": "source_model_train",
+    "fixed_component_calibration_role": "source_model_calibration",
+    "checkpoint_selection_role": "validation",
+    "development_evaluation_role": "historical_other",
+    "hidden_dim": 48,
+    "latent_dim": 32,
+    "perturbation_seed": 248311000,
+    "loss_weights": {
+      "transition": 1.0,
+      "missingness": 0.25,
+      "recorded_behavior": 0.25,
+      "reward_proxy": 0.25,
+      "termination": 0.25,
+      "native_latent_auxiliary": 0.01
+    },
+    "training": {
+      "maximum_epochs": 80,
+      "minimum_epochs": 12,
+      "early_stopping_patience": 8,
+      "convergence_window": 10,
+      "relative_improvement_threshold": 0.005,
+      "batch_size": 128,
+      "learning_rate": 0.001,
+      "weight_decay": 0.0001,
+      "gradient_clip_norm": 5.0,
+      "checkpoint_schema_version": "kdd248e3r-protected-checkpoint-v1",
+      "resume_policy": "exact_optimizer_rng_data_order_only"
+    }
+  },
+  "rollout_profile": {
+    "learned_signal_weight": 0.20,
+    "persistence_weight": 0.55,
+    "innovation_weight_rule": "sqrt(1-learned_signal_weight_squared-persistence_weight_squared)",
+    "fit_role": "source_model_calibration"
+  },
+  "generated_role_namespaces": {
+    "policy_train": 262100000,
+    "policy_validation": 262200000,
+    "context_fit": 262300000,
+    "direct_reference_a": 262400000,
+    "direct_reference_b": 262500000,
+    "ope_dataset": 262600000,
+    "ope_bootstrap": 262700000
+  },
+  "matched_method_count": 17,
+  "matched_methods": [
+    "fitted_behavior",
+    "supported_random",
+    "fixed_minimum",
+    "fixed_maximum",
+    "behavior_cloning",
+    "decision_transformer",
+    "discrete_bcq",
+    "discrete_cql",
+    "discrete_iql",
+    "spibb_style_count_blend_adapter",
+    "persistence_locf_plus_h4_support_only",
+    "hgb_residual_plus_h4_support_only",
+    "deterministic_grud_point_plus_h4_support_only",
+    "causal_transformer_plus_h4_support_only",
+    "categorical_rssm_plus_h4_support_only",
+    "single_gaussian_grud_plus_h4_support_only",
+    "matched_gaussian_ensemble_plus_h4_support_only"
+  ],
+  "additional_fitted_only_methods": [
+    "fitted_markov_q",
+    "conservative_markov_q"
+  ],
+  "ope_estimators": ["IS", "WIS", "CWPDIS", "DR", "WDR", "FQE"],
+  "matched_config": "kdd262_matched_fitted_simulator_ope_v1.json",
+  "source_contract_config": "kdd248e3c_contract_repair_v1.json",
+  "rollout_config": "kdd248e4r5_tail_safe_plugin_v1.json",
+  "claim_boundary": "This workflow compares fixed named policies and OPE estimators inside frozen observational EHR-fitted simulators. Simulator return is model-implied scenario evidence, not clinical policy value, a causal treatment effect, treatment optimization, or external validation."
+}
