@@ -1,0 +1,9 @@
+capability,observed,status,boundary
+full_public_unit_suite,70 tests; 0 failures; 1 historical v2.0.1 manifest skip,pass,public code and synthetic fixtures
+clean_archive_install_and_full_suite,credentialed extra installed; 70 tests; 0 failures; 2 immutable-receipt skips,pass,anonymous archive without MIMIC access
+canonical_constructor_source_hash,914356315ba3a489b6d97f5b2770b3c87e1b770e3ff735a6198a9a064f69592f,pass,frozen source exact
+credentialed_constructor_synthetic_path,5 tasks x 3 roles,pass,synthetic flat-file fixture
+duplicate_encoding_view,one temporary source per required table,pass,source untouched
+base_install_without_pandas,CLI and constructor help pass,pass,credentialed dependency lazy
+split_and_action_tests,passed,pass,synthetic
+constructed_environment_regression,passed in full suite,pass,public constructed mechanisms

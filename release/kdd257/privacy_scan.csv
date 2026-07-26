@@ -1,0 +1,4 @@
+scan,observed,status,boundary
+release_source_scan,216 files; 0 findings,pass,no restricted suffix/header/secret/local path
+private_array_key_scan,no subject_id/stay_id keys,pass,restricted output remains outside Git
+repository_private_artifact_absence,no generated MIMIC output in repository,pass,author output outside Git

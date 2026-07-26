@@ -19,8 +19,8 @@ ROOT = Path(__file__).resolve().parents[1]
 class KDD245V2MMinimalReleaseTests(unittest.TestCase):
     def test_packaging_version_changes_without_scientific_version_change(self) -> None:
         project = tomllib.loads((ROOT / "pyproject.toml").read_text(encoding="utf-8"))["project"]
-        self.assertEqual(project["version"], "2.0.1")
-        self.assertEqual(kdd2027_benchmark.PACKAGE_VERSION, "2.0.1")
+        self.assertEqual(project["version"], "2.0.2")
+        self.assertEqual(kdd2027_benchmark.PACKAGE_VERSION, "2.0.2")
         self.assertEqual(EHR_COMPONENT_BENCHMARK_VERSION, "ehrdyn-icu-canonical-v2.0.0")
         self.assertEqual(EHR_COMPONENT_EVALUATOR_VERSION, "ehr-component-scorer-v2.0.0")
 
@@ -48,6 +48,8 @@ class KDD245V2MMinimalReleaseTests(unittest.TestCase):
             self.assertEqual(list(ROOT.glob(pattern)), [], pattern)
 
     def test_release_manifest_covers_every_runtime_asset(self) -> None:
+        if kdd2027_benchmark.PACKAGE_VERSION != "2.0.1":
+            self.skipTest("KDD245V2M manifest is the immutable v2.0.1 receipt")
         manifest_path = ROOT / "release" / "kdd245v2m" / "release_manifest.csv"
         if not manifest_path.exists():
             self.skipTest("manifest is generated after the validation run")

@@ -74,6 +74,7 @@ class CliArgs(argparse.Namespace):
     direct_episodes: int = 512
     ope_datasets: int = 64
     ope_episodes: int = 256
+    aggregate_only: bool = False
 
 
 def build_parser() -> argparse.ArgumentParser:
@@ -200,6 +201,16 @@ def build_parser() -> argparse.ArgumentParser:
     )
     _ = ehr_components.add_argument("--submission", type=Path, required=True)
     _ = ehr_components.add_argument("--output", type=Path, required=True)
+    constructor = commands.add_parser(
+        "construct-ehr",
+        help="Build the five credentialed MIMIC-IV interfaces in a private local directory.",
+    )
+    _ = constructor.add_argument("--output", type=Path, required=True)
+    _ = constructor.add_argument(
+        "--aggregate-only",
+        action="store_true",
+        help="Write only the aggregate receipt and omit restricted modeling arrays.",
+    )
     return parser
 
 
@@ -291,6 +302,22 @@ def _dispatch(args: CliArgs) -> int:
         ))
     elif args.command == "score-ehr-components":
         _write_json(args.output, score_submission(args.submission))
+    elif args.command == "construct-ehr":
+        from .credentialed_constructor import construct_from_authorized_mimic
+
+        receipt = construct_from_authorized_mimic(
+            args.output,
+            write_private_arrays=not args.aggregate_only,
+        )
+        _print_json(
+            {
+                "tasks": len(receipt["tasks"]),
+                "scientific_surface_sha256": receipt["contracts"][
+                    "scientific_surface_sha256"
+                ],
+                "restricted_output_created": True,
+            }
+        )
     return 0
 
 

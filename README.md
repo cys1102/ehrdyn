@@ -3,12 +3,11 @@
 EHRDyn-ICU is a frozen benchmark contract for recorded ICU trajectory
 forecasting and offline-RL readiness diagnostics.
 
-Version 2.0.1 is a packaging-only minimal-runtime repair of v2.0.0. It contains
-runtime code, task/config contracts, schemas, tiny synthetic fixtures, public
-tests, and the constructed-environment entrant workflow. It excludes
-manuscript result bundles, machine-readable MIMIC-derived scientific results,
-credentialed constructors, checkpoints, patient rows, identifiers, timestamps,
-trajectories, row-level predictions, and credentials.
+Version 2.0.2 adds a documented local constructor for authorized MIMIC-IV v3.1
+users. It contains runtime code, task and configuration contracts, schemas,
+tiny synthetic fixtures, public tests, and the constructed-environment entrant
+workflow. It does not redistribute MIMIC-IV data, split membership, model
+checkpoints, or MIMIC-derived result tables.
 
 The canonical-v2 scientific scorer contract remains version 2.0.0. No cohort,
 task, schema, metric, tolerance, expected synthetic output, or API changed in
@@ -33,7 +32,28 @@ ehrdyn-icu verify-checksums --root .
 ```
 
 `ehrdyn-icu --version` reports the frozen benchmark contract identifier.
-Package metadata reports `2.0.1`.
+Package metadata reports `2.0.2`.
+
+## Credentialed MIMIC-IV construction
+
+Authorized MIMIC-IV v3.1 users can reconstruct the five EHR task interfaces
+locally from the official flat files. Keep the data path out of shell history
+by setting it through the required environment variable.
+
+```bash
+python -m pip install '.[credentialed]'
+export AUTHORIZED_MIMICIV_3_1_ROOT='<authorized MIMIC-IV v3.1 directory>'
+ehrdyn-icu construct-ehr --output '<new private output directory>'
+```
+
+The command validates all 14 required input tables, reconstructs the five
+cohorts and deterministic subject roles, applies train-only preprocessing, and
+writes role-specific modeling arrays to a restricted local directory. Use
+`--aggregate-only` to validate construction without writing the modeling
+arrays. See [CREDENTIALED_CONSTRUCTOR.md](CREDENTIALED_CONSTRUCTOR.md) and
+[MIMIC_ACCESS.md](MIMIC_ACCESS.md). The author-side reference run took about
+2 hours 8 minutes, peaked at 81.3 GiB resident memory, and used 32.3 GiB of
+temporary disk.
 
 ## Synthetic canonical-v2 scorer
 
@@ -73,7 +93,7 @@ leaderboard.
 
 ## Included interfaces
 
-- `src/`: benchmark, scorer, schema, entrant, planner, and evaluator code.
+- `src/`: benchmark, constructor, scorer, schema, entrant, planner, and evaluator code.
 - `configs/`: frozen task and constructed-environment contracts.
 - `schemas/`: Draft 2020-12 input/output schemas.
 - `fixtures/` and `invalid_entrant_fixtures/`: synthetic positive and negative
@@ -84,8 +104,8 @@ leaderboard.
 ## Data and claim boundary
 
 MIMIC-IV remains governed by PhysioNet credentialing and is not redistributed.
-This release does not reconstruct cohorts or publish MIMIC-derived scientific
-results. See [MIMIC_ACCESS.md](MIMIC_ACCESS.md),
+The constructor runs only inside an authorized local environment and publishes
+no MIMIC-derived scientific results. See [MIMIC_ACCESS.md](MIMIC_ACCESS.md),
 [KNOWN_LIMITATIONS.md](KNOWN_LIMITATIONS.md), and
 [ETHICS_AND_MISUSE.md](ETHICS_AND_MISUSE.md).
 
