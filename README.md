@@ -3,10 +3,14 @@
 EHRDyn-ICU is a frozen benchmark contract for recorded ICU trajectory
 forecasting and offline-RL readiness diagnostics.
 
-Version 2.0.4 is a documentation-only successor to immutable v2.0.3. It
-preserves the paper-bound benchmark artifact and corrects the public
-publication status after the frozen ResearchWiki identity was verified.
-The paper-bound artifact adds a
+The KDD267 source implements the version 2.1.0 successor to immutable v2.0.4.
+It preserves the earlier paper-bound benchmark and adds one exact shared
+21-method inventory for the fitted, controlled, and controlled-OPE surfaces.
+The four additions are the discrete XQL and compact Dreamer V1--V3 benchmark
+adaptations used by KDD264. They are not official reproductions. Severity
+rules are excluded from every KDD267 public method inventory.
+
+The paper-bound artifact includes a
 documented local constructor for authorized MIMIC-IV v3.1
 users. It contains runtime code, task and configuration contracts, schemas,
 tiny synthetic fixtures, public tests, and the constructed-environment entrant
@@ -16,7 +20,7 @@ membership, model checkpoints, or MIMIC-derived result tables.
 
 The canonical-v2 scientific scorer contract remains version 2.0.0. No cohort,
 task, schema, metric, tolerance, expected synthetic output, or API changed in
-this packaging release.
+this successor.
 
 ## Installation
 
@@ -31,19 +35,20 @@ ehrdyn-icu --help
 ehrdyn-icu --version
 ehrdyn-icu validate-config --config-dir configs/tasks
 ehrdyn-icu validate-schemas --schema-dir schemas
+ehrdyn-icu method-inventory
 python -m unittest discover -s tests
 ehrdyn-icu scan-release --root .
 ehrdyn-icu verify-checksums --root .
 ```
 
 `ehrdyn-icu --version` reports the frozen benchmark contract identifier.
-Package metadata reports `2.0.4`.
+Package metadata reports `2.1.0`.
 
-The paper-bound route and its publication gate are documented in
-[PAPER_ARTIFACT.md](PAPER_ARTIFACT.md). The terminal decision is
-`complete_paper_bound_public_benchmark_artifact`, bound to the verified
-ResearchWiki snapshot recorded in
-[`release/kdd263/paper_snapshot.json`](release/kdd263/paper_snapshot.json).
+The paper-bound route and its publication evidence are documented in
+[PAPER_ARTIFACT.md](PAPER_ARTIFACT.md). The previous KDD263 release remains
+`complete_paper_bound_public_benchmark_artifact`. KDD267 is bound to the
+remotely frozen no-severity paper and 21-policy controlled-OPE aggregate in
+[`release/kdd267/paper_snapshot.json`](release/kdd267/paper_snapshot.json).
 
 ## Credentialed MIMIC-IV construction
 
@@ -101,6 +106,28 @@ The full 40-environment workflow is documented in
 [RECURSIVE_WORLD_MODEL_ENTRANT.md](RECURSIVE_WORLD_MODEL_ENTRANT.md). The
 demonstration entrant is an interface example and is not part of a scientific
 leaderboard.
+
+## Exact 21-method successor
+
+The public inventory receipt is identical for fitted and controlled workflows:
+
+```bash
+ehrdyn-icu method-inventory
+ehrdyn-icu fitted-synthetic-smoke \
+  --output build/kdd267-fitted-smoke.json
+ehrdyn-icu controlled-21-method-smoke \
+  --config configs/full_benchmark/kdd198_v2_generator_contract.json \
+  --profile aki \
+  --environment-seed 171901 \
+  --output build/kdd267-controlled-smoke.json
+```
+
+Both smokes execute all 21 named methods in the frozen order and all six OPE
+estimators. The controlled OPE inventory also contains exactly those 21
+methods; there is no severity-rule exception. These are nonclinical capability
+checks and do not provide return, rank, or algorithm-family superiority
+evidence. See
+[the KDD267 quickstart](docs/kdd267/21_method_quickstart.md).
 
 ## Included interfaces
 

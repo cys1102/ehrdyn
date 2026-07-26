@@ -1,0 +1,5 @@
+gate,expected,observed,status,action
+candidate_source_identity,9df9363764cb47b1d49de87fe9c403baa567430f240565be9a3138d4c5c2739d,9df9363764cb47b1d49de87fe9c403baa567430f240565be9a3138d4c5c2739d,pass,none
+shared_inventory,21 identical fitted controlled and controlled OPE methods,21 identical methods with severity excluded,pass,none
+final_paper_identity,remote commit with final no-severity manuscript appendix and PDF,f6b449e remote branch binds all three exact hashes,pass,none
+controlled_ope_identity,21-policy aggregate excluding severity,f6b449e remote branch binds the 322560-row aggregate and exact output hashes,pass,none

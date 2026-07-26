@@ -25,6 +25,9 @@ SCHEMA_FILES = {
     "leaderboard_submission": "leaderboard_submission.schema.json",
     "stage_resource_instrumentation": "stage_resource_instrumentation.schema.json",
     "transition_submission": "transition_submission.schema.json",
+    "kdd267_method_inventory_receipt": "kdd267_method_inventory_receipt.schema.json",
+    "kdd267_fitted_smoke_receipt": "kdd267_fitted_smoke_receipt.schema.json",
+    "kdd267_controlled_smoke_receipt": "kdd267_controlled_smoke_receipt.schema.json",
 }
 
 

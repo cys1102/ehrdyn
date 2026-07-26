@@ -1,0 +1,32 @@
+{
+  "schema_version": "kdd267_public_scope_v1",
+  "public": [
+    "source code",
+    "fixed configurations",
+    "schemas",
+    "tests",
+    "documentation",
+    "synthetic fixtures",
+    "controlled environments",
+    "aggregate-safe capability receipts",
+    "checksums"
+  ],
+  "credentialed": [
+    "raw MIMIC-IV v3.1 constructor",
+    "private role arrays",
+    "fitted simulator training and calibration",
+    "21-method fitted evaluation"
+  ],
+  "excluded": [
+    "raw MIMIC-IV",
+    "MIMIC-derived rows",
+    "subject or stay identifiers",
+    "role membership",
+    "exact timestamps",
+    "trajectories",
+    "trained checkpoints",
+    "MIMIC-derived result matrices",
+    "manuscript aggregate result tables"
+  ],
+  "severity_rule_included": false
+}

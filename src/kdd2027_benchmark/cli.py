@@ -27,6 +27,7 @@ from .public_pomdp import run_public_pomdp_smoke
 from .transition_entrant import validate_transition_submission
 from .world_model_smoke import run_world_model_smoke
 from .world_model_full import run_world_model_full
+from .kdd267_inventory import inventory_receipt
 from .full_suite import (
     generate_full_suite,
     run_component_forecasting,
@@ -229,9 +230,22 @@ def build_parser() -> argparse.ArgumentParser:
     _ = fitted.add_argument("--pilot", action="store_true")
     smoke = commands.add_parser(
         "fitted-synthetic-smoke",
-        help="Run the complete fitted/matched/OPE workflow on synthetic fixtures only.",
+        help="Run the exact KDD267 21-method fitted/OPE workflow on synthetic fixtures only.",
     )
     _ = smoke.add_argument("--output", type=Path, required=True)
+    _ = commands.add_parser(
+        "method-inventory",
+        help="Print the exact KDD267 21-method shared inventory receipt.",
+    )
+    controlled_smoke = commands.add_parser(
+        "controlled-21-method-smoke",
+        help="Run all 21 KDD267 policies and six OPE estimators in a public controlled environment.",
+    )
+    _ = controlled_smoke.add_argument("--config", type=Path, required=True)
+    _ = controlled_smoke.add_argument("--profile", required=True)
+    _ = controlled_smoke.add_argument("--environment-seed", type=int, default=171901)
+    _ = controlled_smoke.add_argument("--seed", type=int, default=3408)
+    _ = controlled_smoke.add_argument("--output", type=Path, required=True)
     return parser
 
 
@@ -343,6 +357,20 @@ def _dispatch(args: CliArgs) -> int:
         from .fitted.workflow import run_synthetic_smoke
 
         _print_json(run_synthetic_smoke(args.output))
+    elif args.command == "method-inventory":
+        _print_json(inventory_receipt())
+    elif args.command == "controlled-21-method-smoke":
+        from .kdd267_controlled import run_controlled_21_method_smoke
+
+        _print_json(
+            run_controlled_21_method_smoke(
+                _required_path(args.config),
+                args.profile,
+                args.environment_seed,
+                args.output,
+                seed=args.seed,
+            )
+        )
     elif args.command == "fitted-simulator":
         from .fitted.workflow import (
             evaluate_credentialed,

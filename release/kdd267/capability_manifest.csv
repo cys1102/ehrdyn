@@ -1,0 +1,10 @@
+capability,access,cli,python_interface,contract,status,privacy_boundary
+exact_method_inventory,public,ehrdyn-icu method-inventory,kdd2027_benchmark.kdd267_inventory.inventory_receipt,kdd267_method_inventory_receipt_v1,pass,no clinical data
+credentialed_constructor,credentialed,ehrdyn-icu construct-ehr,kdd2027_benchmark.credentialed_constructor.construct_from_authorized_mimic,canonical five-task constructor,unchanged_private_gate,arrays remain caller-local
+one_step_recursive_scoring,public,ehrdyn-icu score-ehr-components,kdd2027_benchmark.ehr_component_scorer.score_submission,canonical-v2 scorer and recursive entrant,pass,synthetic or caller-local aggregates
+fitted_21_method_smoke,public,ehrdyn-icu fitted-synthetic-smoke,kdd2027_benchmark.fitted.workflow.run_synthetic_smoke,kdd267_fitted_smoke_receipt_v1,pass,synthetic only
+fitted_21_method_full,credentialed,ehrdyn-icu fitted-simulator --mode evaluate,kdd2027_benchmark.fitted.workflow.evaluate_credentialed,kdd267_21_method_successor_v1,structural_pass,checkpoints and results remain caller-local
+controlled_40_environment_generation,public,ehrdyn-icu generate-full-suite,kdd2027_benchmark.full_suite.generate_full_suite,kdd198_v2_generator_contract.json,pass,no clinical data
+controlled_21_method_smoke,public,ehrdyn-icu controlled-21-method-smoke,kdd2027_benchmark.kdd267_controlled.run_controlled_21_method_smoke,KDD161/164/166 exact adapters plus KDD190 common H4 and KDD264 candidates,pass,nonclinical capability receipt only
+six_estimator_ope,public_or_credentialed,fitted-synthetic-smoke or controlled-21-method-smoke,evaluate_ope_datasets or run_controlled_21_method_smoke,"IS,WIS,CWPDIS,DR,WDR,FQE",pass,no result table in release
+paper_identity,remote_authority,n/a,n/a,kdd267_paper_snapshot_v1,pass,f6b449e binds the 21-policy no-severity paper and aggregate

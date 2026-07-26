@@ -1,0 +1,108 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://ehrdyn-icu.org/schemas/kdd267_controlled_smoke_receipt.schema.json",
+  "title": "KDD267 controlled 21-method capability receipt",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "status",
+    "synthetic_nonclinical",
+    "method_count",
+    "method_ids",
+    "controlled_ope_policy_count",
+    "controlled_ope_policy_ids",
+    "severity_rule_included",
+    "direct_methods_executed",
+    "direct_methods_finite",
+    "ope_estimators",
+    "ope_policy_estimator_evaluations",
+    "predecessor_training_rows",
+    "candidate_methods_executed",
+    "exact_model_free_adapters_executed",
+    "exact_component_adapters_executed",
+    "common_h4_planner_gate",
+    "dreamer_v2_mode_sensitivity"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "kdd267_controlled_21_method_smoke_receipt_v1"
+    },
+    "status": {"const": "pass"},
+    "synthetic_nonclinical": {"const": true},
+    "method_count": {"const": 21},
+    "method_ids": {
+      "type": "array",
+      "minItems": 21,
+      "maxItems": 21,
+      "uniqueItems": true
+    },
+    "controlled_ope_policy_count": {"const": 21},
+    "controlled_ope_policy_ids": {
+      "type": "array",
+      "minItems": 21,
+      "maxItems": 21,
+      "uniqueItems": true
+    },
+    "severity_rule_included": {"const": false},
+    "direct_methods_executed": {"const": 21},
+    "direct_methods_finite": {"const": 21},
+    "ope_estimators": {
+      "type": "array",
+      "prefixItems": [
+        {"const": "IS"},
+        {"const": "WIS"},
+        {"const": "CWPDIS"},
+        {"const": "DR"},
+        {"const": "WDR"},
+        {"const": "FQE"}
+      ],
+      "items": false
+    },
+    "ope_policy_estimator_evaluations": {
+      "type": "integer",
+      "minimum": 252
+    },
+    "predecessor_training_rows": {"const": 35},
+    "candidate_methods_executed": {
+      "type": "array",
+      "prefixItems": [
+        {"const": "discrete_xql"},
+        {"const": "dreamer_v1_compact"},
+        {"const": "dreamer_v2_compact"},
+        {"const": "dreamer_v3_compact"}
+      ],
+      "items": false
+    },
+    "exact_model_free_adapters_executed": {
+      "type": "array",
+      "minItems": 6,
+      "maxItems": 6,
+      "uniqueItems": true
+    },
+    "exact_component_adapters_executed": {
+      "type": "array",
+      "minItems": 7,
+      "maxItems": 7,
+      "uniqueItems": true
+    },
+    "common_h4_planner_gate": {"const": true},
+    "dreamer_v2_mode_sensitivity": {
+      "type": "object",
+      "required": [
+        "primary_mode",
+        "development_sensitivity_mode",
+        "mode_is_one_hot",
+        "mode_in_shared_inventory",
+        "status"
+      ],
+      "properties": {
+        "primary_mode": {"const": "sample"},
+        "development_sensitivity_mode": {"const": "mode"},
+        "mode_is_one_hot": {"const": true},
+        "mode_in_shared_inventory": {"const": false},
+        "status": {"const": "pass"}
+      }
+    }
+  },
+  "additionalProperties": true
+}

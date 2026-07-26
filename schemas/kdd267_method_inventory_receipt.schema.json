@@ -1,0 +1,77 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://ehrdyn-icu.org/schemas/kdd267_method_inventory_receipt.schema.json",
+  "title": "KDD267 exact 21-method inventory receipt",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "method_count",
+    "method_ids",
+    "fitted_method_ids",
+    "controlled_method_ids",
+    "controlled_ope_policy_ids",
+    "training_seeds",
+    "ope_estimators",
+    "dreamer_primary_evaluation_mode",
+    "dreamer_v2_development_sensitivity_mode",
+    "severity_rule_included"
+  ],
+  "properties": {
+    "schema_version": {"const": "kdd267_method_inventory_receipt_v1"},
+    "method_count": {"const": 21},
+    "method_ids": {"$ref": "#/$defs/methods"},
+    "fitted_method_ids": {"$ref": "#/$defs/methods"},
+    "controlled_method_ids": {"$ref": "#/$defs/methods"},
+    "controlled_ope_policy_ids": {"$ref": "#/$defs/methods"},
+    "training_seeds": {
+      "type": "array",
+      "prefixItems": [{"const": 3408}, {"const": 3411}, {"const": 3414}],
+      "items": false
+    },
+    "ope_estimators": {
+      "type": "array",
+      "prefixItems": [
+        {"const": "IS"},
+        {"const": "WIS"},
+        {"const": "CWPDIS"},
+        {"const": "DR"},
+        {"const": "WDR"},
+        {"const": "FQE"}
+      ],
+      "items": false
+    },
+    "dreamer_primary_evaluation_mode": {"const": "sample"},
+    "dreamer_v2_development_sensitivity_mode": {"const": "mode"},
+    "severity_rule_included": {"const": false}
+  },
+  "$defs": {
+    "methods": {
+      "type": "array",
+      "prefixItems": [
+        {"const": "fitted_behavior"},
+        {"const": "supported_random"},
+        {"const": "fixed_minimum"},
+        {"const": "fixed_maximum"},
+        {"const": "behavior_cloning"},
+        {"const": "decision_transformer"},
+        {"const": "discrete_bcq"},
+        {"const": "discrete_cql"},
+        {"const": "discrete_iql"},
+        {"const": "spibb_style_count_blend_adapter"},
+        {"const": "discrete_xql"},
+        {"const": "persistence_locf_plus_h4_support_only"},
+        {"const": "hgb_residual_plus_h4_support_only"},
+        {"const": "deterministic_grud_point_plus_h4_support_only"},
+        {"const": "causal_transformer_plus_h4_support_only"},
+        {"const": "categorical_rssm_plus_h4_support_only"},
+        {"const": "single_gaussian_grud_plus_h4_support_only"},
+        {"const": "matched_gaussian_ensemble_plus_h4_support_only"},
+        {"const": "dreamer_v1_compact"},
+        {"const": "dreamer_v2_compact"},
+        {"const": "dreamer_v3_compact"}
+      ],
+      "items": false
+    }
+  },
+  "additionalProperties": true
+}

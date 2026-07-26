@@ -1,0 +1,150 @@
+{
+  "experiment_id": "KDD263",
+  "version": "dreamer-series-offline-imagination-candidate-screen-v1",
+  "source_commit": "225b92b8",
+  "controlled": {
+    "kdd198_result_path": "results/kdd198_pomdp_specification_audit_20260719_084254",
+    "kdd198_tree_sha256": "5d2d2f617fefe779c3aecb947351d7d7f5203a2e1afb0d09b3bc4ecd4447b8fc",
+    "kdd198_decision": "complete_versioned_generator_repair_requires_kdd199_full_refresh",
+    "profiles": ["sepsis", "respiratory", "shock", "aki", "heart_failure"],
+    "environment_seeds": [171901, 171902, 171903, 171904, 171905, 171906, 171907, 171908],
+    "behavior_family": "ehr_matched"
+  },
+  "fitted": {
+    "base_config_path": "configs/kdd262_matched_fitted_simulator_ope_v1.json",
+    "e4r_result_path": "results/kdd248e4r5_20260725_063356",
+    "e4r_tree_sha256": "4255b7e6c6d0093e4ebb22659201834ad148c0db5cfc8792a9a891c5f5ddbe20",
+    "e4r_decision": "ready_for_kdd248c4r_and_kdd248a4r_data_fitted_plugin_evaluation",
+    "tasks": ["sepsis", "respiratory_support", "shock", "aki", "heart_failure"],
+    "checkpoint_root_environment_variable": "KDD248_E3R2_CHECKPOINT_ROOT",
+    "profile_root_environment_variable": "KDD248_E4_PROFILE_ROOT"
+  },
+  "primary_track": "offline_imagination_from_fixed_generated_behavior_batch",
+  "methods": [
+    "recorded_behavior",
+    "dreamer_v1_compact",
+    "dreamer_v2_compact",
+    "dreamer_v3_compact",
+    "discrete_xql"
+  ],
+  "training_seeds": [3408, 3411, 3414],
+  "discount": 0.99,
+  "feature_adapter": {
+    "channels": ["observed_value", "mask", "normalized_recency", "previous_action_one_hot", "normalized_time"],
+    "zero_previous_action_at_initial_step": true,
+    "normalization": "train_valid_rows_mean_and_std",
+    "minimum_scale": 1e-06
+  },
+  "dreamer": {
+    "encoder_dim": 64,
+    "deterministic_dim": 64,
+    "continuous_stochastic_dim": 16,
+    "categorical_groups": 4,
+    "categorical_classes": 8,
+    "hidden_dim": 64,
+    "imagination_horizon": 5,
+    "lambda": 0.95,
+    "entropy_scale": 0.001,
+    "world_learning_rate": 0.0003,
+    "actor_learning_rate": 0.0001,
+    "critic_learning_rate": 0.0001,
+    "gradient_clip_norm": 100.0,
+    "observation_loss_scale": 1.0,
+    "reward_loss_scale": 1.0,
+    "continuation_loss_scale": 1.0,
+    "kl_loss_scale": 1.0,
+    "v1": {
+      "latent": "continuous_gaussian",
+      "minimum_std": 0.1,
+      "free_nats": 0.0,
+      "reward_value_head": "scalar"
+    },
+    "v2": {
+      "latent": "categorical",
+      "unimix": 0.0,
+      "free_nats": 1.0,
+      "kl_balance": 0.8,
+      "reward_value_head": "scalar"
+    },
+    "v3": {
+      "latent": "categorical",
+      "unimix": 0.01,
+      "free_nats": 1.0,
+      "dynamics_kl_scale": 0.5,
+      "representation_kl_scale": 0.1,
+      "reward_value_head": "symlog_twohot",
+      "twohot_bins": 51,
+      "twohot_low": -1.0,
+      "twohot_high": 1.0,
+      "return_normalization_percentiles": [0.05, 0.95]
+    }
+  },
+  "xql": {
+    "hidden_dim": 64,
+    "learning_rate": 0.0003,
+    "beta": 2.0,
+    "advantage_temperature": 2.0,
+    "maximum_weight": 20.0,
+    "target_update_tau": 0.01,
+    "gradient_clip_norm": 10.0
+  },
+  "stage1_pilot": {
+    "controlled_profiles": ["sepsis"],
+    "controlled_environment_seeds": [171901],
+    "fitted_tasks": ["sepsis"],
+    "training_seeds": [3408],
+    "train_episodes": 128,
+    "validation_episodes": 64,
+    "validation_policy_episodes": 128,
+    "direct_replica_episodes": 512,
+    "episode_batch_size": 32,
+    "world_epochs": 12,
+    "actor_epochs": 12,
+    "xql_epochs": 24
+  },
+  "stage2_screen": {
+    "controlled_profiles": ["sepsis", "respiratory", "shock", "aki", "heart_failure"],
+    "controlled_environment_seeds": [171901],
+    "fitted_tasks": ["sepsis", "respiratory_support", "shock", "aki", "heart_failure"],
+    "training_seeds": [3408, 3411, 3414],
+    "train_episodes": 4096,
+    "validation_episodes": 2048,
+    "validation_policy_episodes": 4096,
+    "direct_replica_episodes": 16384,
+    "episode_batch_size": 64,
+    "world_epochs": 100,
+    "actor_epochs": 100,
+    "xql_epochs": 200
+  },
+  "seed_namespaces": {
+    "controlled_train": 263100000,
+    "controlled_validation": 263200000,
+    "controlled_validation_policy": 263250000,
+    "controlled_direct_a": 263300000,
+    "controlled_direct_b": 263400000,
+    "fitted_train": 263500000,
+    "fitted_validation": 263600000,
+    "fitted_validation_policy": 263650000,
+    "fitted_direct_a": 263700000,
+    "fitted_direct_b": 263800000,
+    "environment_stride": 100003,
+    "method_stride": 1009,
+    "training_seed_stride": 17
+  },
+  "direct_replica_gate": {
+    "maximum_standardized_difference": 4.0,
+    "require_finite": true
+  },
+  "output_policy": {
+    "additive_directory_only": true,
+    "aggregate_only": true,
+    "save_generated_data": false,
+    "save_candidate_checkpoints": true,
+    "forbid_patient_rows": true,
+    "forbid_trajectories": true,
+    "forbid_identifiers": true,
+    "forbid_exact_timestamps": true,
+    "forbid_free_text": true
+  },
+  "claim_boundary": "Named compact candidate behavior inside repaired controlled POMDPs or frozen observational EHR-fitted simulators only; not official Dreamer reproduction, real-EHR counterfactual truth, causal treatment effect, clinical policy value, treatment recommendation, clinical utility, or deployment readiness."
+}

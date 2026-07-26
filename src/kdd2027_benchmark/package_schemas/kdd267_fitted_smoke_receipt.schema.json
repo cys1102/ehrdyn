@@ -1,0 +1,72 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://ehrdyn-icu.org/schemas/kdd267_fitted_smoke_receipt.schema.json",
+  "title": "KDD267 fitted synthetic capability receipt",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "status",
+    "synthetic",
+    "matched_methods_per_task",
+    "method_ids",
+    "severity_rule_included",
+    "ope_estimators",
+    "estimator_ids",
+    "candidate_training_rows",
+    "dreamer_v2_mode_sensitivity"
+  ],
+  "properties": {
+    "schema_version": {"const": "kdd267_fitted_smoke_receipt_v1"},
+    "status": {"const": "pass"},
+    "synthetic": {"const": true},
+    "matched_methods_per_task": {"const": 21},
+    "method_ids": {
+      "type": "array",
+      "minItems": 21,
+      "maxItems": 21,
+      "uniqueItems": true
+    },
+    "severity_rule_included": {"const": false},
+    "ope_estimators": {"const": 6},
+    "estimator_ids": {
+      "type": "array",
+      "prefixItems": [
+        {"const": "IS"},
+        {"const": "WIS"},
+        {"const": "CWPDIS"},
+        {"const": "DR"},
+        {"const": "WDR"},
+        {"const": "FQE"}
+      ],
+      "items": false
+    },
+    "candidate_training_rows": {"type": "integer", "minimum": 12},
+    "dreamer_v2_mode_sensitivity": {
+      "type": "array",
+      "minItems": 1,
+      "items": {"$ref": "#/$defs/sensitivity"}
+    }
+  },
+  "$defs": {
+    "sensitivity": {
+      "type": "object",
+      "required": [
+        "method",
+        "primary_mode",
+        "development_sensitivity_mode",
+        "mode_is_one_hot",
+        "mode_in_shared_inventory",
+        "status"
+      ],
+      "properties": {
+        "method": {"const": "dreamer_v2_compact"},
+        "primary_mode": {"const": "sample"},
+        "development_sensitivity_mode": {"const": "mode"},
+        "mode_is_one_hot": {"const": true},
+        "mode_in_shared_inventory": {"const": false},
+        "status": {"const": "pass"}
+      }
+    }
+  },
+  "additionalProperties": true
+}

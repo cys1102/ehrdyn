@@ -1,0 +1,7 @@
+paper_surface,artifact_capability,contract_or_receipt,access,status,claim_boundary
+five-task reconstruction,construct-ehr,canonical_five_task_manifest.json,credentialed,pass,no MIMIC data redistributed
+probabilistic component scoring,score-ehr-components,canonical-v2 scorer,public,pass,synthetic or aggregate caller-local
+21 fitted methods and six OPE estimators,fitted-synthetic-smoke and fitted-simulator,kdd267_21_method_successor_v1,public smoke and credentialed full,pass,simulator capability not clinical value
+21 controlled methods and six OPE estimators,controlled-21-method-smoke,KDD161/164/166 exact adapters plus KDD190 common H4 and KDD264 candidates,public,pass,no severity policy and no scientific result table
+40 controlled environments,generate-full-suite,kdd198_v2_generator_contract.json,public,pass,constructed nonclinical environments
+final manuscript identity,remote ResearchWiki commit,kdd267_paper_snapshot_v1,remote authority,pass,f6b449e binds the 21-policy no-severity paper and aggregate

@@ -1,0 +1,63 @@
+{
+  "schema_version": "kdd267_local_verification_v1",
+  "source_test_suite": {
+    "tests_run": 84,
+    "passed": 83,
+    "skipped": 1,
+    "failures": 0,
+    "errors": 0
+  },
+  "fitted_synthetic_smoke": {
+    "tasks": 1,
+    "methods_per_task": 21,
+    "candidate_training_rows": 12,
+    "ope_estimators": 6,
+    "status": "pass"
+  },
+  "controlled_smoke": {
+    "methods": 21,
+    "direct_methods_finite": 21,
+    "predecessor_training_rows": 35,
+    "candidate_training_rows": 12,
+    "exact_model_free_adapters": 6,
+    "exact_component_adapters": 7,
+    "common_h4_planner_gate": true,
+    "ope_datasets": 2,
+    "ope_policy_estimator_evaluations": 252,
+    "deterministic_replay": true,
+    "status": "pass"
+  },
+  "controlled_full_generation": {
+    "environments": 40,
+    "logged_datasets": 320,
+    "status": "pass"
+  },
+  "schemas": {
+    "count": 16,
+    "status": "pass"
+  },
+  "privacy": {
+    "files_scanned": 292,
+    "findings": 0,
+    "status": "pass"
+  },
+  "checksum_manifest": {
+    "files_checked": 290,
+    "mismatches": 0,
+    "status": "pass"
+  },
+  "anonymous_source_install": {
+    "package_version": "2.1.0",
+    "method_inventory_cli_and_python": "pass",
+    "fitted_smoke": "pass",
+    "controlled_smoke": "pass",
+    "component_scorer": "pass",
+    "full_controlled_generation": "pass"
+  },
+  "credentialed_checks": {
+    "authorized_mimic_rows_accessed": false,
+    "constructor_synthetic_and_structural_tests": "pass",
+    "credentialed_fitted_execution": "not_run_without_authorized_private_input"
+  },
+  "publication_decision": "complete_21_method_paper_bound_public_benchmark_artifact"
+}

@@ -39,12 +39,20 @@ from .run_kdd262_matched_fitted_simulator_ope import (
     evaluate_ope_datasets,
     train_policy_groups,
 )
+from .kdd267_policy_extension import extend_fitted_policy_groups
+from ..kdd267_inventory import (
+    OPE_ESTIMATORS,
+    SHARED_METHODS,
+    TRAINING_SEEDS,
+    validate_shared_inventory,
+)
 
 
 ROOT = Path(__file__).resolve().parent
 WORKFLOW_CONFIG = ROOT / "configs/kdd263_paper_fitted_workflow_v1.json"
 MATCHED_CONFIG = ROOT / "configs/kdd262_matched_fitted_simulator_ope_v1.json"
 CONTRACT_CONFIG = ROOT / "configs/kdd248e3c_contract_repair_v1.json"
+SUCCESSOR_CONFIG = ROOT / "configs/kdd267_21_method_successor_v1.json"
 
 
 def _load(path: Path) -> dict[str, Any]:
@@ -218,6 +226,8 @@ def run_synthetic_smoke(output: Path) -> dict[str, Any]:
     workflow = _load(WORKFLOW_CONFIG)
     matched = _load(MATCHED_CONFIG)
     contract = _load(CONTRACT_CONFIG)
+    successor = _load(SUCCESSOR_CONFIG)
+    validate_shared_inventory(successor["shared_method_ids"])
     source = workflow["source_model"]
     training = dict(source["training"])
     training.update({"maximum_epochs": 2, "minimum_epochs": 1, "early_stopping_patience": 1, "convergence_window": 1, "batch_size": 16})
@@ -242,8 +252,20 @@ def run_synthetic_smoke(output: Path) -> dict[str, Any]:
         policy_count = 0
         estimator_count = 0
         direct_count = 0
+        candidate_training_rows = 0
+        sensitivity_rows: list[dict[str, Any]] = []
         for task_index, task in enumerate(tasks):
             groups, encoder, support, _, _ = train_policy_groups(task, matched, torch.device(device), task_index)
+            groups, candidates, sensitivity = extend_fitted_policy_groups(
+                task,
+                groups,
+                matched,
+                task_index,
+                torch.device(device),
+                pilot=True,
+            )
+            candidate_training_rows += len(candidates)
+            sensitivity_rows.append(sensitivity)
             policy_count += len(groups)
             direct, consistency, normalizer, references = direct_references(task, groups, matched, task_index)
             if any(row["status"] != "pass" for row in consistency):
@@ -254,16 +276,22 @@ def run_synthetic_smoke(output: Path) -> dict[str, Any]:
             direct_count += len(direct)
             estimator_count += len({row["estimator"] for row in records})
     receipt = {
-        "schema_version": "kdd263_fitted_smoke_receipt_v1",
+        "schema_version": "kdd267_fitted_smoke_receipt_v1",
         "status": "pass",
         "synthetic": True,
         "tasks": len(tasks),
-        "matched_methods_per_task": len(matched["common_methods"]),
-        "additional_fitted_methods_per_task": len(matched["fitted_specific_methods"]),
-        "ope_estimators": len(matched["ope"]["estimators"]),
+        "matched_methods_per_task": len(SHARED_METHODS),
+        "method_ids": list(SHARED_METHODS),
+        "additional_fitted_methods_per_task": 0,
+        "severity_rule_included": False,
+        "training_seeds": list(TRAINING_SEEDS),
+        "ope_estimators": len(OPE_ESTIMATORS),
+        "estimator_ids": list(OPE_ESTIMATORS),
         "policy_groups": policy_count,
         "direct_reference_rows": direct_count,
         "distinct_estimators_observed": estimator_count,
+        "candidate_training_rows": candidate_training_rows,
+        "dreamer_v2_mode_sensitivity": sensitivity_rows,
         "claim_boundary": workflow["claim_boundary"],
     }
     output.parent.mkdir(parents=True, exist_ok=True)
@@ -299,7 +327,18 @@ def train_credentialed(constructor_root: Path, restricted_root: Path, output: Pa
         profile_path = profile_root / f"{task_name}__calibrated_profile.pt"
         torch.save(calibrated_rollout_profile_payload(profile), profile_path)
         rows.append({"task": task_name, "selected_seed": selected_seed, "profile_sha256": _sha256(profile_path), "status": "selected"})
-    receipt = {"schema_version": "kdd263_fitted_training_receipt_v1", "status": "pass", "validation": validation, "tasks": len(workflow["tasks"]), "checkpoint_rows": rows, "private_outputs_written": True, "claim_boundary": workflow["claim_boundary"]}
+    receipt = {
+        "schema_version": "kdd267_fitted_training_receipt_v1",
+        "status": "pass",
+        "validation": validation,
+        "tasks": len(workflow["tasks"]),
+        "checkpoint_rows": rows,
+        "matched_method_ids": list(SHARED_METHODS),
+        "training_seeds": list(TRAINING_SEEDS),
+        "severity_rule_included": False,
+        "private_outputs_written": True,
+        "claim_boundary": workflow["claim_boundary"],
+    }
     output.parent.mkdir(parents=True, exist_ok=True)
     output.write_text(json.dumps(receipt, indent=2, sort_keys=True) + "\n", encoding="utf-8")
     return receipt
@@ -325,14 +364,40 @@ def evaluate_credentialed(constructor_root: Path, restricted_root: Path, output:
     output.mkdir(parents=True, exist_ok=True)
     direct_count = 0
     ope_count = 0
+    candidate_training_rows = 0
+    sensitivity_rows: list[dict[str, Any]] = []
     for task_index, task in enumerate(tasks):
         groups, encoder, support, _, _ = train_policy_groups(task, matched, torch.device(device), task_index)
+        groups, candidates, sensitivity = extend_fitted_policy_groups(
+            task,
+            groups,
+            matched,
+            task_index,
+            torch.device(device),
+            pilot=pilot,
+        )
+        candidate_training_rows += len(candidates)
+        sensitivity_rows.append(sensitivity)
         direct, consistency, normalizer, references = direct_references(task, groups, matched, task_index)
         if any(row["status"] != "pass" for row in consistency):
             raise RuntimeError(f"direct-reference consistency failure for {task.name}")
         records, _, _ = evaluate_ope_datasets(task, groups, encoder, support, references, normalizer, matched, output / task.name, task_index)
         direct_count += len(direct)
         ope_count += len(records)
-    receipt = {"schema_version": "kdd263_fitted_evaluation_receipt_v1", "status": "pass", "tasks": len(tasks), "matched_methods_per_task": len(matched["common_methods"]), "ope_estimators": len(matched["ope"]["estimators"]), "direct_reference_rows": direct_count, "policy_estimator_rows": ope_count, "private_outputs_written": True, "claim_boundary": workflow["claim_boundary"]}
+    receipt = {
+        "schema_version": "kdd267_fitted_evaluation_receipt_v1",
+        "status": "pass",
+        "tasks": len(tasks),
+        "matched_methods_per_task": len(SHARED_METHODS),
+        "method_ids": list(SHARED_METHODS),
+        "severity_rule_included": False,
+        "ope_estimators": len(OPE_ESTIMATORS),
+        "direct_reference_rows": direct_count,
+        "policy_estimator_rows": ope_count,
+        "candidate_training_rows": candidate_training_rows,
+        "dreamer_v2_mode_sensitivity": sensitivity_rows,
+        "private_outputs_written": True,
+        "claim_boundary": workflow["claim_boundary"],
+    }
     (output / "aggregate_receipt.json").write_text(json.dumps(receipt, indent=2, sort_keys=True) + "\n", encoding="utf-8")
     return receipt

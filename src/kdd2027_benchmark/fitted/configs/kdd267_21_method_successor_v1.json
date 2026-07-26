@@ -1,0 +1,168 @@
+{
+  "schema_version": "kdd267_21_method_successor_v1",
+  "predecessor_matched_config": "kdd262_matched_fitted_simulator_ope_v1.json",
+  "candidate_source": {
+    "repository_commit": "8a1913f480d8c686db436f90c16df7fa7f13eb3a",
+    "source_path": "kdd_benchmark_discovery/kdd263_dreamer_candidates.py",
+    "source_sha256": "9df9363764cb47b1d49de87fe9c403baa567430f240565be9a3138d4c5c2739d",
+    "artifact_path": "kdd2027_benchmark/kdd267_candidates.py",
+    "port_type": "exact_source_copy"
+  },
+  "controlled_sources": {
+    "repository_commit": "8a1913f480d8c686db436f90c16df7fa7f13eb3a",
+    "model_free": {
+      "source_path": "kdd_benchmark_discovery/kdd161_model_free.py",
+      "source_sha256": "2fcfb6cbe830a8784207fa1ed8db842b104ac4b4e764f159fe7a5badcd165852",
+      "artifact_path": "kdd2027_benchmark/fitted/kdd161_model_free.py",
+      "artifact_sha256": "2fcfb6cbe830a8784207fa1ed8db842b104ac4b4e764f159fe7a5badcd165852",
+      "port_type": "exact_source_copy"
+    },
+    "transition_models": {
+      "source_path": "kdd_benchmark_discovery/kdd164_metric_selection.py",
+      "source_sha256": "f0b48ec896c952f1ef09217ab55d77c2afe51886224bf4fb4047ac2d14a44052",
+      "artifact_path": "kdd2027_benchmark/fitted/kdd164_metric_selection.py",
+      "artifact_sha256": "74f6d7e3d8969bc634422afd8ff6a7842cc6df9b615ea9545ad7d0a90f2258b8",
+      "port_type": "package_import_boundary_patch"
+    },
+    "controlled_policy_helpers": {
+      "source_path": "kdd_benchmark_discovery/kdd166_pomdp_benchmark.py",
+      "source_sha256": "cb1189d2a8d2ba180e9a3b91d08737fb93e11502547c242ae97400a19dd7ccf8",
+      "artifact_path": "kdd2027_benchmark/fitted/kdd166_pomdp_benchmark.py",
+      "artifact_sha256": "cb1189d2a8d2ba180e9a3b91d08737fb93e11502547c242ae97400a19dd7ccf8",
+      "port_type": "exact_source_copy"
+    },
+    "sequence_scoring_primitives": {
+      "source_path": "kdd_benchmark_discovery/kdd171_method_blind_pomdp.py",
+      "source_sha256": "3eadee4556f5d5923594b8ae139bd54a9cd46cc00ad6565696d9df634dc58b14",
+      "artifact_path": "kdd2027_benchmark/kdd267_planner_primitives.py",
+      "artifact_sha256": "8190eef879c1d02c9d62f01862ea0be2ae1fde5463d514e0b1fd100034450323",
+      "port_type": "exact_selected_primitives_with_package_import_boundary"
+    },
+    "common_h4_planner": {
+      "source_path": "kdd_benchmark_discovery/kdd190_all_method_comparison.py",
+      "source_sha256": "f019aa6d4bdf71cd0340d037fe022d8a8eeccf5d5d61a1f69e5b2cde458a3d62",
+      "artifact_path": "kdd2027_benchmark/kdd267_h4_planner.py",
+      "artifact_sha256": "f9b8cd1d335ee9f27c0b89addb455a7ac97eea53afe6f94cf6b363618210b8a9",
+      "port_type": "exact_planner_path_with_package_import_boundary"
+    },
+    "environment": {
+      "source_path": "kdd_benchmark_discovery/kdd198_pomdp_v2.py",
+      "source_sha256": "257b540db70e83bd521ad3111ce0f9ba992228672be267e7456b22063f6814bf",
+      "artifact_path": "kdd2027_benchmark/full_pomdp_v2.py",
+      "artifact_sha256": "d33ded90f76051265005c67e6eeaa526299a29594b3e4d05440546129fa8429a",
+      "port_type": "package_import_boundary_patch"
+    },
+    "direct_evaluator": {
+      "source_path": "kdd_benchmark_discovery/kdd199_repaired_direct_evaluator.py",
+      "source_sha256": "6132f697c8ea784b92728d2b53a3392ea4839da16b866a68587874b2dfb9b0fc",
+      "artifact_path": "kdd2027_benchmark/full_direct_evaluator.py",
+      "artifact_sha256": "fd5f1c8f82c662d09f38c4de724263c11064e400c01ed2334d9f569986cf12b4",
+      "port_type": "package_import_boundary_patch"
+    }
+  },
+  "shared_method_ids": [
+    "fitted_behavior",
+    "supported_random",
+    "fixed_minimum",
+    "fixed_maximum",
+    "behavior_cloning",
+    "decision_transformer",
+    "discrete_bcq",
+    "discrete_cql",
+    "discrete_iql",
+    "spibb_style_count_blend_adapter",
+    "discrete_xql",
+    "persistence_locf_plus_h4_support_only",
+    "hgb_residual_plus_h4_support_only",
+    "deterministic_grud_point_plus_h4_support_only",
+    "causal_transformer_plus_h4_support_only",
+    "categorical_rssm_plus_h4_support_only",
+    "single_gaussian_grud_plus_h4_support_only",
+    "matched_gaussian_ensemble_plus_h4_support_only",
+    "dreamer_v1_compact",
+    "dreamer_v2_compact",
+    "dreamer_v3_compact"
+  ],
+  "candidate_method_ids": [
+    "discrete_xql",
+    "dreamer_v1_compact",
+    "dreamer_v2_compact",
+    "dreamer_v3_compact"
+  ],
+  "training_seeds": [3408, 3411, 3414],
+  "dreamer_primary_evaluation_mode": "sample",
+  "dreamer_v2_development_sensitivity_mode": "mode",
+  "severity_rule_included": false,
+  "training": {
+    "episode_batch_size": 64,
+    "dreamer_world_epochs": 100,
+    "dreamer_actor_epochs": 100,
+    "xql_epochs": 200
+  },
+  "pilot_overrides": {
+    "episode_batch_size": 16,
+    "dreamer_world_epochs": 1,
+    "dreamer_actor_epochs": 1,
+    "xql_epochs": 2
+  },
+  "controlled": {
+    "authoritative_manifest": "configs/full_benchmark/kdd198_v2_generator_contract.json",
+    "behavior_family": "ehr_matched",
+    "train_episodes": 128,
+    "validation_episodes": 64,
+    "train_seed_base": 1991000000,
+    "validation_seed_base": 1992000000,
+    "profile_seed_stride": 1000000,
+    "model_free_training": {
+      "batch_size": 32,
+      "bcq_behavior_threshold": 0.3,
+      "convergence_relative_improvement_threshold": 1.0,
+      "convergence_window": 2,
+      "cql_alpha": 0.5,
+      "decision_transformer_context": 4,
+      "decision_transformer_target_return_quantile": 0.75,
+      "discount": 0.99,
+      "gradient_clip_norm": 5.0,
+      "hidden_dim": 32,
+      "iql_expectile": 0.7,
+      "iql_max_weight": 20.0,
+      "iql_temperature": 2.0,
+      "learning_rate": 0.001,
+      "maximum_epochs": 2,
+      "minimum_epochs": 1,
+      "minimum_metric_improvement": 0.00001,
+      "patience": 1,
+      "probability_nll_floor_for_metric_only": 0.00000001,
+      "sequence_batch_size": 32,
+      "soft_spibb_min_count": 20,
+      "soft_spibb_temperature": 1.0,
+      "weight_decay": 0.0001
+    },
+    "component_training": {
+      "batch_size": 32,
+      "hidden_dim": 32,
+      "latent_dim": 24,
+      "learning_rate": 0.001,
+      "weight_decay": 0.0001,
+      "gradient_clip_norm": 5.0,
+      "max_epochs": 2,
+      "minimum_epochs": 1,
+      "early_stopping_patience": 1
+    },
+    "planner": {
+      "name": "H4_support_only_sequence_categorical_CEM",
+      "horizon": 4,
+      "candidates": 64,
+      "cem_iterations": 3,
+      "elites": 8,
+      "smoothing": 0.2,
+      "support_mask_every_step": true,
+      "execute_first_action_only": true,
+      "receding_horizon_replan": true,
+      "terminal_bootstrap": "repeat_last_action_expected_reward_for_remaining_horizon",
+      "uncertainty_penalty": 0.0,
+      "planner_seed": 1903408
+    }
+  },
+  "claim_boundary": "The executable successor compares fixed named implementations inside synthetic, controlled, or frozen observational fitted simulators. Smoke outputs are capability checks, not algorithm-family superiority, clinical policy value, causal treatment effects, treatment recommendations, or external validation."
+}

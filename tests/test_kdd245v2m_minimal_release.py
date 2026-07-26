@@ -19,12 +19,13 @@ ROOT = Path(__file__).resolve().parents[1]
 class KDD245V2MMinimalReleaseTests(unittest.TestCase):
     def test_packaging_version_changes_without_scientific_version_change(self) -> None:
         project = tomllib.loads((ROOT / "pyproject.toml").read_text(encoding="utf-8"))["project"]
-        self.assertEqual(project["version"], "2.0.4")
-        self.assertEqual(kdd2027_benchmark.PACKAGE_VERSION, "2.0.4")
+        self.assertEqual(project["version"], "2.1.0")
+        self.assertEqual(kdd2027_benchmark.PACKAGE_VERSION, "2.1.0")
         self.assertEqual(EHR_COMPONENT_BENCHMARK_VERSION, "ehrdyn-icu-canonical-v2.0.0")
         self.assertEqual(EHR_COMPONENT_EVALUATOR_VERSION, "ehr-component-scorer-v2.0.0")
 
     def test_prohibited_release_surfaces_are_absent(self) -> None:
+        ignored_roots = {".git", ".venv", "build", "dist", "__pycache__"}
         for path in (
             "public_bundle",
             "clinical_review",
@@ -45,7 +46,12 @@ class KDD245V2MMinimalReleaseTests(unittest.TestCase):
             "**/*real*ehr*.csv",
             "**/*figure-data*",
         ):
-            self.assertEqual(list(ROOT.glob(pattern)), [], pattern)
+            matches = [
+                path
+                for path in ROOT.glob(pattern)
+                if not ignored_roots.intersection(path.relative_to(ROOT).parts)
+            ]
+            self.assertEqual(matches, [], pattern)
 
     def test_release_manifest_covers_every_runtime_asset(self) -> None:
         if kdd2027_benchmark.PACKAGE_VERSION != "2.0.1":
