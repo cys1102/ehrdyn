@@ -3,7 +3,10 @@
 EHRDyn-ICU is a frozen benchmark contract for recorded ICU trajectory
 forecasting and offline-RL readiness diagnostics.
 
-Version 2.0.3 is the paper-bound successor to immutable v2.0.2. It adds a
+Version 2.0.4 is a documentation-only successor to immutable v2.0.3. It
+preserves the paper-bound benchmark artifact and corrects the public
+publication status after the frozen ResearchWiki identity was verified.
+The paper-bound artifact adds a
 documented local constructor for authorized MIMIC-IV v3.1
 users. It contains runtime code, task and configuration contracts, schemas,
 tiny synthetic fixtures, public tests, and the constructed-environment entrant
@@ -34,12 +37,13 @@ ehrdyn-icu verify-checksums --root .
 ```
 
 `ehrdyn-icu --version` reports the frozen benchmark contract identifier.
-Package metadata reports `2.0.3`.
+Package metadata reports `2.0.4`.
 
 The paper-bound route and its publication gate are documented in
-[PAPER_ARTIFACT.md](PAPER_ARTIFACT.md). The current terminal receipt is
-`stop_missing_frozen_paper_identity` until the submitted ResearchWiki commit is
-supplied.
+[PAPER_ARTIFACT.md](PAPER_ARTIFACT.md). The terminal decision is
+`complete_paper_bound_public_benchmark_artifact`, bound to the verified
+ResearchWiki snapshot recorded in
+[`release/kdd263/paper_snapshot.json`](release/kdd263/paper_snapshot.json).
 
 ## Credentialed MIMIC-IV construction
 

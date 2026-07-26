@@ -27,6 +27,14 @@ class KDD263PaperIdentityTests(unittest.TestCase):
         self.assertIn("trained checkpoints", scope["excluded"])
         self.assertIn("MIMIC-derived result tables", scope["excluded"])
 
+    def test_public_documentation_reports_completed_publication(self) -> None:
+        readme = (ROOT / "README.md").read_text(encoding="utf-8")
+        paper_artifact = (ROOT / "PAPER_ARTIFACT.md").read_text(encoding="utf-8")
+        for text in (readme, paper_artifact):
+            self.assertIn("complete_paper_bound_public_benchmark_artifact", text)
+            self.assertNotIn("stop_missing_frozen_paper_identity", text)
+            self.assertNotIn("missing submitted ResearchWiki commit", text)
+
 
 if __name__ == "__main__":
     unittest.main()

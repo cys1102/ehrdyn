@@ -30,6 +30,9 @@ public end-to-end proof of the same source-fit, calibrated rollout, matched
 method, and six-estimator workflow.
 
 The publication decision is `complete_paper_bound_public_benchmark_artifact`.
-`release/kdd263/paper_snapshot.json` records the observed manuscript/appendix/PDF
-hashes and the missing submitted ResearchWiki commit. No successor tag or
-release asset is published until that identity is supplied.
+`release/kdd263/paper_snapshot.json` binds the exact manuscript, appendix, and
+PDF hashes to the remotely reachable ResearchWiki commit
+`146a02840570368ac7a3efd106cf10b0d3cbba91`. The immutable paper-bound artifact
+was published as v2.0.3. Version 2.0.4 changes only documentation and package
+metadata so that the public status consistently reflects that completed
+publication.
