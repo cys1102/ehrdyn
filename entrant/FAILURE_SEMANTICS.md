@@ -11,7 +11,7 @@
   reconstruction or authorize retrospective policy-value claims.
 - A bundle artifact marked as restricted or omitted remains nonreproducible
   from the public bundle. A synthetic substitute is never used for parity.
-- KDD215 distinguishes `entrant_timeout`, crash/empty response, malformed JSON,
+- The entrant protocol distinguishes `entrant_timeout`, crash/empty response, malformed JSON,
   protocol-version mismatch, action-dimension failure, nonfinite or negative
   probabilities, normalization failure, unsupported mass, nondeterminism, and
   component mean/scale contract failure. These are retained in the aggregate

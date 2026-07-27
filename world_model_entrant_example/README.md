@@ -17,10 +17,9 @@ Run the two-profile smoke from a clean install:
 
 ```bash
 ehrdyn-icu evaluate-world-model-smoke \
-  --manifest configs/full_benchmark/kdd198_v2_generator_contract.json \
   --entrant world_model_entrant_example/point.json \
   --entrant world_model_entrant_example/gaussian.json \
-  --output build/kdd235a-smoke --episodes 8
+  --output build/ehrdyn-world-model-smoke --episodes 8
 ```
 
 Arbitrary entrant execution uses the existing fail-closed subprocess sandbox. Linux entrants

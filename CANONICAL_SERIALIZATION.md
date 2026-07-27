@@ -1,6 +1,6 @@
 # Canonical aggregate serialization
 
-KDD214 uses one writer for generated JSON and JSONL hash surfaces:
+EHRDyn uses one writer for generated JSON and JSONL hash surfaces:
 `kdd2027_benchmark.canonical`. Static source files retain ordinary byte hashes
 and are not rewritten to mimic computed-result portability.
 
@@ -18,5 +18,5 @@ and preprocessing contracts, public POMDP mechanism hashes, and the portability
 probe. JSONL writes one independently canonicalized object plus LF per row.
 
 Python 3.11, 3.12, and 3.13 must produce identical canonical bytes for the
-frozen KDD214 aggregate probe. Raw pre-quantization floating values are compared
+frozen aggregate probe. Raw pre-quantization floating values are compared
 separately and must remain within the frozen absolute tolerance `5e-12`.

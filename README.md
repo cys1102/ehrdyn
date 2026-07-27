@@ -1,26 +1,43 @@
-# EHRDyn-ICU
+# EHRDyn
 
-EHRDyn-ICU is a frozen benchmark contract for recorded ICU trajectory
-forecasting and offline-RL readiness diagnostics.
+EHRDyn is a benchmark for evaluating offline reinforcement learning from
+electronic health records (EHRs). It aligns five MIMIC-IV task contracts across
+credentialed EHR dynamics and support diagnostics, frozen EHR-fitted
+observational simulators, and 40 public controlled environments. These
+complementary surfaces test transition models, policies, world models, and
+off-policy evaluation (OPE) estimators without treating simulator returns as
+clinical counterfactual truth.
 
-The KDD267 source implements the version 2.1.0 successor to immutable v2.0.4.
-It preserves the earlier paper-bound benchmark and adds one exact shared
-21-method inventory for the fitted, controlled, and controlled-OPE surfaces.
-The four additions are the discrete XQL and compact Dreamer V1--V3 benchmark
-adaptations used by KDD264. They are not official reproductions. Severity
-rules are excluded from every KDD267 public method inventory.
+The shared simulator suite contains 21 policy specifications and six OPE
+estimators. The fitted and controlled surfaces use the same method order;
+severity rules are not part of either inventory. Discrete XQL and the compact
+Dreamer V1--V3 implementations are benchmark adaptations, not official
+reproductions of the original systems.
 
-The paper-bound artifact includes a
-documented local constructor for authorized MIMIC-IV v3.1
-users. It contains runtime code, task and configuration contracts, schemas,
-tiny synthetic fixtures, public tests, and the constructed-environment entrant
-workflow, plus the source-model train/calibration split and paper-fitted
-simulator/matched-method route. It does not redistribute MIMIC-IV data, split
-membership, model checkpoints, or MIMIC-derived result tables.
+The repository and benchmark display name is EHRDyn. The Python package and
+command-line interface retain the compatibility name `ehrdyn-icu`.
 
-The canonical-v2 scientific scorer contract remains version 2.0.0. No cohort,
-task, schema, metric, tolerance, expected synthetic output, or API changed in
-this successor.
+## Benchmark surfaces
+
+| Surface | Access | Evaluated object or submission | Evaluation reference | Start here |
+| --- | --- | --- | --- | --- |
+| EHR dynamics and support | Credentialed MIMIC-IV v3.1 | Transition-prediction submission | Recorded next observations and logged trajectories | [MIMIC access](MIMIC_ACCESS.md), [component scorer](EHR_COMPONENT_SCORER.md) |
+| EHR-fitted simulator | Credentialed full workflow; public synthetic smoke | Named policy or candidate transition implementation | Direct return in a frozen fitted observational simulator | [Paper artifact](PAPER_ARTIFACT.md) |
+| Controlled policy evaluation | Public | Policy or world-model entrant | Direct return in a frozen synthetic mechanism | [World-model entrant](RECURSIVE_WORLD_MODEL_ENTRANT.md) |
+| Simulator OPE | Public controlled workflow; credentialed fitted workflow; public smoke | Six included OPE implementations | Direct simulator return for each fixed policy | [OPE contract](OPE_CONTRACT.md) |
+
+EHRDyn reports a multi-metric profile rather than one composite score. The
+current controlled environments are public development assets, not a hidden
+test service.
+
+The public controlled workflows and synthetic smokes require no MIMIC access.
+Credentialed rows run only in an authorized, caller-owned MIMIC-IV environment
+and keep all restricted inputs and outputs local.
+
+The controlled policy and world-model surfaces expose isolated entrant
+interfaces. The current OPE surface provides six versioned Python estimator
+implementations; it does not yet define an isolated estimator-subprocess
+schema.
 
 ## Installation
 
@@ -42,13 +59,8 @@ ehrdyn-icu verify-checksums --root .
 ```
 
 `ehrdyn-icu --version` reports the frozen benchmark contract identifier.
-Package metadata reports `2.1.0`.
-
-The paper-bound route and its publication evidence are documented in
-[PAPER_ARTIFACT.md](PAPER_ARTIFACT.md). The previous KDD263 release remains
-`complete_paper_bound_public_benchmark_artifact`. KDD267 is bound to the
-remotely frozen no-severity paper and 21-policy controlled-OPE aggregate in
-[`release/kdd267/paper_snapshot.json`](release/kdd267/paper_snapshot.json).
+Package metadata reports `2.1.0`. The manuscript-facing workflow is documented
+in [PAPER_ARTIFACT.md](PAPER_ARTIFACT.md).
 
 ## Credentialed MIMIC-IV construction
 
@@ -71,7 +83,7 @@ arrays. See [CREDENTIALED_CONSTRUCTOR.md](CREDENTIALED_CONSTRUCTOR.md) and
 2 hours 8 minutes, peaked at 81.3 GiB resident memory, and used 32.3 GiB of
 temporary disk.
 
-## Synthetic canonical-v2 scorer
+## EHR-format component scorer
 
 The scorer accepts point, independent-Gaussian, and Gaussian-ensemble
 submissions. It reports aggregate forecasting, calibration, interval,
@@ -79,7 +91,6 @@ termination, support, ESS, and evaluability diagnostics where defined.
 
 ```bash
 ehrdyn-icu score-ehr-components \
-  --submission fixtures/kdd245v2r/gaussian.json \
   --output build/ehr-component-score.json
 ```
 
@@ -87,14 +98,13 @@ See [EHR_COMPONENT_SCORER.md](EHR_COMPONENT_SCORER.md),
 [SCHEMA_VALIDATION.md](SCHEMA_VALIDATION.md), and
 [CANONICAL_SERIALIZATION.md](CANONICAL_SERIALIZATION.md).
 
-## Constructed-environment entrant
+## Controlled-environment entrant
 
 The public constructed workflow uses only released synthetic mechanisms and
 fixtures. A bounded smoke is:
 
 ```bash
 ehrdyn-icu evaluate-world-model-smoke \
-  --manifest configs/full_benchmark/kdd198_v2_generator_contract.json \
   --entrant world_model_entrant_example/point.json \
   --entrant world_model_entrant_example/gaussian.json \
   --entrant world_model_entrant_example/ensemble.json \
@@ -107,19 +117,19 @@ The full 40-environment workflow is documented in
 demonstration entrant is an interface example and is not part of a scientific
 leaderboard.
 
-## Exact 21-method successor
+## Shared 21-policy and six-estimator workflow
 
-The public inventory receipt is identical for fitted and controlled workflows:
+Install the fitted dependency group, then run the public bounded workflow:
 
 ```bash
+python -m pip install '.[fitted]'
 ehrdyn-icu method-inventory
 ehrdyn-icu fitted-synthetic-smoke \
-  --output build/kdd267-fitted-smoke.json
+  --output build/ehrdyn-fitted-smoke.json
 ehrdyn-icu controlled-21-method-smoke \
-  --config configs/full_benchmark/kdd198_v2_generator_contract.json \
   --profile aki \
   --environment-seed 171901 \
-  --output build/kdd267-controlled-smoke.json
+  --output build/ehrdyn-controlled-smoke.json
 ```
 
 Both smokes execute all 21 named methods in the frozen order and all six OPE
@@ -127,7 +137,7 @@ estimators. The controlled OPE inventory also contains exactly those 21
 methods; there is no severity-rule exception. These are nonclinical capability
 checks and do not provide return, rank, or algorithm-family superiority
 evidence. See
-[the KDD267 quickstart](docs/kdd267/21_method_quickstart.md).
+[the 21-method quickstart](docs/21_method_quickstart.md).
 
 ## Included interfaces
 
@@ -147,8 +157,10 @@ no MIMIC-derived scientific results. See [MIMIC_ACCESS.md](MIMIC_ACCESS.md),
 [KNOWN_LIMITATIONS.md](KNOWN_LIMITATIONS.md), and
 [ETHICS_AND_MISUSE.md](ETHICS_AND_MISUSE.md).
 
-Unsupported uses include treatment recommendation, causal effect estimation,
+Intended use includes nonclinical evaluation of forecasting, simulator-based
+policy construction, direct simulator returns, and OPE recovery. Unsupported
+uses include treatment recommendation, causal effect estimation,
 counterfactual benefit claims, clinical deployment, and autonomous decisions.
 
 Citation metadata are in [CITATION.cff](CITATION.cff). The repository is
-<https://github.com/cys1102/ehrdyn-icu>.
+<https://github.com/cys1102/ehrdyn>.

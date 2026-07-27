@@ -29,6 +29,5 @@ uv run ehrdyn-icu validate-transition-submission \
   --submission fixtures/transition_submission_small.json \
   --config-dir configs/tasks
 uv run ehrdyn-icu score-ehr-components \
-  --submission fixtures/kdd245v2r/gaussian.json \
   --output /tmp/ehrdyn_ehr_component_score.json
 ```

@@ -1,7 +1,8 @@
-# KDD215 entrant protocol
+# Entrant Protocol
 
-KDD215 uses `kdd215.entrant.v1` declarations and a persistent newline-delimited
-JSON subprocess protocol (`kdd215.runtime.v1`). Entrant code is not imported by
+The compatibility schema `kdd215.entrant.v1` defines entrant declarations and
+a persistent newline-delimited JSON subprocess protocol
+(`kdd215.runtime.v1`). Entrant code is not imported by
 the evaluator. On Linux the evaluator requires Bubblewrap, removes network
 access, mounts the entrant read-only, provides a private working directory, and
 applies CPU, address-space, file-size, descriptor, output, and response-time

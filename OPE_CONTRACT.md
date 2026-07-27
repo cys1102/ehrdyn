@@ -1,95 +1,59 @@
-# Offline-Policy Diagnostic Documentation
+# Off-Policy Evaluation Contract
 
-This document describes the frozen aggregate KDD078/KDD079 diagnostics after the
-KDD094 code-to-document audit. It is explanatory documentation, not an exact
-target-policy replay package and not evidence of causal treatment-policy value.
+EHRDyn uses OPE in two distinct roles. On real EHR trajectories, OPE diagnoses
+longitudinal support and estimator agreement because the value of an unexecuted
+policy is unknown. In the fitted and controlled simulator workflows, direct
+policy execution supplies a reference return against which estimator recovery
+can be measured.
 
-## Quarantine Status
+Neither role estimates a clinical counterfactual value.
 
-Offline-policy rows are not accepted by the public leaderboard submission
-public validator. They remain frozen aggregate stress tests because exact
-KDD078 target-policy probability surfaces are unavailable and no public
-task-policy registry can reproduce every reported value. A future policy track
-requires a new version with policy probabilities, task-policy-denominator row
-keys, a frozen FQE protocol, and subject-cluster inference. It must not silently
-reuse the current diagnostics.
+## Real-EHR diagnostics
 
-## Population, Horizon, And Reward
+The credentialed EHR workflow fits behavior probabilities on training data and
+evaluates support on a separate historical development role. It reports
+calibration, trajectory importance weights, effective sample size (ESS),
+numerical availability, and agreement among estimators. Estimator disagreement
+is a warning; it does not identify the correct policy value.
 
-- Population: held-out test episodes from each support-eligible frozen task.
-- Initial-state distribution: the first test transition of each episode.
-- Horizon: 17 transitions from 18 four-hour bins.
-- Discount: `gamma = 0.99`.
-- Termination: the final transition is terminal; no separate censoring model is
-  implemented.
-- Canonical KDD079 reward: `terminal_plus_intermediate`.
-- Terminal reward: `+1` for 90-day survival and `-1` for 90-day mortality.
-- Composite reward: terminal reward plus `0.25` times the clipped task-specific
-  intermediate physiology change. Component definitions remain observable
-  proxies, not validated clinical utilities.
-
-## Policies And Behavior Denominators
-
-The historical aggregate policy-family catalog was not an exact registry of
-KDD078 probability surfaces and is intentionally excluded from this
-minimal-runtime release. The original probability surfaces were not retained.
-Learned policies used seeds `3408`, `3411`, and `3414`; fidelity labels were
-never pooled.
-
-Two behavior denominators are fit on training data and evaluated separately:
-
-- kNN frequency: `k=64`, Euclidean distance in a train-standardized fixed random
-  projection, additive smoothing 1;
-- neural classifier: MLP `32-64-K`, five epochs, validation-only temperature
-  scaling.
-
-Behavior features are projected current values, masks, `log1p` recency/deltas,
-previous action, and normalized step. Aggregate calibration is reported by task
-and split. The two denominators are never averaged. Naive deterministic controls
-use `epsilon=0.001`, not exact point masses.
-
-## Importance Sampling
-
-For logged action `a_it`, evaluation policy `pi_e`, and behavior policy `pi_b`,
+For logged action `a_it`, evaluation policy `pi_e`, and fitted behavior policy
+`pi_b`,
 
 ```text
 rho_it = pi_e(a_it | h_it) / max(pi_b(a_it | h_it), 1e-12)
 w_i,t  = product_{j=0}^t rho_ij
+ESS    = (sum_i w_i,H)^2 / sum_i w_i,H^2
 ```
 
-WIS normalizes final trajectory weights across episodes and weights each
-discounted return. WPDIS normalizes cumulative weights separately at each step.
-ESS uses final trajectory weights:
+The full reporting contract identifies the task, action and reward contract,
+policy, behavior denominator, horizon, clipping, estimator, bootstrap unit,
+ESS, weight concentration, and numerical status.
 
-```text
-ESS = (sum_i w_i,H)^2 / sum_i w_i,H^2
-```
+## Simulator recovery benchmark
 
-Unclipped results are primary diagnostics. Ratio clipping is evaluated at `1`,
-`2`, `5`, `10`, `20`, and `50`. ESS is reported at horizons `1`, `2`, `4`, `8`,
-`12`, and `17`; this is not per-decision ESS at every step. CWPDIS is not
-implemented or exported in KDD078/KDD079.
+The simulator benchmark fixes the same 21 target policies used by the direct
+return comparison and evaluates six estimators:
 
-## Inference And FQE
+- importance sampling (IS);
+- weighted importance sampling (WIS);
+- consistent weighted per-decision importance sampling (CWPDIS);
+- doubly robust estimation (DR);
+- weighted doubly robust estimation (WDR); and
+- fitted Q evaluation (FQE).
 
-- KDD079 WIS/WPDIS intervals use 100 episode-bootstrap replicates; KDD078 uses
-  200. Neither establishes subject-cluster robustness.
-- Linear and neural FQE use training transitions and evaluate the target policy
-  on initial held-out test states.
-- Neural FQE uses three seeds, two 64-unit hidden layers, eight epochs, batch
-  size 2048, AdamW learning rate `5e-4`, target updates once per epoch, and
-  `gamma=0.99`.
-- Linear and neural FQE are both reported. No frozen selector chooses one as the
-  preferred estimand. Finite FQE is a software diagnostic, not proof of correct
-  clinical value.
+Each estimator uses logged simulator datasets that are separate from policy
+development and direct-return batches. Behavior and nuisance models are refit
+within each dataset and bootstrap replicate. The target is the direct
+full-episode simulator return of the fixed policy.
 
-## Required Reporting
+Primary metrics are value MAE, empirical coverage of nominal 90% intervals,
+policy-ordering recovery, ESS, support, and numerical availability. Fitted and
+controlled simulator errors use different natural normalization ranges and
+must not be compared as if they shared a clinical scale.
 
-Every row should identify task, action contract, reward, policy ID, policy seed,
-behavior denominator, horizon, clipping, estimator, bootstrap unit, ESS, weight
-concentration, and fidelity label. Exact KDD078 policy-specific attribution is
-blocked where probability provenance is unavailable. Denominator or estimator
-rank disagreement blocks a policy-winner declaration. Historical
-machine-readable result and provenance tables are excluded from this release.
-Missing probability provenance is an availability block, not a negative
-policy-performance result.
+## Interpretation boundary
+
+Low simulator OPE error establishes recovery only for the stated simulator
+mechanism and data-generation process. It does not establish retrospective-EHR
+accuracy, causal treatment benefit, or suitability for clinical deployment.
+No single OPE estimator is designated as a universal benchmark winner.

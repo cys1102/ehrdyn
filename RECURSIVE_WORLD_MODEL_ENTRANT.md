@@ -1,6 +1,6 @@
-# Recursive constructed world-model entrant
+# Recursive Controlled-Environment World-Model Entrant
 
-EHRDyn-ICU v1.3.0 exposes a typed subprocess API for point, independent-
+EHRDyn exposes a typed subprocess API for point, independent-
 Gaussian, and Gaussian-ensemble recursive transition models. Entrants receive
 only observations, masks, recency, previous actions, proposed action sequences,
 and public task metadata.
@@ -13,7 +13,6 @@ source .venv/bin/activate
 python -m pip install -e .
 
 ehrdyn-icu evaluate-world-model-smoke \
-  --manifest configs/full_benchmark/kdd198_v2_generator_contract.json \
   --entrant world_model_entrant_example/point.json \
   --entrant world_model_entrant_example/gaussian.json \
   --entrant world_model_entrant_example/ensemble.json \
@@ -24,7 +23,6 @@ ehrdyn-icu evaluate-world-model-smoke \
 
 ```bash
 ehrdyn-icu evaluate-world-model-full \
-  --manifest configs/full_benchmark/kdd198_v2_generator_contract.json \
   --entrant recursive_world_model_entrant/entrant.json \
   --output build/world-model-full \
   --forecast-episodes 32 \

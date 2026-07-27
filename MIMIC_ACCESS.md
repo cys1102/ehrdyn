@@ -1,6 +1,6 @@
 # MIMIC-IV access boundary
 
-MIMIC-IV v3.1 is credentialed data and is not redistributed by EHRDyn-ICU.
+MIMIC-IV v3.1 is credentialed data and is not redistributed by EHRDyn.
 The public package contains the code needed to reconstruct the five EHR task
 interfaces locally. It contains no MIMIC rows, derived result tables,
 checkpoints, or split membership.

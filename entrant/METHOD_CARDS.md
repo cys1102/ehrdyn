@@ -3,9 +3,10 @@
 These reference implementations exercise the public interfaces. They
 are not the restricted-data models used for manuscript evidence.
 
-The KDD212 implementations below remain `smoke_only`. KDD215 adds the isolated
+The implementations below remain `smoke_only`. The isolated
 `history_softmax_reference` policy and `locf_gaussian_reference` transition
-component. Neither is relabeled as an authoritative KDD199 learned method.
+component test protocol conformance. Neither is presented as a manuscript
+baseline or an authoritative reproduction of an external method.
 
 ## Behavior cloning
 
@@ -26,18 +27,18 @@ implementation of a named external simulator method.
 
 The bounded scorer exposes IS, WIS, CWPDIS, DR, WDR, and FQE. Behavior and
 return nuisance tables are refit for every independent synthetic dataset and
-inside every bootstrap resample. The smoke is an implementation check; the
-immutable KDD202B aggregate evidence remains separate.
+inside every bootstrap resample. The smoke is an implementation check rather
+than a scientific result.
 
-## KDD215 history softmax conformance policy
+## History-softmax conformance policy
 
 `history_softmax_reference` consumes only values, masks, recency, past action,
 and step through the isolated JSONL protocol. It returns a complete supported
 categorical distribution. It is deterministic and has no fitting stage, so it
-is a conformance policy rather than a reconstructed KDD199 behavior-cloning
+is a conformance policy rather than a reconstructed behavior-cloning
 checkpoint.
 
-## KDD215 LOCF Gaussian component
+## LOCF Gaussian component
 
 `locf_gaussian_reference` emits a point mean and positive predictive scale from
 observable history. It does not emit reward or termination components. H1/H4/H8

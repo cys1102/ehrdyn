@@ -18,11 +18,11 @@ source .venv/bin/activate
 python -m pip install .
 
 ehrdyn-icu score-ehr-components \
-  --submission fixtures/kdd245v2r/gaussian.json \
   --output /tmp/ehrdyn_ehr_component_score.json
 ```
 
-Replace the synthetic submission with a local document conforming to
+Without `--submission`, the command uses the released synthetic example. Pass
+`--submission <local-document>` to score a local document conforming to
 `schemas/ehr_component_submission.schema.json`. The scorer validates the full
 33-feature record, task action range, horizon, prediction form, termination
 probability, behavior denominator, and target probability. It writes only the

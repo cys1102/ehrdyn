@@ -1,6 +1,6 @@
 # Full recursive entrant demonstration
 
-This package is deliberately entrant-owned. It imports no EHRDyn-ICU transition
+This package is deliberately entrant-owned. It imports no EHRDyn transition
 class, checkpoint, private configuration, or historical expected result. It
 communicates only through the public `kdd235a.runtime.v1` JSONL protocol.
 

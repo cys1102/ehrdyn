@@ -1,13 +1,25 @@
 # Known Limitations
 
-- MIMIC-IV access is credentialed and no data are redistributed.
-- No non-sepsis task passes every sepsis-relative axis.
-- Respiratory policy evaluation is excluded after action-observation repair.
-- AKI and HF have no rich repeated-action contract.
-- Frozen common-family uncertainty lacks Cov80, CRPS, IntervalScore90, risk-coverage, and five-member variance decomposition aggregates.
-- Policy/OPE/FQE evidence is diagnostic-only and confounded by indication.
-- Exact KDD078 target-policy probability surfaces are unavailable. OPE rows are quarantined from public leaderboard submissions.
-- Independent ICU/cardiology adjudication of the seven compact paper contracts remains pending.
-- The credentialed construction path is public, but running it requires an authorized MIMIC-IV v3.1 environment.
-- Medication-family axes use recorded exposure with overlap-prorated amounts; they are not cross-drug dose-equivalent intensities, and local units still require credentialed and clinical review.
-- The respiratory contract retains its historical nominal five-bin identifier, but duplicate train quantiles yield empirical `K=4`; reports must state both facts.
+- MIMIC-IV access is credentialed, and no row-level data, split membership,
+  checkpoints, or MIMIC-derived arrays are redistributed.
+- The real-EHR analyses use one database and development roles rather than an
+  untouched confirmatory test set.
+- Recorded actions are interval-level exposures. They may reflect adaptation
+  during the interval and do not identify assigned interventions or causal
+  effects.
+- Real-EHR outcomes do not reveal the value of an unexecuted policy.
+  Retrospective OPE on those trajectories is therefore a support and agreement
+  diagnostic, not an accuracy benchmark.
+- EHR-fitted simulator returns are defined by learned observational dynamics
+  and may inherit model error, distribution shift, and unmeasured confounding.
+- Controlled-environment returns are measurable but synthetic. Matching
+  selected EHR aggregates does not establish clinical or joint-distribution
+  realism.
+- The 40 controlled environments are public development assets rather than a
+  protected final evaluation service.
+- Fixed-budget comparisons concern the released named implementations, not
+  method families or asymptotic performance.
+- Proxy rewards and compact task contracts require further independent
+  clinical review.
+- The benchmark does not establish clinical utility, causal benefit,
+  deployment readiness, fairness, or cross-site generalization.

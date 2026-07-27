@@ -7,7 +7,7 @@ from collections.abc import Mapping
 from dataclasses import dataclass
 from pathlib import Path
 
-from . import BENCHMARK_VERSION
+from . import BENCHMARK_VERSION, PACKAGE_VERSION
 from .baseline import BASELINES, run_baseline
 from .canonical import canonical_bytes, write_canonical_json
 from .config import validate_config_directory, validate_task_config
@@ -36,6 +36,18 @@ from .full_suite import (
     summarize_ope,
     validate_entrant_conformance,
 )
+
+REPOSITORY_ROOT = Path(__file__).resolve().parents[2]
+DEFAULT_CONTROLLED_MANIFEST = (
+    REPOSITORY_ROOT
+    / "configs"
+    / "full_benchmark"
+    / "kdd198_v2_generator_contract.json"
+)
+DEFAULT_EHR_COMPONENT_EXAMPLE = (
+    REPOSITORY_ROOT / "fixtures" / "kdd245v2r" / "gaussian.json"
+)
+
 
 @dataclass(slots=True)
 class CliArgs(argparse.Namespace):
@@ -85,8 +97,12 @@ class CliArgs(argparse.Namespace):
 
 
 def build_parser() -> argparse.ArgumentParser:
-    parser = argparse.ArgumentParser(description="KDD 2027 frozen benchmark clean-room utilities.")
-    _ = parser.add_argument("--version", action="version", version=BENCHMARK_VERSION)
+    parser = argparse.ArgumentParser(description="EHRDyn benchmark utilities.")
+    _ = parser.add_argument(
+        "--version",
+        action="version",
+        version=f"EHRDyn {PACKAGE_VERSION}",
+    )
     commands = parser.add_subparsers(dest="command", required=True)
     fixture = commands.add_parser("generate-fixture", help="Generate a deterministic synthetic fixture.")
     _ = fixture.add_argument("--output", type=Path, required=True)
@@ -134,15 +150,15 @@ def build_parser() -> argparse.ArgumentParser:
     _ = manifest.add_argument("--task-manifest", type=Path, required=True)
     _ = manifest.add_argument("--contract-manifest", type=Path, required=True)
     _ = manifest.add_argument("--evidence", type=Path, required=True)
-    pomdp = commands.add_parser("pomdp-smoke", help="Run the repaired public constructed-POMDP entrant smoke.")
-    _ = pomdp.add_argument("--config", type=Path, required=True)
+    pomdp = commands.add_parser("pomdp-smoke", help="Run the public controlled-environment entrant smoke.")
+    _ = pomdp.add_argument("--config", type=Path, default=DEFAULT_CONTROLLED_MANIFEST)
     _ = pomdp.add_argument("--profile", required=True)
     _ = pomdp.add_argument("--environment-seed", type=int, default=21201)
     _ = pomdp.add_argument("--episodes", type=int, default=64)
     _ = pomdp.add_argument("--seed", type=int, default=3408)
     _ = pomdp.add_argument("--output", type=Path, required=True)
-    ope = commands.add_parser("ope-smoke", help="Run the bounded KDD202B-compatible repeated-dataset OPE smoke.")
-    _ = ope.add_argument("--config", type=Path, required=True)
+    ope = commands.add_parser("ope-smoke", help="Run the bounded repeated-dataset OPE smoke.")
+    _ = ope.add_argument("--config", type=Path, default=DEFAULT_CONTROLLED_MANIFEST)
     _ = ope.add_argument("--profile", required=True)
     _ = ope.add_argument("--environment-seed", type=int, default=21201)
     _ = ope.add_argument("--datasets", type=int, default=4)
@@ -157,44 +173,44 @@ def build_parser() -> argparse.ArgumentParser:
     _ = rebuild.add_argument("--bundle", type=Path, required=True)
     _ = rebuild.add_argument("--output", type=Path, required=True)
     full = commands.add_parser("generate-full-suite", help="Verify and enumerate the authoritative 40-environment/320-dataset suite.")
-    _ = full.add_argument("--manifest", type=Path, required=True)
+    _ = full.add_argument("--manifest", type=Path, default=DEFAULT_CONTROLLED_MANIFEST)
     _ = full.add_argument("--output", type=Path, required=True)
     _ = full.add_argument("--cache-dir", type=Path)
-    entrant = commands.add_parser("validate-entrant", help="Validate and sandbox-probe a KDD215 entrant.")
+    entrant = commands.add_parser("validate-entrant", help="Validate and sandbox-probe an entrant.")
     _ = entrant.add_argument("--entrant", type=Path, required=True)
-    _ = entrant.add_argument("--manifest", type=Path, required=True)
+    _ = entrant.add_argument("--manifest", type=Path, default=DEFAULT_CONTROLLED_MANIFEST)
     train = commands.add_parser("train-entrant", help="Validate the entrant training boundary and public role contract.")
     _ = train.add_argument("--entrant", type=Path, required=True)
-    _ = train.add_argument("--manifest", type=Path, required=True)
+    _ = train.add_argument("--manifest", type=Path, default=DEFAULT_CONTROLLED_MANIFEST)
     _ = train.add_argument("--output", type=Path, required=True)
     transition_full = commands.add_parser("evaluate-transition", help="Evaluate a component entrant on all 40 environments.")
     _ = transition_full.add_argument("--entrant", type=Path, required=True)
-    _ = transition_full.add_argument("--manifest", type=Path, required=True)
+    _ = transition_full.add_argument("--manifest", type=Path, default=DEFAULT_CONTROLLED_MANIFEST)
     _ = transition_full.add_argument("--output", type=Path, required=True)
     direct = commands.add_parser("evaluate-policy-return", help="Evaluate a policy entrant by paired full-suite direct return.")
     _ = direct.add_argument("--entrant", type=Path, required=True)
-    _ = direct.add_argument("--manifest", type=Path, required=True)
+    _ = direct.add_argument("--manifest", type=Path, default=DEFAULT_CONTROLLED_MANIFEST)
     _ = direct.add_argument("--output", type=Path, required=True)
     _ = direct.add_argument("--contrasts", type=Path, required=True)
     full_ope = commands.add_parser("evaluate-policy-ope", help="Run the frozen 320-dataset repeated-OPE protocol.")
     _ = full_ope.add_argument("--entrant", type=Path, required=True)
-    _ = full_ope.add_argument("--manifest", type=Path, required=True)
+    _ = full_ope.add_argument("--manifest", type=Path, default=DEFAULT_CONTROLLED_MANIFEST)
     _ = full_ope.add_argument("--direct-returns", type=Path, required=True)
     _ = full_ope.add_argument("--workers", type=int, default=1)
     _ = full_ope.add_argument("--output", type=Path, required=True)
     summarize = commands.add_parser("summarize-submission", help="Summarize full-suite entrant OPE results.")
     _ = summarize.add_argument("--input", type=Path, required=True)
     _ = summarize.add_argument("--output", type=Path, required=True)
-    world_model = commands.add_parser("evaluate-world-model-smoke", help="Run the KDD235A recursive world-model entrant smoke.")
-    _ = world_model.add_argument("--manifest", type=Path, required=True)
+    world_model = commands.add_parser("evaluate-world-model-smoke", help="Run the public recursive world-model entrant smoke.")
+    _ = world_model.add_argument("--manifest", type=Path, default=DEFAULT_CONTROLLED_MANIFEST)
     _ = world_model.add_argument("--entrant", dest="entrants", action="append", type=Path, required=True)
     _ = world_model.add_argument("--episodes", type=int, default=8)
     _ = world_model.add_argument("--output", type=Path, required=True)
     world_model_full = commands.add_parser(
         "evaluate-world-model-full",
-        help="Run the KDD235B recursive entrant over all 40 constructed environments.",
+        help="Run a recursive entrant over all 40 controlled environments.",
     )
-    _ = world_model_full.add_argument("--manifest", type=Path, required=True)
+    _ = world_model_full.add_argument("--manifest", type=Path, default=DEFAULT_CONTROLLED_MANIFEST)
     _ = world_model_full.add_argument("--entrant", type=Path, required=True)
     _ = world_model_full.add_argument("--output", type=Path, required=True)
     _ = world_model_full.add_argument("--forecast-episodes", type=int, default=32)
@@ -206,7 +222,7 @@ def build_parser() -> argparse.ArgumentParser:
         "score-ehr-components",
         help="Score local canonical-v2 EHR component predictions and write aggregate-only metrics.",
     )
-    _ = ehr_components.add_argument("--submission", type=Path, required=True)
+    _ = ehr_components.add_argument("--submission", type=Path, default=DEFAULT_EHR_COMPONENT_EXAMPLE)
     _ = ehr_components.add_argument("--output", type=Path, required=True)
     constructor = commands.add_parser(
         "construct-ehr",
@@ -220,7 +236,7 @@ def build_parser() -> argparse.ArgumentParser:
     )
     fitted = commands.add_parser(
         "fitted-simulator",
-        help="Train/calibrate/evaluate the paper-bound EHR-fitted simulator in caller-owned paths.",
+        help="Train, calibrate, or evaluate the EHR-fitted simulator in caller-owned paths.",
     )
     _ = fitted.add_argument("--mode", dest="fitted_mode", choices=("dry-run", "train", "evaluate", "all"), default="dry-run")
     _ = fitted.add_argument("--constructor-root", type=Path, required=True)
@@ -230,18 +246,18 @@ def build_parser() -> argparse.ArgumentParser:
     _ = fitted.add_argument("--pilot", action="store_true")
     smoke = commands.add_parser(
         "fitted-synthetic-smoke",
-        help="Run the exact KDD267 21-method fitted/OPE workflow on synthetic fixtures only.",
+        help="Run the shared 21-method fitted/OPE workflow on synthetic fixtures only.",
     )
     _ = smoke.add_argument("--output", type=Path, required=True)
     _ = commands.add_parser(
         "method-inventory",
-        help="Print the exact KDD267 21-method shared inventory receipt.",
+        help="Print the shared 21-method inventory receipt.",
     )
     controlled_smoke = commands.add_parser(
         "controlled-21-method-smoke",
-        help="Run all 21 KDD267 policies and six OPE estimators in a public controlled environment.",
+        help="Run all 21 policies and six OPE estimators in a public controlled environment.",
     )
-    _ = controlled_smoke.add_argument("--config", type=Path, required=True)
+    _ = controlled_smoke.add_argument("--config", type=Path, default=DEFAULT_CONTROLLED_MANIFEST)
     _ = controlled_smoke.add_argument("--profile", required=True)
     _ = controlled_smoke.add_argument("--environment-seed", type=int, default=171901)
     _ = controlled_smoke.add_argument("--seed", type=int, default=3408)
@@ -258,7 +274,7 @@ def main() -> int:
     try:
         return _dispatch(args)
     except ReleaseContractError as error:
-        print(f"KDD2027 contract error: {error}")
+        print(f"EHRDyn contract error: {error}")
         return 2
 
 
