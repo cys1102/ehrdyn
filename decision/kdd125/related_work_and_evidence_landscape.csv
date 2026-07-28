@@ -1,0 +1,4 @@
+surface,dynamics,reward_outcome,policy_truth,ehr_ope,claim_boundary
+EHRDyn-ICU KDD125,multi-cohort P components,sepsis discharge-relative terminal proxy plus separate physiology sensitivity,constructed environments only,complete reliability-qualified atlas,no causal or clinical policy claim
+AI-Clinician-aligned scaffold,four-hour sepsis scaffold,terminal outcome alignment surface,not imported,not treated as counterfactual truth,alignment label; not exact reproduction
+KDD122 component benchmark,logged-action P/R/T components,lactate-delta physiology sensitivity,none,not performed in KDD122,observation process not generated

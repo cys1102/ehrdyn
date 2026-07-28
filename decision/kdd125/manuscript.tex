@@ -1,0 +1,32 @@
+\documentclass[10pt]{article}
+\usepackage[margin=0.75in]{geometry}
+\usepackage{booktabs,graphicx,hyperref}
+\title{EHRDyn-ICU: A Lineage-Consistent Benchmark of EHR P/R/T Components and Reliability-Qualified Offline Evaluation}
+\author{Anonymous}
+\date{}
+\begin{document}\maketitle
+\begin{abstract}
+We rebuild a five-cohort development benchmark from final aggregate artifacts. Sepsis and heart failure use large-lineage v2 materializations; respiratory, shock, and AKI retain unchanged component lineages. AF/flutter is excluded after its frozen materialization yielded 9,963 subjects, below the 10,000-subject gate. Known-value environments provide constructed policy truth, while every mathematically defined retrospective EHR OPE estimate is reported with support and reliability diagnostics. No retrospective EHR policy winner is claimed.
+\end{abstract}
+\section{Scope and components}
+P denotes next-state dynamics, R denotes a frozen reward or outcome component, and T denotes trajectory termination or censoring. T is not 90-day mortality. Models are P/R/T components, not complete EHR world models, because the observation process is not generated.
+\section{Cohorts and lineage}
+\begin{table}[h]\centering\caption{Primary cohorts. Both subject and ICU-stay episode counts are aggregate.}\begin{tabular}{lrrl}\toprule Cohort & Subjects & Episodes & Source \\\midrule
+heart\_failure & 25,694 & 29,524 & KDD121/KDD122 \\
+sepsis & 21,837 & 26,272 & KDD121/KDD122 \\
+aki & 16,380 & 21,083 & KDD097/KDD098R \\
+respiratory & 18,709 & 21,679 & KDD097/KDD098R \\
+shock & 37,015 & 49,495 & KDD097/KDD098R \\
+\bottomrule\end{tabular}\end{table}
+The superseded sepsis, AF/flutter, and heart-failure constructions are preserved only in a labeled historical sensitivity artifact. No transition, reward, termination, uncertainty, action-information, policy, or OPE metric is transferred from them.
+\section{Reward semantics}
+The primary sepsis R is \texttt{terminal\_90d\_only}: raw terminal rewards are +100 for observed survival and -100 for death, divided by 100 for optimization and attached once to the final valid transition. The label is a hospital-discharge-origin proxy using hospital death or recorded death by discharge plus 90 days; it is not episode-anchor 90-day mortality and not an exact AI-Clinician reproduction. The implementation has no explicit right-censoring field and treats missing recorded death without hospital death as survival proxy, a selection/ascertainment limitation. \texttt{terminal\_90d\_plus\_lactate} is a prespecified dense-shaping sensitivity. \texttt{lactate\_delta\_only} is the KDD122 physiology sensitivity. Their scales are not pooled.
+\section{Methods and planning}
+The transition inventory contains persistence/LOCF, HGB residual, GRU-D, causal Transformer, categorical RSSM, and Gaussian recurrent ensemble components where executed. H1 is one-step exhaustive supported-action search; H4 and H8 are four- and eight-step categorical CEM with receding-horizon first-action execution. Truncated horizons use the separately validated terminal outcome/value bootstrap, and terminal reward is emitted once.
+\section{Transparent OPE reliability atlas}
+The release retains 5,457 task--reward--policy--seed--horizon--estimator--denominator--clip status rows. Counts are {"estimand\_not\_defined": 3, "not\_computable\_missing\_probability": 54, "reported\_estimator\_disagreement": 27, "reported\_support\_fragile": 4347, "reported\_supported": 1026}. Estimates remain development-only and are accompanied by estimand, computability, support, ESS, weight tails, repeated-dataset calibration, clipping/denominator sensitivity, and estimator disagreement. Known-value reliability is metadata, not authorization.
+\section{Limitations and claim boundary}
+Known-value policy truth exists only in constructed environments. Retrospective EHR estimates are not true counterfactual policy values and do not establish causal treatment effects, treatment benefit, clinical utility, deployment readiness, or confirmatory generalization. No policy, estimator, denominator, clipping value, reward, or support threshold was selected from retrospective estimates.
+\section{Artifacts}
+All manuscript numbers are generated from aggregate source artifacts and traced in \texttt{manuscript\_number\_audit.csv}. Source and output hashes are in \texttt{artifact\_hashes.json}.
+\end{document}

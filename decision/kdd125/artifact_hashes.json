@@ -1,0 +1,148 @@
+{
+  "hash_algorithm": "sha256",
+  "release_artifacts": {
+    "README.md": "bc38de074c3b70ff17938068d5ca726bfd57c2569276ba6a789ec6478d6c7931",
+    "artifact_documentation.md": "de6d45637de6289d2756dd3a3f616e1418c5b08acebdbae428ecdecd7a820725",
+    "complete_action_information.csv": "2271ccf1f35442124f0e98345c877d4284e3b091a2c6301d3cc7d0107e61a791",
+    "complete_model_performance_by_cohort.csv": "76f013a1c5575fe5c2b25f65235cb90fa46661178954d654ce9f2dab16a46178",
+    "complete_policy_and_planner_inventory.csv": "c01af6b72c3e0c2da680b2926d54fda52a1ced308dacf50452b80f48cfa43296",
+    "complete_retrospective_ope_estimates.csv": "166fb3fdfa4cfcab69d8c729714b34b4eae2cb94d5611fde9e6862daa9779580",
+    "complete_uncertainty_by_cohort.csv": "9e659f4828030ef40c7d19029ba7a26327fae16603ab40c3ed2946326305e6c5",
+    "decision.md": "50ef30422dae0b939c44e24c60aa88d2ea0649e205d645396e3ba11fb1cbb725",
+    "figures/final_cohort_scale.pdf": "46da4f26f0f0458ce136d044f01ba26183e2c508e0e9bd75a6e29e917906f01f",
+    "figures/final_cohort_scale.png": "2d3d321d199e83512a66f6f72af4864a4948a68181db95d4e425d4fc51772fd9",
+    "figures/ope_evidence_status.pdf": "e4fd829fbb7fa727148da75e90fd4066ad04cbd9cc0f58c9b09a6f3ccef43fc3",
+    "figures/ope_evidence_status.png": "629435dfa6fea1fb9fe6a318dc66af2103cad1bbd03221fce553a573de129f26",
+    "figures/transition_leader_counts.pdf": "0eceb1dca5698264d0a8fe27eeb5dbea2bdad319d65da017d21b181e41809ff8",
+    "figures/transition_leader_counts.png": "4bcb3e9bc2d4a12ea8c32bc185b4d967d35eb68a88f5945dabf4d85c161fbce5",
+    "final_cohort_scale.csv": "0f32d182ad21522002e2fe7fbcadf3f96388c1da53c88f865f3e3a55033567eb",
+    "historical_small_lineage_sensitivity.csv": "fbec838bbfffd5e5054db8b9d2d698db65809f33db744e0f17f17f2e1d455f7f",
+    "known_value_to_ehr_reliability_bridge.csv": "38488d99d908666e46e8ea807fe7b2bb2dfe97a6d27e893b717f4ea238e781b2",
+    "limitations.md": "1f8c256feba3618a5edcfea248c6be3f244cc9b609e520e5155bea03f99bf2a3",
+    "lineage_replacement_audit.csv": "9a279db771c59f623cffd3f60bf8b32757d1cabfbb89cd81ad272234227ec80e",
+    "manuscript.pdf": "1cf6545486e5b5d46b19de1e02dbfa336f9bb7f01f9e39dfe22ee3294ccad155",
+    "manuscript.tex": "0caf960402fbf59cf7a8c78f98e030517aba0af5aaeef031348ebd23a027ef81",
+    "manuscript_number_audit.csv": "40c3e554b34a095fc6f0f4970b0ae3a00bb7054b60062dc82fbc1d8b4750891c",
+    "method_cards.md": "f277a3f0e1a6f8ca8adb9661809ef792a7df275ef1ebd8e0c9708911f28d8e58",
+    "ope_evidence_status.csv": "637bf7b300426a0f507f4c96f223af1bc8286148bf87f4c3eeea9a932d3f0ec2",
+    "ope_reliability_atlas.csv": "e9d94ff97853b067092ea0063f91103b844422085149466f7d79d247660b8ff3",
+    "privacy_and_release_validation.md": "efb6ae7a12e563208c614120729441d481f6842473ce52f152020b70f1e5d27f",
+    "related_work_and_evidence_landscape.csv": "7afc178c8ae1ae37d69f7e8c3c0b128f9a9de54b811615e1b33ead15511c002e",
+    "reward_lineage_and_scale_audit.csv": "b2006bea45be97c81b16f1b2ea91e488e84f60103431202c07cc3c52dfbc1890",
+    "synthesis_statistics.csv": "7cc6d7846b14347f2cdb5c4241580af534c0e039667cfc3c99775223e676193c"
+  },
+  "source_artifacts": [
+    {
+      "path": "results/kdd097_rich_task_materialization_20260714_v2/aggregate_cohort_flow.csv",
+      "sha256": "8fe205ccfa665c841ec3d785497643f454f46ddf486bb6434fe4b55363ca2ef9"
+    },
+    {
+      "path": "results/kdd097_rich_task_materialization_20260714_v2/task_operability_decisions.csv",
+      "sha256": "049ebf271897e782c4f8b56309649b318b21f06893fb3cba45aa05f9ea88b4fc"
+    },
+    {
+      "path": "results/kdd098r_convergence_planning_components_20260714_v2/one_step_state_metrics.csv",
+      "sha256": "b78ef8ea85654a0c72318497e174cf492436f5c76cb34bb866645a9103931ec6"
+    },
+    {
+      "path": "results/kdd098r_convergence_planning_components_20260714_v2/recursive_rollout_metrics.csv",
+      "sha256": "9d64a9b5f110362cf07ce9f18d8f16d0c9217994c6c1ee42129109d821471e95"
+    },
+    {
+      "path": "results/kdd098r_convergence_planning_components_20260714_v2/uncertainty_calibration.csv",
+      "sha256": "903ff29683a595648d9dcf3b7ec0b85f58c034d28f3018ac47e980739b19d651"
+    },
+    {
+      "path": "results/kdd098r_convergence_planning_components_20260714_v2/targeted_action_information.csv",
+      "sha256": "40bd2c8cf25eaebe44748aef3165bcce9f7fed827587ba2dbafc6edd51d6bc5f"
+    },
+    {
+      "path": "results/kdd098r_convergence_planning_components_20260714_v2/artifact_hashes.json",
+      "sha256": "6036bd30ad63b381d1391e816597af17753f67f028ddd33894ccf25ce0868817"
+    },
+    {
+      "path": "results/kdd121_large_lineage_materialization_20260715_121442/aggregate_role_counts.csv",
+      "sha256": "26cff1af14aa2aca4286ca860c0799d1a7967885ec428b3a1a31c21683ff93ed"
+    },
+    {
+      "path": "results/kdd121_large_lineage_materialization_20260715_121442/decision.md",
+      "sha256": "f76f88851562c9a82c6a6a68b136553c7936192058ffb02dd640ed43ec98bf8a"
+    },
+    {
+      "path": "results/kdd122_large_lineage_component_benchmark_20260715_123954/one_step_state_metrics.csv",
+      "sha256": "dcb67ffdc9fc97636c2354140b6947cffcc99d8c889fa4f11be526f8ab0250ea"
+    },
+    {
+      "path": "results/kdd122_large_lineage_component_benchmark_20260715_123954/recursive_rollout_metrics.csv",
+      "sha256": "f72eeff259d57df55762655916bd8c096c742b05a75a26bdf88a97f0a09fd876"
+    },
+    {
+      "path": "results/kdd122_large_lineage_component_benchmark_20260715_123954/uncertainty_calibration.csv",
+      "sha256": "d7997c0d702bb55b592cd80ba6fafc9a723649d987eb40cd1f84b17a31327eb3"
+    },
+    {
+      "path": "results/kdd122_large_lineage_component_benchmark_20260715_123954/targeted_action_information.csv",
+      "sha256": "29546079d033e512eb6d6e87460c8aef2a46265f3f75dc577cb75e3570c61da6"
+    },
+    {
+      "path": "results/kdd122_large_lineage_component_benchmark_20260715_123954/decision.md",
+      "sha256": "d9c61f5f9c82124a75495fba1c3a3e508b5fbf53bfdca95ecead608b2ff28d06"
+    },
+    {
+      "path": "results/kdd123_v2_terminal90_policy_20260715_131353/sepsis_reward_contracts.csv",
+      "sha256": "892792d54a3b1209f336dd9e05981619e90b4a57c75fab69aa03f390a946c215"
+    },
+    {
+      "path": "results/kdd123_v2_terminal90_policy_20260715_131353/sepsis_terminal90_provenance.csv",
+      "sha256": "f7f578de00c714070f2c39d678fd43637cbb328735f8ce68f4e5ba94b9d7aaac"
+    },
+    {
+      "path": "results/kdd123_v2_terminal90_policy_20260715_131353/censoring_and_unknown_outcome_audit.csv",
+      "sha256": "d7a6fcc1498a35b4746c0165a8fa6257be6026e9cac51a2fbd0c270103154e29"
+    },
+    {
+      "path": "results/kdd123_v2_terminal90_policy_20260715_131353/reward_eligible_counts_by_role.csv",
+      "sha256": "2b3954476a3b76b0637e64b85ec309f7b996107c916965cf1d9e5291b11a95a3"
+    },
+    {
+      "path": "results/kdd123_v2_terminal90_policy_20260715_131353/policy_training_diagnostics.csv",
+      "sha256": "eee6e577d4715cf293bf0987148f685881db50f79f0396d7ccb1f5bf8571e634"
+    },
+    {
+      "path": "results/kdd123_v2_terminal90_policy_20260715_131353/decision.md",
+      "sha256": "170a05acdfbc69f563c9cc2a1105be363f52c8c1dcc48d448dd17de5319214b8"
+    },
+    {
+      "path": "results/kdd124_v2_terminal_ope_atlas_20260715_141059/known_value_to_ehr_reliability_bridge.csv",
+      "sha256": "4b9d3ff9d360f76bcaae5fa850b3ee02fa59887cecf5c98ca45485e4b2f43618"
+    },
+    {
+      "path": "results/kdd124_v2_terminal_ope_atlas_20260715_141059/complete_retrospective_ope_estimates.csv",
+      "sha256": "6c73e585eba2888320e9600c1d787824c955b00adcba0c7a84655053e4bac558"
+    },
+    {
+      "path": "results/kdd124_v2_terminal_ope_atlas_20260715_141059/ope_reliability_atlas.csv",
+      "sha256": "1e3ab332eb3fd3867383821c24ce3bac507464c6c44e91020cf0cc6ed476200a"
+    },
+    {
+      "path": "results/kdd124_v2_terminal_ope_atlas_20260715_141059/ope_evidence_status.csv",
+      "sha256": "4399b69727ce08dd5aa8793b9f7e9dd3ec6b798f26d45558e96f283acb81af55"
+    },
+    {
+      "path": "results/kdd124_v2_terminal_ope_atlas_20260715_141059/nonexecution_reasons.csv",
+      "sha256": "e7c7cbea1e650769d261dc04bd4b1600794db0f723c8916bb6b8eeafb5cf95c6"
+    },
+    {
+      "path": "results/kdd124_v2_terminal_ope_atlas_20260715_141059/terminal_reward_exact_policy_values.csv",
+      "sha256": "c447368658079c6e7183337ec69d50bb80227634be8e4c5a3ca1cc9bc452f00e"
+    },
+    {
+      "path": "results/kdd124_v2_terminal_ope_atlas_20260715_141059/terminal_reward_planner_results.csv",
+      "sha256": "cc2a9303d301efcc16bdf306946589ad69301cb18e2e2b414e8f1d71fecb65bd"
+    },
+    {
+      "path": "results/kdd124_v2_terminal_ope_atlas_20260715_141059/decision.md",
+      "sha256": "01440e76ebf7d9c9179f902eec04ae88574088da8857388834d09182da83ae97"
+    }
+  ]
+}

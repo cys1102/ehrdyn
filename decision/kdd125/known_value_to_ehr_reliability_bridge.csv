@@ -1,0 +1,10 @@
+ehr_task,reward_match,estimator,known_value_median_coverage90,known_value_median_rank_recovery,known_value_median_sign_recovery,known_value_false_improvement_rate,reliability_metadata_not_authorization
+sepsis,terminal_reward_profile_specific,IS,0.4333333333333333,0.3142857142857143,0.4,0.2220833333333333,True
+sepsis,terminal_reward_profile_specific,WIS,0.5833333333333333,0.4285714285714286,0.6,0.1954166666666666,True
+sepsis,terminal_reward_profile_specific,PDIS,0.5333333333333333,0.1428571428571428,0.4,0.2070833333333333,True
+sepsis,terminal_reward_profile_specific,WPDIS,0.6,0.3142857142857143,0.6,0.1630555555555555,True
+sepsis,terminal_reward_profile_specific,CWPDIS,0.6,0.3142857142857143,0.6,0.1613888888888889,True
+sepsis,terminal_reward_profile_specific,DR,0.6,0.1428571428571428,0.4,0.2090277777777777,True
+sepsis,terminal_reward_profile_specific,WDR,0.6,0.2571428571428572,0.6,0.1720833333333333,True
+sepsis,terminal_reward_profile_specific,FQE,0.0,0.2,0.4,0.2355555555555555,True
+sepsis,terminal_reward_profile_specific,support_restricted_WPDIS,0.6,0.3142857142857143,0.6,0.1630555555555555,True

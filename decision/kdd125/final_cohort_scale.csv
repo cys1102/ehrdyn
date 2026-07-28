@@ -1,0 +1,7 @@
+cohort,subjects,episodes,decision_rows,valid_transitions,primary_status,source_receipt
+af_flutter,9963,11912,0,0,excluded_scale_gate_failed_after_materialization,KDD121
+heart_failure,25694,29524,238294,238294,retained_large_lineage_v2,KDD121/KDD122
+sepsis,21837,26272,209886,209886,retained_large_lineage_v2,KDD121/KDD122
+aki,16380,21083,181311,181311,retained_unchanged_KDD097_KDD098R_lineage,KDD097/KDD098R
+respiratory,18709,21679,125246,125246,retained_unchanged_KDD097_KDD098R_lineage,KDD097/KDD098R
+shock,37015,49495,390341,390341,retained_unchanged_KDD097_KDD098R_lineage,KDD097/KDD098R

@@ -1,12 +1,11 @@
 # EHRDyn-ICU: multi-cohort decision evaluation for EHR model components and offline RL
 
-The paper-facing anonymous release is in [`decision/`](decision/README.md).
-It provides six scale-qualified EHR P/R/T-component targets, an 18-row current
-transition matrix for the three lineages with complete reevaluation, 18
-explicitly superseded transition rows awaiting large-lineage reruns, 18 current
-exact-finite task--mechanism environments, every current aggregate policy/OPE
-result row, the anonymous manuscript, a release validator, and an unrestricted
-synthetic smoke test.
+The additive KDD125 paper-facing release candidate is in
+[`decision/kdd125/`](decision/kdd125/README.md). It replaces small-lineage
+sepsis and heart-failure evidence with their large-lineage results, records
+AF/flutter as a scale-gate exclusion, and reports reliability-qualified
+retrospective OPE without a real-EHR policy winner. The earlier `decision/`
+artifacts remain preserved as historical release-engineering evidence.
 
 ```bash
 python -m pip install -e .

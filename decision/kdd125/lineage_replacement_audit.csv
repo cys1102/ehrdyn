@@ -1,0 +1,4 @@
+cohort,superseded_episodes,primary_replacement,primary_included,historical_only,metric_transfer_allowed
+sepsis,3440,KDD121/KDD122 large-lineage v2,True,False,False
+af_flutter,4276,KDD121 aggregate exclusion receipt,False,True,False
+heart_failure,3986,KDD121/KDD122 large-lineage v2,True,False,False

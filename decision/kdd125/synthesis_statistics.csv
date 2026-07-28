@@ -1,0 +1,22 @@
+statistic,lineage,method_id,value
+mean_one_step_rmse_within_lineage,KDD097/KDD098R unchanged,dreamer_v3_categorical_rssm,0.7553113956159687
+mean_one_step_rmse_within_lineage,KDD097/KDD098R unchanged,gaussian_transition_ensemble,0.6901942429103795
+mean_one_step_rmse_within_lineage,KDD097/KDD098R unchanged,grud_world_model,0.6939085540003627
+mean_one_step_rmse_within_lineage,KDD097/KDD098R unchanged,hgb_residual,0.7043543981985522
+mean_one_step_rmse_within_lineage,KDD097/KDD098R unchanged,persistence_locf,0.795450970188846
+mean_one_step_rmse_within_lineage,KDD097/KDD098R unchanged,transformer_world_model,0.6888809615127526
+mean_one_step_rmse_within_lineage,KDD121/KDD122 large-lineage v2,dreamer_v3_categorical_rssm,3.2423850125749634
+mean_one_step_rmse_within_lineage,KDD121/KDD122 large-lineage v2,gaussian_transition_ensemble,3.2103886669873667
+mean_one_step_rmse_within_lineage,KDD121/KDD122 large-lineage v2,grud_world_model,3.2120904025906056
+mean_one_step_rmse_within_lineage,KDD121/KDD122 large-lineage v2,hgb_residual,3.215116218163319
+mean_one_step_rmse_within_lineage,KDD121/KDD122 large-lineage v2,persistence_locf,3.2538148418711548
+mean_one_step_rmse_within_lineage,KDD121/KDD122 large-lineage v2,transformer_world_model,3.2107781027029145
+one_step_cohort_leader_count,,gaussian_transition_ensemble,1.0
+one_step_cohort_leader_count,,hgb_residual,1.0
+one_step_cohort_leader_count,,transformer_world_model,3.0
+one_step_vs_recursive44_rank_reversal_rows,,,26.0
+coverage90_min,,,0.7066203321946047
+coverage90_max,,,0.9427718300071662
+positive_action_information_rows,,,179.0
+executed_action_information_rows,,,218.0
+known_value_median_coverage90_across_bridge,,,0.6

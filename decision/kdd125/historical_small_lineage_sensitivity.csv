@@ -1,0 +1,7 @@
+cohort,subjects,episodes,decision_rows,valid_transitions,primary_status,source_receipt
+aki,16380,21083,181311,181311,retained_unchanged_KDD097_KDD098R_lineage,KDD097/KDD098R
+respiratory,18709,21679,125246,125246,retained_unchanged_KDD097_KDD098R_lineage,KDD097/KDD098R
+shock,37015,49495,390341,390341,retained_unchanged_KDD097_KDD098R_lineage,KDD097/KDD098R
+sepsis,3391,3440,historical,historical,superseded_historical_sensitivity_only,KDD097/KDD098R
+af_flutter,2551,4276,historical,historical,superseded_historical_sensitivity_only,KDD097/KDD098R
+heart_failure,2378,3986,historical,historical,superseded_historical_sensitivity_only,KDD097/KDD098R

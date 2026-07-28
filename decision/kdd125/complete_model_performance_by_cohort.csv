@@ -1,0 +1,841 @@
+experiment_id,cohort,method_id,seed,evaluation_mode,horizon_hours,feature_group,rmse,mae,observed_cells,lineage,component_definition
+KDD098R,respiratory,persistence_locf,3408,one_step,4,overall,0.8266710568836556,0.5297804098394288,350509,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,respiratory,hgb_residual,3408,one_step,4,overall,0.711888977552521,0.4795209174870131,350509,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,respiratory,hgb_residual,3411,one_step,4,overall,0.7116993811085333,0.4795373503067997,350509,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,respiratory,hgb_residual,3414,one_step,4,overall,0.7121546856874044,0.479702253137823,350509,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,respiratory,grud_world_model,3408,one_step,4,overall,0.7008867919362638,0.4746866023685137,350509,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,respiratory,grud_world_model,3411,one_step,4,overall,0.7010397331431463,0.47561424959249354,350509,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,respiratory,grud_world_model,3414,one_step,4,overall,0.698498664404608,0.4739823449644161,350509,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,respiratory,transformer_world_model,3408,one_step,4,overall,0.6945881697399433,0.47034216060283845,350509,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,respiratory,transformer_world_model,3411,one_step,4,overall,0.6955550414528823,0.4704108131198067,350509,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,respiratory,transformer_world_model,3414,one_step,4,overall,0.6940863135883426,0.4692471304245995,350509,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,respiratory,dreamer_v3_categorical_rssm,3408,one_step,4,overall,0.7729285986934018,0.512657945445989,350509,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,respiratory,dreamer_v3_categorical_rssm,3411,one_step,4,overall,0.7721394357608976,0.5112680333577244,350509,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,respiratory,dreamer_v3_categorical_rssm,3414,one_step,4,overall,0.7742744782279837,0.513543569365187,350509,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,respiratory,gaussian_transition_ensemble,3408;3411;3414,one_step,4,overall,0.6959484183864965,0.4703875113027671,350509,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,shock,persistence_locf,3408,one_step,4,overall,0.8109697007764569,0.5251114657443363,954762,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,shock,hgb_residual,3408,one_step,4,overall,0.7198055776195641,0.4840982278226503,954762,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,shock,hgb_residual,3411,one_step,4,overall,0.7201603137411222,0.4840322731650397,954762,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,shock,hgb_residual,3414,one_step,4,overall,0.7197491391960072,0.4841917147286247,954762,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,shock,grud_world_model,3408,one_step,4,overall,0.7066828085935725,0.4793135585834674,954762,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,shock,grud_world_model,3411,one_step,4,overall,0.708621522770624,0.48080076232986524,954762,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,shock,grud_world_model,3414,one_step,4,overall,0.7073155074111747,0.4790607161556043,954762,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,shock,transformer_world_model,3408,one_step,4,overall,0.7009191483357129,0.4742088934238212,954762,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,shock,transformer_world_model,3411,one_step,4,overall,0.7026769059034792,0.4758221602836997,954762,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,shock,transformer_world_model,3414,one_step,4,overall,0.7034818070310704,0.47637386981595115,954762,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,shock,dreamer_v3_categorical_rssm,3408,one_step,4,overall,0.7681774513223596,0.5100349063264821,954762,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,shock,dreamer_v3_categorical_rssm,3411,one_step,4,overall,0.7685154588641178,0.5095986315842077,954762,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,shock,dreamer_v3_categorical_rssm,3414,one_step,4,overall,0.7689148293660474,0.5101446986661395,954762,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,shock,gaussian_transition_ensemble,3408;3411;3414,one_step,4,overall,0.7036517936889496,0.4757002390581333,954762,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,aki,persistence_locf,3408,one_step,4,overall,0.7487121529064257,0.4722672640659573,460490,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,aki,hgb_residual,3408,one_step,4,overall,0.6822022158457083,0.4466790030311129,460490,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,aki,hgb_residual,3411,one_step,4,overall,0.6805636090912285,0.44660210727530686,460490,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,aki,hgb_residual,3414,one_step,4,overall,0.6809656839448801,0.4461935671106076,460490,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,aki,grud_world_model,3408,one_step,4,overall,0.675097722459339,0.445306760183292,460490,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,aki,grud_world_model,3411,one_step,4,overall,0.6732793564620861,0.44489685499560255,460490,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,aki,grud_world_model,3414,one_step,4,overall,0.6737548788224498,0.4450295550925172,460490,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,aki,transformer_world_model,3408,one_step,4,overall,0.6689193705042328,0.4409593004483417,460490,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,aki,transformer_world_model,3411,one_step,4,overall,0.670312120979473,0.44139739602468997,460490,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,aki,transformer_world_model,3414,one_step,4,overall,0.6693897760796363,0.44077942144912247,460490,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,aki,dreamer_v3_categorical_rssm,3408,one_step,4,overall,0.7227948301778976,0.4666277228179139,460490,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,aki,dreamer_v3_categorical_rssm,3411,one_step,4,overall,0.7252426388607374,0.46747687400071547,460490,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,aki,dreamer_v3_categorical_rssm,3414,one_step,4,overall,0.7248148392702755,0.4673077743957851,460490,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,aki,gaussian_transition_ensemble,3408;3411;3414,one_step,4,overall,0.6709825166556923,0.4418654349886787,460490,KDD097/KDD098R unchanged,P next-state dynamics
+KDD122,sepsis,persistence_locf,3408,one_step,4,overall,5.718282478796401,0.45313173999511897,469231,KDD121/KDD122 large-lineage v2,"P; P=next-state, R=reward/outcome, T=trajectory termination"
+KDD122,sepsis,hgb_residual,3408,one_step,4,overall,5.710625210495758,0.4296461802314062,469231,KDD121/KDD122 large-lineage v2,"P; P=next-state, R=reward/outcome, T=trajectory termination"
+KDD122,sepsis,hgb_residual,3411,one_step,4,overall,5.71051959794108,0.4291644489080418,469231,KDD121/KDD122 large-lineage v2,"P; P=next-state, R=reward/outcome, T=trajectory termination"
+KDD122,sepsis,hgb_residual,3414,one_step,4,overall,5.710568539379382,0.4281737132616107,469231,KDD121/KDD122 large-lineage v2,"P; P=next-state, R=reward/outcome, T=trajectory termination"
+KDD122,sepsis,grud_world_model,3408,one_step,4,overall,5.713173827729815,0.44551955471266474,469231,KDD121/KDD122 large-lineage v2,"P; P=next-state, R=reward/outcome, T=trajectory termination"
+KDD122,sepsis,grud_world_model,3411,one_step,4,overall,5.711713297632882,0.43677463583568865,469231,KDD121/KDD122 large-lineage v2,"P; P=next-state, R=reward/outcome, T=trajectory termination"
+KDD122,sepsis,grud_world_model,3414,one_step,4,overall,5.711246854803927,0.4376962810838326,469231,KDD121/KDD122 large-lineage v2,"P; P=next-state, R=reward/outcome, T=trajectory termination"
+KDD122,sepsis,transformer_world_model,3408,one_step,4,overall,5.711051211152259,0.4372178117137933,469231,KDD121/KDD122 large-lineage v2,"P; P=next-state, R=reward/outcome, T=trajectory termination"
+KDD122,sepsis,transformer_world_model,3411,one_step,4,overall,5.712569424666944,0.44209712377211785,469231,KDD121/KDD122 large-lineage v2,"P; P=next-state, R=reward/outcome, T=trajectory termination"
+KDD122,sepsis,transformer_world_model,3414,one_step,4,overall,5.713171782050032,0.4469505929695045,469231,KDD121/KDD122 large-lineage v2,"P; P=next-state, R=reward/outcome, T=trajectory termination"
+KDD122,sepsis,dreamer_v3_categorical_rssm,3408,one_step,4,overall,5.718415108988115,0.46430030269082195,469231,KDD121/KDD122 large-lineage v2,"P; P=next-state, R=reward/outcome, T=trajectory termination"
+KDD122,sepsis,dreamer_v3_categorical_rssm,3411,one_step,4,overall,5.718170465953598,0.46839637119146516,469231,KDD121/KDD122 large-lineage v2,"P; P=next-state, R=reward/outcome, T=trajectory termination"
+KDD122,sepsis,dreamer_v3_categorical_rssm,3414,one_step,4,overall,5.718208147294234,0.4651262010431177,469231,KDD121/KDD122 large-lineage v2,"P; P=next-state, R=reward/outcome, T=trajectory termination"
+KDD122,sepsis,gaussian_transition_ensemble,3408;3411;3414,one_step,4,overall,5.71150102986858,0.43481176940846844,469231,KDD121/KDD122 large-lineage v2,"P; P=next-state, R=reward/outcome, T=trajectory termination"
+KDD122,heart_failure,persistence_locf,3408,one_step,4,overall,0.7893472049459085,0.39722315222983356,475384,KDD121/KDD122 large-lineage v2,"P; P=next-state, R=reward/outcome, T=trajectory termination"
+KDD122,heart_failure,hgb_residual,3408,one_step,4,overall,0.7204161103688654,0.3667264386488626,475384,KDD121/KDD122 large-lineage v2,"P; P=next-state, R=reward/outcome, T=trajectory termination"
+KDD122,heart_failure,hgb_residual,3411,one_step,4,overall,0.7229080049461474,0.36808002094493003,475384,KDD121/KDD122 large-lineage v2,"P; P=next-state, R=reward/outcome, T=trajectory termination"
+KDD122,heart_failure,hgb_residual,3414,one_step,4,overall,0.7156598458486813,0.3660108658939242,475384,KDD121/KDD122 large-lineage v2,"P; P=next-state, R=reward/outcome, T=trajectory termination"
+KDD122,heart_failure,grud_world_model,3408,one_step,4,overall,0.7130845783260864,0.3652687388328822,475384,KDD121/KDD122 large-lineage v2,"P; P=next-state, R=reward/outcome, T=trajectory termination"
+KDD122,heart_failure,grud_world_model,3411,one_step,4,overall,0.7121213208309086,0.36516587207779044,475384,KDD121/KDD122 large-lineage v2,"P; P=next-state, R=reward/outcome, T=trajectory termination"
+KDD122,heart_failure,grud_world_model,3414,one_step,4,overall,0.7112025362200151,0.36475213458707473,475384,KDD121/KDD122 large-lineage v2,"P; P=next-state, R=reward/outcome, T=trajectory termination"
+KDD122,heart_failure,transformer_world_model,3408,one_step,4,overall,0.7089113500027945,0.3613771824284006,475384,KDD121/KDD122 large-lineage v2,"P; P=next-state, R=reward/outcome, T=trajectory termination"
+KDD122,heart_failure,transformer_world_model,3411,one_step,4,overall,0.7105840390460475,0.36197838317753006,475384,KDD121/KDD122 large-lineage v2,"P; P=next-state, R=reward/outcome, T=trajectory termination"
+KDD122,heart_failure,transformer_world_model,3414,one_step,4,overall,0.7083808092994104,0.36206063088027934,475384,KDD121/KDD122 large-lineage v2,"P; P=next-state, R=reward/outcome, T=trajectory termination"
+KDD122,heart_failure,dreamer_v3_categorical_rssm,3408,one_step,4,overall,0.7674888490068622,0.3937783718427381,475384,KDD121/KDD122 large-lineage v2,"P; P=next-state, R=reward/outcome, T=trajectory termination"
+KDD122,heart_failure,dreamer_v3_categorical_rssm,3411,one_step,4,overall,0.7684493505565921,0.3939626877833742,475384,KDD121/KDD122 large-lineage v2,"P; P=next-state, R=reward/outcome, T=trajectory termination"
+KDD122,heart_failure,dreamer_v3_categorical_rssm,3414,one_step,4,overall,0.7635781536503782,0.39227857316593895,475384,KDD121/KDD122 large-lineage v2,"P; P=next-state, R=reward/outcome, T=trajectory termination"
+KDD122,heart_failure,gaussian_transition_ensemble,3408;3411;3414,one_step,4,overall,0.7092763041061533,0.361591845379616,475384,KDD121/KDD122 large-lineage v2,"P; P=next-state, R=reward/outcome, T=trajectory termination"
+KDD098R,respiratory,persistence_locf,3408,logged_action_recursive,4,overall,1.0520161590592816,0.7050534717489904,63541,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,respiratory,persistence_locf,3408,logged_action_recursive,8,overall,1.0976635129322785,0.7421574187487652,52803,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,respiratory,persistence_locf,3408,logged_action_recursive,12,overall,1.1412978140656174,0.7833628594032916,43677,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,respiratory,persistence_locf,3408,logged_action_recursive,16,overall,1.1611277664027548,0.8119023523026632,38288,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,respiratory,persistence_locf,3408,logged_action_recursive,20,overall,1.187887041107997,0.8221015281271763,34117,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,respiratory,persistence_locf,3408,logged_action_recursive,24,overall,1.1856404316407965,0.8353432856400368,30514,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,respiratory,persistence_locf,3408,logged_action_recursive,28,overall,1.2232635661987956,0.8548148298930032,27479,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,respiratory,persistence_locf,3408,logged_action_recursive,32,overall,1.236056455658158,0.867218509207796,23922,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,respiratory,persistence_locf,3408,logged_action_recursive,36,overall,1.248793890879267,0.8885379583775181,19265,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,respiratory,persistence_locf,3408,logged_action_recursive,40,overall,1.2689941914085636,0.9129272401373412,13218,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,respiratory,persistence_locf,3408,logged_action_recursive,44,overall,1.3366822634129794,0.9590770645896772,3685,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,respiratory,hgb_residual,3408,logged_action_recursive,4,overall,0.8346441679271943,0.5820208123566751,63541,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,respiratory,hgb_residual,3408,logged_action_recursive,8,overall,0.8331721032728467,0.5859549416840244,52803,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,respiratory,hgb_residual,3408,logged_action_recursive,12,overall,0.867818981334652,0.6217089270929789,43677,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,respiratory,hgb_residual,3408,logged_action_recursive,16,overall,0.8758835527700656,0.6430264454732203,38288,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,respiratory,hgb_residual,3408,logged_action_recursive,20,overall,0.9127990678910982,0.663923444982827,34117,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,respiratory,hgb_residual,3408,logged_action_recursive,24,overall,0.9293271242369492,0.6870492605626951,30514,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,respiratory,hgb_residual,3408,logged_action_recursive,28,overall,0.9846512489853916,0.7134939887668489,27479,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,respiratory,hgb_residual,3408,logged_action_recursive,32,overall,1.003939490851241,0.732085637936757,23922,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,respiratory,hgb_residual,3408,logged_action_recursive,36,overall,1.0388172737312664,0.7580321973375015,19265,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,respiratory,hgb_residual,3408,logged_action_recursive,40,overall,1.0571974341276942,0.7820678556611997,13218,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,respiratory,hgb_residual,3408,logged_action_recursive,44,overall,1.0952679625133013,0.8061815364691309,3685,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,respiratory,hgb_residual,3411,logged_action_recursive,4,overall,0.8365322528716486,0.5826699007130604,63541,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,respiratory,hgb_residual,3411,logged_action_recursive,8,overall,0.8330945561993529,0.5866349258460605,52803,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,respiratory,hgb_residual,3411,logged_action_recursive,12,overall,0.8629568673281429,0.6194101840872084,43677,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,respiratory,hgb_residual,3411,logged_action_recursive,16,overall,0.8675720063985742,0.6364959295457593,38288,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,respiratory,hgb_residual,3411,logged_action_recursive,20,overall,0.8959377972543685,0.6517945506700266,34117,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,respiratory,hgb_residual,3411,logged_action_recursive,24,overall,0.8993765539002752,0.6656551202571642,30514,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,respiratory,hgb_residual,3411,logged_action_recursive,28,overall,0.9472000243134095,0.6869726759606299,27479,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,respiratory,hgb_residual,3411,logged_action_recursive,32,overall,0.9578108513717828,0.7024137246537213,23922,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,respiratory,hgb_residual,3411,logged_action_recursive,36,overall,0.9763882486724222,0.7179704225599971,19265,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,respiratory,hgb_residual,3411,logged_action_recursive,40,overall,0.985798275043536,0.7349243782104182,13218,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,respiratory,hgb_residual,3411,logged_action_recursive,44,overall,1.016067015906566,0.7604751708099096,3685,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,respiratory,hgb_residual,3414,logged_action_recursive,4,overall,0.836792986060936,0.5825166303721737,63541,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,respiratory,hgb_residual,3414,logged_action_recursive,8,overall,0.8349484040968286,0.5896654922398527,52803,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,respiratory,hgb_residual,3414,logged_action_recursive,12,overall,0.8680612881675811,0.6262431211813474,43677,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,respiratory,hgb_residual,3414,logged_action_recursive,16,overall,0.874352767870894,0.6445241881357909,38288,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,respiratory,hgb_residual,3414,logged_action_recursive,20,overall,0.9027224995751364,0.6598482975524366,34117,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,respiratory,hgb_residual,3414,logged_action_recursive,24,overall,0.9066314832351364,0.6726742087215019,30514,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,respiratory,hgb_residual,3414,logged_action_recursive,28,overall,0.9545208229263156,0.6918164495202449,27479,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,respiratory,hgb_residual,3414,logged_action_recursive,32,overall,0.9648088028409716,0.7042553042568437,23922,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,respiratory,hgb_residual,3414,logged_action_recursive,36,overall,0.9793458842426884,0.7191351307518024,19265,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,respiratory,hgb_residual,3414,logged_action_recursive,40,overall,0.9882324829163652,0.734333852820416,13218,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,respiratory,hgb_residual,3414,logged_action_recursive,44,overall,1.0064260208748963,0.7528024320522881,3685,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,respiratory,grud_world_model,3408,logged_action_recursive,4,overall,0.8161677074314545,0.5671364933935222,63541,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,respiratory,grud_world_model,3408,logged_action_recursive,8,overall,0.8376875823667193,0.5858315721065274,52803,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,respiratory,grud_world_model,3408,logged_action_recursive,12,overall,0.8853713982678895,0.631041740347039,43677,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,respiratory,grud_world_model,3408,logged_action_recursive,16,overall,0.9057625464566292,0.6657516393619223,38288,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,respiratory,grud_world_model,3408,logged_action_recursive,20,overall,0.959842218038741,0.6979158741366107,34117,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,respiratory,grud_world_model,3408,logged_action_recursive,24,overall,0.9825768234114955,0.7318949486681173,30514,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,respiratory,grud_world_model,3408,logged_action_recursive,28,overall,1.054256126715647,0.769453049631926,27479,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,respiratory,grud_world_model,3408,logged_action_recursive,32,overall,1.1016665885133288,0.8088072936068335,23922,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,respiratory,grud_world_model,3408,logged_action_recursive,36,overall,1.1532815689637217,0.8511239455346199,19265,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,respiratory,grud_world_model,3408,logged_action_recursive,40,overall,1.199798421452969,0.8932883748020163,13218,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,respiratory,grud_world_model,3408,logged_action_recursive,44,overall,1.213293764346354,0.9042654495808236,3685,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,respiratory,grud_world_model,3411,logged_action_recursive,4,overall,0.817505393618509,0.5678833853773877,63541,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,respiratory,grud_world_model,3411,logged_action_recursive,8,overall,0.8369473980588205,0.585935517962273,52803,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,respiratory,grud_world_model,3411,logged_action_recursive,12,overall,0.881917144455403,0.6274784103662054,43677,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,respiratory,grud_world_model,3411,logged_action_recursive,16,overall,0.8922980623879434,0.6531207851595477,38288,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,respiratory,grud_world_model,3411,logged_action_recursive,20,overall,0.9282383314243972,0.6707314580023434,34117,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,respiratory,grud_world_model,3411,logged_action_recursive,24,overall,0.9305698774329598,0.6861425333379892,30514,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,respiratory,grud_world_model,3411,logged_action_recursive,28,overall,0.9757920908270964,0.7063490680222497,27479,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,respiratory,grud_world_model,3411,logged_action_recursive,32,overall,0.989302822464178,0.7198200735994884,23922,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,respiratory,grud_world_model,3411,logged_action_recursive,36,overall,1.0066469765206074,0.7361013859143047,19265,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,respiratory,grud_world_model,3411,logged_action_recursive,40,overall,1.0223337097128158,0.757379474169463,13218,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,respiratory,grud_world_model,3411,logged_action_recursive,44,overall,1.0385277107727358,0.7789218734420983,3685,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,respiratory,grud_world_model,3414,logged_action_recursive,4,overall,0.8112217502068602,0.5638679537460797,63541,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,respiratory,grud_world_model,3414,logged_action_recursive,8,overall,0.8305925374900356,0.5822501327234343,52803,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,respiratory,grud_world_model,3414,logged_action_recursive,12,overall,0.8685033627174753,0.6194461514594195,43677,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,respiratory,grud_world_model,3414,logged_action_recursive,16,overall,0.8754707650847107,0.6436470199358202,38288,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,respiratory,grud_world_model,3414,logged_action_recursive,20,overall,0.9099920419187008,0.6585472663368311,34117,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,respiratory,grud_world_model,3414,logged_action_recursive,24,overall,0.909853228605646,0.6747943938094075,30514,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,respiratory,grud_world_model,3414,logged_action_recursive,28,overall,0.9541262633636456,0.6950111494618324,27479,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,respiratory,grud_world_model,3414,logged_action_recursive,32,overall,0.9770505032094826,0.7138416498415274,23922,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,respiratory,grud_world_model,3414,logged_action_recursive,36,overall,0.9921787283125671,0.7354575761428969,19265,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,respiratory,grud_world_model,3414,logged_action_recursive,40,overall,1.0128450370078002,0.7623544887580446,13218,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,respiratory,grud_world_model,3414,logged_action_recursive,44,overall,1.031661211087144,0.7825293881419333,3685,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,respiratory,transformer_world_model,3408,logged_action_recursive,4,overall,0.8104860348856858,0.5588155263290114,63541,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,respiratory,transformer_world_model,3408,logged_action_recursive,8,overall,0.8459114317537884,0.5940367003521473,52803,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,respiratory,transformer_world_model,3408,logged_action_recursive,12,overall,0.9209811837871276,0.6705291945389644,43677,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,respiratory,transformer_world_model,3408,logged_action_recursive,16,overall,0.9865386691139034,0.7441068822441145,38288,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,respiratory,transformer_world_model,3408,logged_action_recursive,20,overall,1.09657698485093,0.8318462855266012,34117,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,respiratory,transformer_world_model,3408,logged_action_recursive,24,overall,1.1763359404844902,0.9110414581233728,30514,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,respiratory,transformer_world_model,3408,logged_action_recursive,28,overall,1.307196499778459,1.0083962044096335,27479,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,respiratory,transformer_world_model,3408,logged_action_recursive,32,overall,1.4277415289343958,1.1017212865008963,23922,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,respiratory,transformer_world_model,3408,logged_action_recursive,36,overall,1.5602380888662228,1.210492554590206,19265,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,respiratory,transformer_world_model,3408,logged_action_recursive,40,overall,1.683918742261315,1.316817957322899,13218,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,respiratory,transformer_world_model,3408,logged_action_recursive,44,overall,1.8386291604090224,1.4279683934246648,3685,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,respiratory,transformer_world_model,3411,logged_action_recursive,4,overall,0.8117463603155743,0.559100221676525,63541,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,respiratory,transformer_world_model,3411,logged_action_recursive,8,overall,0.8477899878663091,0.5910364323146439,52803,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,respiratory,transformer_world_model,3411,logged_action_recursive,12,overall,0.925301934250874,0.6675210662816846,43677,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,respiratory,transformer_world_model,3411,logged_action_recursive,16,overall,0.9894223182015764,0.7444994222065608,38288,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,respiratory,transformer_world_model,3411,logged_action_recursive,20,overall,1.100326090234287,0.8376774405096167,34117,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,respiratory,transformer_world_model,3411,logged_action_recursive,24,overall,1.1974590124999511,0.9410083256556718,30514,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,respiratory,transformer_world_model,3411,logged_action_recursive,28,overall,1.3304188822755625,1.049615576899544,27479,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,respiratory,transformer_world_model,3411,logged_action_recursive,32,overall,1.457097976604018,1.1649141739538522,23922,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,respiratory,transformer_world_model,3411,logged_action_recursive,36,overall,1.592937423935156,1.291393784568256,19265,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,respiratory,transformer_world_model,3411,logged_action_recursive,40,overall,1.7230039620000257,1.409727337788622,13218,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,respiratory,transformer_world_model,3411,logged_action_recursive,44,overall,1.860137295457268,1.514741205218851,3685,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,respiratory,transformer_world_model,3414,logged_action_recursive,4,overall,0.8081712002166402,0.5562776713943265,63541,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,respiratory,transformer_world_model,3414,logged_action_recursive,8,overall,0.8526803513572201,0.5991403951889247,52803,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,respiratory,transformer_world_model,3414,logged_action_recursive,12,overall,0.9434506500763804,0.6886802762513591,43677,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,respiratory,transformer_world_model,3414,logged_action_recursive,16,overall,1.0354173581678012,0.7843887402502229,38288,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,respiratory,transformer_world_model,3414,logged_action_recursive,20,overall,1.1750851423228994,0.8910604264344593,34117,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,respiratory,transformer_world_model,3414,logged_action_recursive,24,overall,1.2946296172269278,1.0019190619691476,30514,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,respiratory,transformer_world_model,3414,logged_action_recursive,28,overall,1.453962477843406,1.1192762734504074,27479,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,respiratory,transformer_world_model,3414,logged_action_recursive,32,overall,1.602561990211899,1.2373428294841209,23922,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,respiratory,transformer_world_model,3414,logged_action_recursive,36,overall,1.7706182589646366,1.3791587277586064,19265,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,respiratory,transformer_world_model,3414,logged_action_recursive,40,overall,1.9393116631160012,1.5164742203391528,13218,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,respiratory,transformer_world_model,3414,logged_action_recursive,44,overall,2.158362955510487,1.6702129399874013,3685,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,respiratory,dreamer_v3_categorical_rssm,3408,logged_action_recursive,4,overall,0.9465701981224912,0.653123688282243,63541,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,respiratory,dreamer_v3_categorical_rssm,3408,logged_action_recursive,8,overall,0.9937506770213548,0.6911720558964318,52803,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,respiratory,dreamer_v3_categorical_rssm,3408,logged_action_recursive,12,overall,1.0562493315270454,0.7457651961091385,43677,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,respiratory,dreamer_v3_categorical_rssm,3408,logged_action_recursive,16,overall,1.0885912701341751,0.785109926134122,38288,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,respiratory,dreamer_v3_categorical_rssm,3408,logged_action_recursive,20,overall,1.1362888846832115,0.8150167753760855,34117,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,respiratory,dreamer_v3_categorical_rssm,3408,logged_action_recursive,24,overall,1.1565524557746252,0.8426373252360584,30514,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,respiratory,dreamer_v3_categorical_rssm,3408,logged_action_recursive,28,overall,1.2093896672132944,0.8783678942343522,27479,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,respiratory,dreamer_v3_categorical_rssm,3408,logged_action_recursive,32,overall,1.2411371982061348,0.9045508511462224,23922,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,respiratory,dreamer_v3_categorical_rssm,3408,logged_action_recursive,36,overall,1.2804784028896512,0.9425508763205852,19265,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,respiratory,dreamer_v3_categorical_rssm,3408,logged_action_recursive,40,overall,1.3103207915932351,0.9792824129994028,13218,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,respiratory,dreamer_v3_categorical_rssm,3408,logged_action_recursive,44,overall,1.4205343316000063,1.0601451174725034,3685,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,respiratory,dreamer_v3_categorical_rssm,3411,logged_action_recursive,4,overall,0.9468419644735812,0.6522536232761872,63541,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,respiratory,dreamer_v3_categorical_rssm,3411,logged_action_recursive,8,overall,0.9928316061635318,0.6893923862603256,52803,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,respiratory,dreamer_v3_categorical_rssm,3411,logged_action_recursive,12,overall,1.0522502121555273,0.7401859597710402,43677,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,respiratory,dreamer_v3_categorical_rssm,3411,logged_action_recursive,16,overall,1.0813021296049612,0.7764494409620323,38288,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,respiratory,dreamer_v3_categorical_rssm,3411,logged_action_recursive,20,overall,1.1249920423401527,0.8027662621280537,34117,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,respiratory,dreamer_v3_categorical_rssm,3411,logged_action_recursive,24,overall,1.1432047581223428,0.827709006338661,30514,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,respiratory,dreamer_v3_categorical_rssm,3411,logged_action_recursive,28,overall,1.19836230602946,0.8641771764042521,27479,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,respiratory,dreamer_v3_categorical_rssm,3411,logged_action_recursive,32,overall,1.2304818368817418,0.8910377694533138,23922,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,respiratory,dreamer_v3_categorical_rssm,3411,logged_action_recursive,36,overall,1.2730560853242006,0.9359386534882876,19265,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,respiratory,dreamer_v3_categorical_rssm,3411,logged_action_recursive,40,overall,1.3012750836712712,0.9703079635804936,13218,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,respiratory,dreamer_v3_categorical_rssm,3411,logged_action_recursive,44,overall,1.4427987220444425,1.079801848966229,3685,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,respiratory,dreamer_v3_categorical_rssm,3414,logged_action_recursive,4,overall,0.9503646106881932,0.6565886917935807,63541,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,respiratory,dreamer_v3_categorical_rssm,3414,logged_action_recursive,8,overall,0.9955088268176367,0.6932233833009339,52803,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,respiratory,dreamer_v3_categorical_rssm,3414,logged_action_recursive,12,overall,1.056663157820974,0.7468204085433087,43677,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,respiratory,dreamer_v3_categorical_rssm,3414,logged_action_recursive,16,overall,1.0935888319268343,0.7896457198091718,38288,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,respiratory,dreamer_v3_categorical_rssm,3414,logged_action_recursive,20,overall,1.143958147991189,0.8207298184461609,34117,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,respiratory,dreamer_v3_categorical_rssm,3414,logged_action_recursive,24,overall,1.1712830657763549,0.8518877749469161,30514,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,respiratory,dreamer_v3_categorical_rssm,3414,logged_action_recursive,28,overall,1.232471473317582,0.8918452987796328,27479,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,respiratory,dreamer_v3_categorical_rssm,3414,logged_action_recursive,32,overall,1.2718488028395185,0.9259957944228342,23922,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,respiratory,dreamer_v3_categorical_rssm,3414,logged_action_recursive,36,overall,1.319632603127333,0.9681569079046458,19265,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,respiratory,dreamer_v3_categorical_rssm,3414,logged_action_recursive,40,overall,1.3626976742886137,1.0129137732534277,13218,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,respiratory,dreamer_v3_categorical_rssm,3414,logged_action_recursive,44,overall,1.5002751141838728,1.1066625216553112,3685,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,respiratory,gaussian_transition_ensemble,3408;3411;3414,logged_action_recursive,4,overall,0.811351462651547,0.5627917407566853,63541,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,respiratory,gaussian_transition_ensemble,3408;3411;3414,logged_action_recursive,8,overall,0.8266866777304802,0.576266452290084,52803,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,respiratory,gaussian_transition_ensemble,3408;3411;3414,logged_action_recursive,12,overall,0.8614139758010175,0.609254364807931,43677,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,respiratory,gaussian_transition_ensemble,3408;3411;3414,logged_action_recursive,16,overall,0.8629170561188841,0.6285588540905274,38288,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,respiratory,gaussian_transition_ensemble,3408;3411;3414,logged_action_recursive,20,overall,0.8926755818444985,0.6411113655137212,34117,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,respiratory,gaussian_transition_ensemble,3408;3411;3414,logged_action_recursive,24,overall,0.8901575491705426,0.6556281331643091,30514,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,respiratory,gaussian_transition_ensemble,3408;3411;3414,logged_action_recursive,28,overall,0.9328406701611824,0.6745850229586492,27479,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,respiratory,gaussian_transition_ensemble,3408;3411;3414,logged_action_recursive,32,overall,0.9479145897063944,0.690941074065649,23922,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,respiratory,gaussian_transition_ensemble,3408;3411;3414,logged_action_recursive,36,overall,0.962153488116874,0.7086272068924078,19265,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,respiratory,gaussian_transition_ensemble,3408;3411;3414,logged_action_recursive,40,overall,0.9715041767355156,0.7323402458382754,13218,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,respiratory,gaussian_transition_ensemble,3408;3411;3414,logged_action_recursive,44,overall,0.9722130935132034,0.7334550196431898,3685,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,shock,persistence_locf,3408,logged_action_recursive,4,overall,0.981316399319958,0.6473897208214072,128445,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,shock,persistence_locf,3408,logged_action_recursive,8,overall,1.020297446594831,0.6800361889536551,121022,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,shock,persistence_locf,3408,logged_action_recursive,12,overall,1.064383249090893,0.7242586444558697,107236,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,shock,persistence_locf,3408,logged_action_recursive,16,overall,1.0885096688977434,0.7478678548459589,98505,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,shock,persistence_locf,3408,logged_action_recursive,20,overall,1.0961252040802427,0.7490772239727702,92864,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,shock,persistence_locf,3408,logged_action_recursive,24,overall,1.12188796758926,0.7778876640384452,86285,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,shock,persistence_locf,3408,logged_action_recursive,28,overall,1.1262154863900062,0.7876302042208149,81446,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,shock,persistence_locf,3408,logged_action_recursive,32,overall,1.142587370046771,0.7947461488852825,77323,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,shock,persistence_locf,3408,logged_action_recursive,36,overall,1.162851749722652,0.8207764186512312,69815,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,shock,persistence_locf,3408,logged_action_recursive,40,overall,1.174802527433802,0.8309771186237915,64774,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,shock,persistence_locf,3408,logged_action_recursive,44,overall,1.1214205729049678,0.7829405117427406,27047,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,shock,hgb_residual,3408,logged_action_recursive,4,overall,0.8273935736427084,0.5647040902594977,128445,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,shock,hgb_residual,3408,logged_action_recursive,8,overall,0.8337799695541874,0.580557627977402,121022,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,shock,hgb_residual,3408,logged_action_recursive,12,overall,0.8588270409101322,0.6166195908811319,107236,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,shock,hgb_residual,3408,logged_action_recursive,16,overall,0.8800769047464323,0.6411723104629526,98505,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,shock,hgb_residual,3408,logged_action_recursive,20,overall,0.8994260771776932,0.6592870487537972,92864,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,shock,hgb_residual,3408,logged_action_recursive,24,overall,0.92843801707902,0.685651835966819,86285,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,shock,hgb_residual,3408,logged_action_recursive,28,overall,0.9486424366890728,0.7074402242262643,81446,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,shock,hgb_residual,3408,logged_action_recursive,32,overall,0.9665466868654826,0.7236840881500018,77323,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,shock,hgb_residual,3408,logged_action_recursive,36,overall,0.9872890115601386,0.7412423587185692,69815,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,shock,hgb_residual,3408,logged_action_recursive,40,overall,1.0139755114733724,0.7629254338620401,64774,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,shock,hgb_residual,3408,logged_action_recursive,44,overall,1.0383752084960307,0.7756196973365636,27047,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,shock,hgb_residual,3411,logged_action_recursive,4,overall,0.826842504737081,0.5648875792137242,128445,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,shock,hgb_residual,3411,logged_action_recursive,8,overall,0.835605705089649,0.5806437398944636,121022,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,shock,hgb_residual,3411,logged_action_recursive,12,overall,0.8609613638046184,0.6161224203163462,107236,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,shock,hgb_residual,3411,logged_action_recursive,16,overall,0.8837436412526634,0.6420486991458392,98505,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,shock,hgb_residual,3411,logged_action_recursive,20,overall,0.9039472212105096,0.6591167411909358,92864,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,shock,hgb_residual,3411,logged_action_recursive,24,overall,0.931298145022695,0.6849340037588457,86285,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,shock,hgb_residual,3411,logged_action_recursive,28,overall,0.9540717535312172,0.7073693650918617,81446,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,shock,hgb_residual,3411,logged_action_recursive,32,overall,0.9721318198485032,0.7227440534590757,77323,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,shock,hgb_residual,3411,logged_action_recursive,36,overall,0.9919153241864678,0.7413499866773059,69815,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,shock,hgb_residual,3411,logged_action_recursive,40,overall,1.0157177776093458,0.7621334597360772,64774,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,shock,hgb_residual,3411,logged_action_recursive,44,overall,1.041826740393331,0.7769444601700269,27047,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,shock,hgb_residual,3414,logged_action_recursive,4,overall,0.8251387310508501,0.5651886514390814,128445,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,shock,hgb_residual,3414,logged_action_recursive,8,overall,0.8310866710092405,0.578805374578927,121022,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,shock,hgb_residual,3414,logged_action_recursive,12,overall,0.856265872795416,0.6130494939487557,107236,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,shock,hgb_residual,3414,logged_action_recursive,16,overall,0.8782243283358635,0.636953630968889,98505,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,shock,hgb_residual,3414,logged_action_recursive,20,overall,0.8974516261908184,0.6542900728098482,92864,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,shock,hgb_residual,3414,logged_action_recursive,24,overall,0.923329231405598,0.6789151082525342,86285,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,shock,hgb_residual,3414,logged_action_recursive,28,overall,0.9424481592562683,0.6985377643307813,81446,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,shock,hgb_residual,3414,logged_action_recursive,32,overall,0.962509171291604,0.7152934956367726,77323,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,shock,hgb_residual,3414,logged_action_recursive,36,overall,0.9826945620097508,0.7329846585287084,69815,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,shock,hgb_residual,3414,logged_action_recursive,40,overall,1.0045458136145748,0.7525415401137296,64774,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,shock,hgb_residual,3414,logged_action_recursive,44,overall,1.0354880030272848,0.769403124145006,27047,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,shock,grud_world_model,3408,logged_action_recursive,4,overall,0.8172553574149046,0.5619869750568581,128445,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,shock,grud_world_model,3408,logged_action_recursive,8,overall,0.842934320266482,0.5891239157311466,121022,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,shock,grud_world_model,3408,logged_action_recursive,12,overall,0.8820412389931804,0.6338960339532769,107236,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,shock,grud_world_model,3408,logged_action_recursive,16,overall,0.9116947386637608,0.6645364380463443,98505,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,shock,grud_world_model,3408,logged_action_recursive,20,overall,0.9357835888702272,0.6832150130008143,92864,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,shock,grud_world_model,3408,logged_action_recursive,24,overall,0.9720074307328014,0.7150457314552198,86285,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,shock,grud_world_model,3408,logged_action_recursive,28,overall,0.9922683111958854,0.7372769530455058,81446,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,shock,grud_world_model,3408,logged_action_recursive,32,overall,1.0190641964375609,0.7581332856970715,77323,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,shock,grud_world_model,3408,logged_action_recursive,36,overall,1.0522235404205058,0.7883814610104695,69815,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,shock,grud_world_model,3408,logged_action_recursive,40,overall,1.0846787490742502,0.8136825631093899,64774,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,shock,grud_world_model,3408,logged_action_recursive,44,overall,1.1085917040720166,0.8286620633248106,27047,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,shock,grud_world_model,3411,logged_action_recursive,4,overall,0.8221156181236496,0.5650900206198517,128445,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,shock,grud_world_model,3411,logged_action_recursive,8,overall,0.8416297423650309,0.5904501040464863,121022,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,shock,grud_world_model,3411,logged_action_recursive,12,overall,0.8805399653970131,0.6354814445893421,107236,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,shock,grud_world_model,3411,logged_action_recursive,16,overall,0.9116976599534012,0.6676243366441148,98505,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,shock,grud_world_model,3411,logged_action_recursive,20,overall,0.9425914775248048,0.6916638156671483,92864,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,shock,grud_world_model,3411,logged_action_recursive,24,overall,0.9846978299146776,0.726118150210447,86285,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,shock,grud_world_model,3411,logged_action_recursive,28,overall,1.0123058314448563,0.7516256701260375,81446,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,shock,grud_world_model,3411,logged_action_recursive,32,overall,1.0406364870735985,0.7719651355448652,77323,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,shock,grud_world_model,3411,logged_action_recursive,36,overall,1.0802089195869171,0.8039819421457943,69815,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,shock,grud_world_model,3411,logged_action_recursive,40,overall,1.1144569726801132,0.8303560298241811,64774,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,shock,grud_world_model,3411,logged_action_recursive,44,overall,1.131944132522586,0.8410737209126671,27047,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,shock,grud_world_model,3414,logged_action_recursive,4,overall,0.8167624141839299,0.5609637431779614,128445,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,shock,grud_world_model,3414,logged_action_recursive,8,overall,0.8454226593885268,0.5903256540803087,121022,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,shock,grud_world_model,3414,logged_action_recursive,12,overall,0.8864070317893192,0.6372189456672831,107236,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,shock,grud_world_model,3414,logged_action_recursive,16,overall,0.9134698231739252,0.6655139222082023,98505,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,shock,grud_world_model,3414,logged_action_recursive,20,overall,0.9429963898473448,0.6890577659612678,92864,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,shock,grud_world_model,3414,logged_action_recursive,24,overall,0.983711780676945,0.7231380131494916,86285,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,shock,grud_world_model,3414,logged_action_recursive,28,overall,1.0090454534743476,0.749605927114288,81446,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,shock,grud_world_model,3414,logged_action_recursive,32,overall,1.0416868639639936,0.7733822255589694,77323,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,shock,grud_world_model,3414,logged_action_recursive,36,overall,1.0829742485867375,0.8090062139551518,69815,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,shock,grud_world_model,3414,logged_action_recursive,40,overall,1.117490581235331,0.8369606129761274,64774,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,shock,grud_world_model,3414,logged_action_recursive,44,overall,1.1524354075614354,0.8615667634170774,27047,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,shock,transformer_world_model,3408,logged_action_recursive,4,overall,0.8201205695784963,0.5578693559145017,128445,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,shock,transformer_world_model,3408,logged_action_recursive,8,overall,0.8635795400120844,0.596269316337824,121022,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,shock,transformer_world_model,3408,logged_action_recursive,12,overall,0.9741922793381156,0.7068462432680599,107236,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,shock,transformer_world_model,3408,logged_action_recursive,16,overall,1.1214575913950031,0.8478235855270931,98505,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,shock,transformer_world_model,3408,logged_action_recursive,20,overall,1.2965711050422113,1.0056583584098135,92864,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,shock,transformer_world_model,3408,logged_action_recursive,24,overall,1.4929363437757848,1.184340922344043,86285,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,shock,transformer_world_model,3408,logged_action_recursive,28,overall,1.6956384109958376,1.3681548050507355,81446,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,shock,transformer_world_model,3408,logged_action_recursive,32,overall,1.9209841875079448,1.5651905579836842,77323,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,shock,transformer_world_model,3408,logged_action_recursive,36,overall,2.163507977185944,1.7730062554733732,69815,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,shock,transformer_world_model,3408,logged_action_recursive,40,overall,2.4053022872499925,1.979880447220188,64774,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,shock,transformer_world_model,3408,logged_action_recursive,44,overall,2.659732445468981,2.202208768615784,27047,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,shock,transformer_world_model,3411,logged_action_recursive,4,overall,0.8210387320376219,0.5598254922774943,128445,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,shock,transformer_world_model,3411,logged_action_recursive,8,overall,0.8534147961266542,0.5882337894579829,121022,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,shock,transformer_world_model,3411,logged_action_recursive,12,overall,0.9239585048548852,0.6614243433874039,107236,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,shock,transformer_world_model,3411,logged_action_recursive,16,overall,1.00164597729747,0.7395603119152419,98505,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,shock,transformer_world_model,3411,logged_action_recursive,20,overall,1.091672904384825,0.8198056954129326,92864,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,shock,transformer_world_model,3411,logged_action_recursive,24,overall,1.1988136258168771,0.9171809820635604,86285,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,shock,transformer_world_model,3411,logged_action_recursive,28,overall,1.304032665677638,1.0168384857138226,81446,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,shock,transformer_world_model,3411,logged_action_recursive,32,overall,1.4279883541657026,1.1228145798930174,77323,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,shock,transformer_world_model,3411,logged_action_recursive,36,overall,1.5575216609919835,1.2396886970896297,69815,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,shock,transformer_world_model,3411,logged_action_recursive,40,overall,1.6869614448546923,1.3538387134775471,64774,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,shock,transformer_world_model,3411,logged_action_recursive,44,overall,1.8064283810192343,1.4570897524114408,27047,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,shock,transformer_world_model,3414,logged_action_recursive,4,overall,0.8230470807518686,0.5605250503723517,128445,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,shock,transformer_world_model,3414,logged_action_recursive,8,overall,0.8550555929610794,0.5931012450390835,121022,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,shock,transformer_world_model,3414,logged_action_recursive,12,overall,0.9334131458517054,0.6718334774169752,107236,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,shock,transformer_world_model,3414,logged_action_recursive,16,overall,1.0284447172047662,0.755917121879835,98505,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,shock,transformer_world_model,3414,logged_action_recursive,20,overall,1.1412221800629878,0.8442697080039456,92864,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,shock,transformer_world_model,3414,logged_action_recursive,24,overall,1.2721667085955544,0.949997344831935,86285,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,shock,transformer_world_model,3414,logged_action_recursive,28,overall,1.4154477059889108,1.065729974421954,81446,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,shock,transformer_world_model,3414,logged_action_recursive,32,overall,1.5792882883942316,1.1870210417126728,77323,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,shock,transformer_world_model,3414,logged_action_recursive,36,overall,1.7395233664575436,1.310235384251511,69815,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,shock,transformer_world_model,3414,logged_action_recursive,40,overall,1.908128149922082,1.4362688369405143,64774,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,shock,transformer_world_model,3414,logged_action_recursive,44,overall,2.0435451706168157,1.5179090556743546,27047,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,shock,dreamer_v3_categorical_rssm,3408,logged_action_recursive,4,overall,0.9118994561110034,0.6151893425492746,128445,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,shock,dreamer_v3_categorical_rssm,3408,logged_action_recursive,8,overall,0.9468996886855208,0.647874902452082,121022,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,shock,dreamer_v3_categorical_rssm,3408,logged_action_recursive,12,overall,0.9965847434325116,0.6999918725207738,107236,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,shock,dreamer_v3_categorical_rssm,3408,logged_action_recursive,16,overall,1.0320056451345003,0.7361252498312699,98505,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,shock,dreamer_v3_categorical_rssm,3408,logged_action_recursive,20,overall,1.0619471379099343,0.7578030256471663,92864,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,shock,dreamer_v3_categorical_rssm,3408,logged_action_recursive,24,overall,1.0942654501419498,0.7909312677484037,86285,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,shock,dreamer_v3_categorical_rssm,3408,logged_action_recursive,28,overall,1.1135002530145717,0.8158296060901405,81446,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,shock,dreamer_v3_categorical_rssm,3408,logged_action_recursive,32,overall,1.1446261616706987,0.841305121991574,77323,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,shock,dreamer_v3_categorical_rssm,3408,logged_action_recursive,36,overall,1.1811986297890893,0.8796485223345193,69815,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,shock,dreamer_v3_categorical_rssm,3408,logged_action_recursive,40,overall,1.2147435426725963,0.9094582095498044,64774,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,shock,dreamer_v3_categorical_rssm,3408,logged_action_recursive,44,overall,1.2732894125121728,0.9584272558727688,27047,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,shock,dreamer_v3_categorical_rssm,3411,logged_action_recursive,4,overall,0.909880790790002,0.6136677513910651,128445,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,shock,dreamer_v3_categorical_rssm,3411,logged_action_recursive,8,overall,0.9452718593491468,0.645040031175136,121022,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,shock,dreamer_v3_categorical_rssm,3411,logged_action_recursive,12,overall,0.996240768915115,0.6977606726604989,107236,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,shock,dreamer_v3_categorical_rssm,3411,logged_action_recursive,16,overall,1.0345056977154603,0.7352920525457597,98505,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,shock,dreamer_v3_categorical_rssm,3411,logged_action_recursive,20,overall,1.0630907521811803,0.7545688715367417,92864,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,shock,dreamer_v3_categorical_rssm,3411,logged_action_recursive,24,overall,1.0928392714341302,0.784637837734193,86285,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,shock,dreamer_v3_categorical_rssm,3411,logged_action_recursive,28,overall,1.108525126212706,0.8066974279434684,81446,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,shock,dreamer_v3_categorical_rssm,3411,logged_action_recursive,32,overall,1.1331346296864089,0.8257554034350835,77323,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,shock,dreamer_v3_categorical_rssm,3411,logged_action_recursive,36,overall,1.1608549856149566,0.8556694615594636,69815,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,shock,dreamer_v3_categorical_rssm,3411,logged_action_recursive,40,overall,1.1842950859919448,0.876836772843561,64774,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,shock,dreamer_v3_categorical_rssm,3411,logged_action_recursive,44,overall,1.2309196295646443,0.9187496358174636,27047,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,shock,dreamer_v3_categorical_rssm,3414,logged_action_recursive,4,overall,0.9107578940175336,0.6143273250592298,128445,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,shock,dreamer_v3_categorical_rssm,3414,logged_action_recursive,8,overall,0.9437410069687132,0.6444226057793981,121022,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,shock,dreamer_v3_categorical_rssm,3414,logged_action_recursive,12,overall,0.9919310461719162,0.6959976632366682,107236,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,shock,dreamer_v3_categorical_rssm,3414,logged_action_recursive,16,overall,1.027662069835894,0.7319462334132718,98505,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,shock,dreamer_v3_categorical_rssm,3414,logged_action_recursive,20,overall,1.057581957894697,0.7534561197529248,92864,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,shock,dreamer_v3_categorical_rssm,3414,logged_action_recursive,24,overall,1.09218800984435,0.7873061445887698,86285,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,shock,dreamer_v3_categorical_rssm,3414,logged_action_recursive,28,overall,1.1143037692446984,0.8155556911890328,81446,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,shock,dreamer_v3_categorical_rssm,3414,logged_action_recursive,32,overall,1.1506635332811006,0.8433238935342426,77323,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,shock,dreamer_v3_categorical_rssm,3414,logged_action_recursive,36,overall,1.1929403281160176,0.8851276427378829,69815,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,shock,dreamer_v3_categorical_rssm,3414,logged_action_recursive,40,overall,1.2368962016844358,0.9233155065088268,64774,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,shock,dreamer_v3_categorical_rssm,3414,logged_action_recursive,44,overall,1.3186021171997502,0.9915938238710772,27047,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,shock,gaussian_transition_ensemble,3408;3411;3414,logged_action_recursive,4,overall,0.8154828475163608,0.5595788529428228,128445,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,shock,gaussian_transition_ensemble,3408;3411;3414,logged_action_recursive,8,overall,0.83458856744936,0.5819935864344398,121022,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,shock,gaussian_transition_ensemble,3408;3411;3414,logged_action_recursive,12,overall,0.8646424481259101,0.6192646193436393,107236,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,shock,gaussian_transition_ensemble,3408;3411;3414,logged_action_recursive,16,overall,0.8826114420160234,0.6400762571286366,98505,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,shock,gaussian_transition_ensemble,3408;3411;3414,logged_action_recursive,20,overall,0.8985026602774322,0.6522185092199676,92864,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,shock,gaussian_transition_ensemble,3408;3411;3414,logged_action_recursive,24,overall,0.9257022048540964,0.6766493694191913,86285,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,shock,gaussian_transition_ensemble,3408;3411;3414,logged_action_recursive,28,overall,0.9347811824303992,0.6900513729570105,81446,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,shock,gaussian_transition_ensemble,3408;3411;3414,logged_action_recursive,32,overall,0.9486994904312172,0.7002432431459397,77323,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,shock,gaussian_transition_ensemble,3408;3411;3414,logged_action_recursive,36,overall,0.9694464579994504,0.7217016541329567,69815,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,shock,gaussian_transition_ensemble,3408;3411;3414,logged_action_recursive,40,overall,0.9863708327486672,0.737524862437378,64774,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,shock,gaussian_transition_ensemble,3408;3411;3414,logged_action_recursive,44,overall,0.9995726666712844,0.7441836919410747,27047,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,aki,persistence_locf,3408,logged_action_recursive,4,overall,0.8842795785296188,0.5674072074999328,53736,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,aki,persistence_locf,3408,logged_action_recursive,8,overall,0.9339657173148416,0.6066066718410493,52024,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,aki,persistence_locf,3408,logged_action_recursive,12,overall,0.9794909685763415,0.6435176693230139,48463,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,aki,persistence_locf,3408,logged_action_recursive,16,overall,0.9912985533159628,0.6680176759404514,43596,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,aki,persistence_locf,3408,logged_action_recursive,20,overall,1.0024638415527338,0.6746443879732004,46112,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,aki,persistence_locf,3408,logged_action_recursive,24,overall,1.001937745158555,0.6790355750118612,45126,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,aki,persistence_locf,3408,logged_action_recursive,28,overall,1.0363143091520397,0.7140020745285287,38646,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,aki,persistence_locf,3408,logged_action_recursive,32,overall,1.0377890858967342,0.7153988793841315,37961,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,aki,persistence_locf,3408,logged_action_recursive,36,overall,1.056536586171816,0.73398968898813,35645,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,aki,persistence_locf,3408,logged_action_recursive,40,overall,1.0918232609998084,0.7544316929946434,32257,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,aki,persistence_locf,3408,logged_action_recursive,44,overall,1.0294088614221537,0.7173495060130411,26924,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,aki,hgb_residual,3408,logged_action_recursive,4,overall,0.7879566123794478,0.5234826049067248,53736,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,aki,hgb_residual,3408,logged_action_recursive,8,overall,0.8074375016643,0.5557988442746,52024,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,aki,hgb_residual,3408,logged_action_recursive,12,overall,0.8416043741848351,0.5921338125918146,48463,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,aki,hgb_residual,3408,logged_action_recursive,16,overall,0.8479409984050877,0.6202042733861016,43596,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,aki,hgb_residual,3408,logged_action_recursive,20,overall,0.8752140903757164,0.6461838186972029,46112,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,aki,hgb_residual,3408,logged_action_recursive,24,overall,0.8882059427024035,0.6594282081282024,45126,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,aki,hgb_residual,3408,logged_action_recursive,28,overall,0.902962707945447,0.6845345484218159,38646,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,aki,hgb_residual,3408,logged_action_recursive,32,overall,0.922398259670672,0.6993759452587853,37961,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,aki,hgb_residual,3408,logged_action_recursive,36,overall,0.9562226168563588,0.7282942062136273,35645,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,aki,hgb_residual,3408,logged_action_recursive,40,overall,0.9901590455146076,0.7502414972523784,32257,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,aki,hgb_residual,3408,logged_action_recursive,44,overall,0.9829367258718292,0.7458819576686265,26924,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,aki,hgb_residual,3411,logged_action_recursive,4,overall,0.7886076979934493,0.524407861200984,53736,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,aki,hgb_residual,3411,logged_action_recursive,8,overall,0.814314034929795,0.5612834357526534,52024,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,aki,hgb_residual,3411,logged_action_recursive,12,overall,0.852998406380378,0.6035086544544896,48463,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,aki,hgb_residual,3411,logged_action_recursive,16,overall,0.8648564284094049,0.6356122721759737,43596,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,aki,hgb_residual,3411,logged_action_recursive,20,overall,0.8993176279526807,0.6654634787867861,46112,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,aki,hgb_residual,3411,logged_action_recursive,24,overall,0.914418198681908,0.6797850294572612,45126,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,aki,hgb_residual,3411,logged_action_recursive,28,overall,0.9354649940633124,0.7118849413893628,38646,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,aki,hgb_residual,3411,logged_action_recursive,32,overall,0.953249831208552,0.7263012353193748,37961,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,aki,hgb_residual,3411,logged_action_recursive,36,overall,0.9780715388016364,0.7516200323125932,35645,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,aki,hgb_residual,3411,logged_action_recursive,40,overall,1.0176310287522317,0.7740163484298868,32257,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,aki,hgb_residual,3411,logged_action_recursive,44,overall,0.995856606342748,0.7653061994497774,26924,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,aki,hgb_residual,3414,logged_action_recursive,4,overall,0.7872003353086876,0.5232116955998632,53736,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,aki,hgb_residual,3414,logged_action_recursive,8,overall,0.809201235828355,0.5543867603281953,52024,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,aki,hgb_residual,3414,logged_action_recursive,12,overall,0.8472977775102977,0.5908020404671332,48463,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,aki,hgb_residual,3414,logged_action_recursive,16,overall,0.8579373619513323,0.6200949835641698,43596,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,aki,hgb_residual,3414,logged_action_recursive,20,overall,0.8909127931806423,0.6470276715547221,46112,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,aki,hgb_residual,3414,logged_action_recursive,24,overall,0.9107424714126482,0.6602928858418838,45126,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,aki,hgb_residual,3414,logged_action_recursive,28,overall,0.9362672035241076,0.6967082210859473,38646,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,aki,hgb_residual,3414,logged_action_recursive,32,overall,0.9587104102311994,0.7128107968993067,37961,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,aki,hgb_residual,3414,logged_action_recursive,36,overall,0.9912301197316468,0.7421322291318553,35645,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,aki,hgb_residual,3414,logged_action_recursive,40,overall,1.0343875883830718,0.769066542115043,32257,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,aki,hgb_residual,3414,logged_action_recursive,44,overall,1.010805989856676,0.7593320334047002,26924,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,aki,grud_world_model,3408,logged_action_recursive,4,overall,0.7949576291005847,0.5316796598208031,53736,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,aki,grud_world_model,3408,logged_action_recursive,8,overall,0.8300538025214392,0.5683224146735786,52024,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,aki,grud_world_model,3408,logged_action_recursive,12,overall,0.8734311769039482,0.6079953833636111,48463,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,aki,grud_world_model,3408,logged_action_recursive,16,overall,0.8897565174468854,0.6406047874403518,43596,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,aki,grud_world_model,3408,logged_action_recursive,20,overall,0.9102868801680446,0.6553203458078557,46112,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,aki,grud_world_model,3408,logged_action_recursive,24,overall,0.9279411924535386,0.671043757609865,45126,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,aki,grud_world_model,3408,logged_action_recursive,28,overall,0.9615876835636584,0.7127873605172703,38646,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,aki,grud_world_model,3408,logged_action_recursive,32,overall,0.9748304336607064,0.7264388913295077,37961,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,aki,grud_world_model,3408,logged_action_recursive,36,overall,1.0127300009738234,0.7587790143761701,35645,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,aki,grud_world_model,3408,logged_action_recursive,40,overall,1.0627292019456074,0.79570005575233,32257,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,aki,grud_world_model,3408,logged_action_recursive,44,overall,1.0372242741640998,0.781458276696357,26924,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,aki,grud_world_model,3411,logged_action_recursive,4,overall,0.7910949173796987,0.5296884030155743,53736,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,aki,grud_world_model,3411,logged_action_recursive,8,overall,0.8253481891338311,0.5636998465189187,52024,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,aki,grud_world_model,3411,logged_action_recursive,12,overall,0.8711838320767197,0.6053607880457672,48463,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,aki,grud_world_model,3411,logged_action_recursive,16,overall,0.8914675602617045,0.6422433239810581,43596,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,aki,grud_world_model,3411,logged_action_recursive,20,overall,0.9254887056485426,0.6663904577927958,46112,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,aki,grud_world_model,3411,logged_action_recursive,24,overall,0.9559365696759462,0.6892034150640071,45126,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,aki,grud_world_model,3411,logged_action_recursive,28,overall,0.9951385604037822,0.7347724203403124,38646,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,aki,grud_world_model,3411,logged_action_recursive,32,overall,1.0249378667601454,0.7568867165149108,37961,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,aki,grud_world_model,3411,logged_action_recursive,36,overall,1.0656732149568102,0.7919633924835936,35645,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,aki,grud_world_model,3411,logged_action_recursive,40,overall,1.1236557116487378,0.8288461963123173,32257,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,aki,grud_world_model,3411,logged_action_recursive,44,overall,1.1069921577105182,0.8184835934680744,26924,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,aki,grud_world_model,3414,logged_action_recursive,4,overall,0.791735694970874,0.5309173188260035,53736,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,aki,grud_world_model,3414,logged_action_recursive,8,overall,0.82299585388491,0.5628419172199992,52024,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,aki,grud_world_model,3414,logged_action_recursive,12,overall,0.8614699504599587,0.5985178282195434,48463,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,aki,grud_world_model,3414,logged_action_recursive,16,overall,0.8797598000825669,0.6356121706482892,43596,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,aki,grud_world_model,3414,logged_action_recursive,20,overall,0.913142181060912,0.6633775720441283,46112,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,aki,grud_world_model,3414,logged_action_recursive,24,overall,0.9432975460674926,0.6903247676620538,45126,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,aki,grud_world_model,3414,logged_action_recursive,28,overall,0.9896603506027994,0.7438396479012194,38646,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,aki,grud_world_model,3414,logged_action_recursive,32,overall,1.0292156239071872,0.7786105771727485,37961,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,aki,grud_world_model,3414,logged_action_recursive,36,overall,1.090289775325163,0.829832544057449,35645,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,aki,grud_world_model,3414,logged_action_recursive,40,overall,1.1655004723715494,0.8851287154161792,32257,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,aki,grud_world_model,3414,logged_action_recursive,44,overall,1.1903935939502792,0.9104634760400978,26924,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,aki,transformer_world_model,3408,logged_action_recursive,4,overall,0.7923489620730605,0.5250706890744743,53736,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,aki,transformer_world_model,3408,logged_action_recursive,8,overall,0.8580374034320642,0.582183819510694,52024,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,aki,transformer_world_model,3408,logged_action_recursive,12,overall,0.9955207067527,0.7027556250908928,48463,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,aki,transformer_world_model,3408,logged_action_recursive,16,overall,1.1634063267983472,0.8584288502934417,43596,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,aki,transformer_world_model,3408,logged_action_recursive,20,overall,1.3460964307348842,0.9905116679504729,46112,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,aki,transformer_world_model,3408,logged_action_recursive,24,overall,1.5629836675237638,1.1527730433811172,45126,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,aki,transformer_world_model,3408,logged_action_recursive,28,overall,1.8558439547521788,1.3944519433692746,38646,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,aki,transformer_world_model,3408,logged_action_recursive,32,overall,2.088233970513445,1.5600373932453102,37961,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,aki,transformer_world_model,3408,logged_action_recursive,36,overall,2.337974453012543,1.7458549924033246,35645,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,aki,transformer_world_model,3408,logged_action_recursive,40,overall,2.652231130399962,1.980633556506432,32257,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,aki,transformer_world_model,3408,logged_action_recursive,44,overall,2.802154073641763,2.063972740673113,26924,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,aki,transformer_world_model,3411,logged_action_recursive,4,overall,0.7922735708450791,0.5249307660759154,53736,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,aki,transformer_world_model,3411,logged_action_recursive,8,overall,0.8542673821345848,0.5816362121902907,52024,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,aki,transformer_world_model,3411,logged_action_recursive,12,overall,0.992769410708092,0.7051711250345023,48463,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,aki,transformer_world_model,3411,logged_action_recursive,16,overall,1.1626453030852395,0.8745179009796267,43596,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,aki,transformer_world_model,3411,logged_action_recursive,20,overall,1.3440388449552063,1.0153088907900634,46112,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,aki,transformer_world_model,3411,logged_action_recursive,24,overall,1.5653252536148374,1.1887724094254066,45126,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,aki,transformer_world_model,3411,logged_action_recursive,28,overall,1.8795746928671704,1.470691377316069,38646,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,aki,transformer_world_model,3411,logged_action_recursive,32,overall,2.1045829230574933,1.6354740778161054,37961,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,aki,transformer_world_model,3411,logged_action_recursive,36,overall,2.374774293878948,1.8535396213569737,35645,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,aki,transformer_world_model,3411,logged_action_recursive,40,overall,2.7013690654313405,2.129479211594476,32257,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,aki,transformer_world_model,3411,logged_action_recursive,44,overall,2.8378637464770966,2.1897205183277557,26924,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,aki,transformer_world_model,3414,logged_action_recursive,4,overall,0.791602692573524,0.5242708545814774,53736,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,aki,transformer_world_model,3414,logged_action_recursive,8,overall,0.8441657324595073,0.570826959693276,52024,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,aki,transformer_world_model,3414,logged_action_recursive,12,overall,0.9521565870823688,0.6700503775319495,48463,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,aki,transformer_world_model,3414,logged_action_recursive,16,overall,1.0724340813083053,0.7967576657823613,43596,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,aki,transformer_world_model,3414,logged_action_recursive,20,overall,1.2222935153715713,0.9281224660255554,46112,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,aki,transformer_world_model,3414,logged_action_recursive,24,overall,1.3966586360862163,1.0865268251971367,45126,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,aki,transformer_world_model,3414,logged_action_recursive,28,overall,1.6089729160637969,1.290802502100723,38646,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,aki,transformer_world_model,3414,logged_action_recursive,32,overall,1.8019191352905148,1.460521613083176,37961,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,aki,transformer_world_model,3414,logged_action_recursive,36,overall,2.007425537149759,1.6390709700800226,35645,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,aki,transformer_world_model,3414,logged_action_recursive,40,overall,2.257475922221517,1.859426263964488,32257,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,aki,transformer_world_model,3414,logged_action_recursive,44,overall,2.421508400898737,1.997987360119677,26924,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,aki,dreamer_v3_categorical_rssm,3408,logged_action_recursive,4,overall,0.8560104262130216,0.5578902545296467,53736,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,aki,dreamer_v3_categorical_rssm,3408,logged_action_recursive,8,overall,0.8966829169751945,0.5926594676475375,52024,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,aki,dreamer_v3_categorical_rssm,3408,logged_action_recursive,12,overall,0.9375296207917944,0.6272440520372475,48463,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,aki,dreamer_v3_categorical_rssm,3408,logged_action_recursive,16,overall,0.9440755538636798,0.65092149694766,43596,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,aki,dreamer_v3_categorical_rssm,3408,logged_action_recursive,20,overall,0.9634033283610632,0.6616961351425845,46112,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,aki,dreamer_v3_categorical_rssm,3408,logged_action_recursive,24,overall,0.9657912437574988,0.669094413129366,45126,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,aki,dreamer_v3_categorical_rssm,3408,logged_action_recursive,28,overall,0.9967459311868974,0.70464948802315,38646,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,aki,dreamer_v3_categorical_rssm,3408,logged_action_recursive,32,overall,1.0040107138850871,0.7170250862219647,37961,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,aki,dreamer_v3_categorical_rssm,3408,logged_action_recursive,36,overall,1.027509205969771,0.7417918580217462,35645,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,aki,dreamer_v3_categorical_rssm,3408,logged_action_recursive,40,overall,1.0676705755434757,0.7687025216433898,32257,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,aki,dreamer_v3_categorical_rssm,3408,logged_action_recursive,44,overall,1.034016310092148,0.7546192097289964,26924,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,aki,dreamer_v3_categorical_rssm,3411,logged_action_recursive,4,overall,0.8585132192159461,0.5601143447544258,53736,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,aki,dreamer_v3_categorical_rssm,3411,logged_action_recursive,8,overall,0.9015763275502928,0.5968542725324872,52024,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,aki,dreamer_v3_categorical_rssm,3411,logged_action_recursive,12,overall,0.9464419337538248,0.6340179757186246,48463,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,aki,dreamer_v3_categorical_rssm,3411,logged_action_recursive,16,overall,0.9543416519114306,0.6594945390506938,43596,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,aki,dreamer_v3_categorical_rssm,3411,logged_action_recursive,20,overall,0.9767716120051424,0.6737443430990583,46112,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,aki,dreamer_v3_categorical_rssm,3411,logged_action_recursive,24,overall,0.979666093376522,0.6824390935946844,45126,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,aki,dreamer_v3_categorical_rssm,3411,logged_action_recursive,28,overall,1.0121270980372752,0.7198140105462754,38646,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,aki,dreamer_v3_categorical_rssm,3411,logged_action_recursive,32,overall,1.021536734519369,0.7336581147584962,37961,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,aki,dreamer_v3_categorical_rssm,3411,logged_action_recursive,36,overall,1.047768824987805,0.7583161460061212,35645,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,aki,dreamer_v3_categorical_rssm,3411,logged_action_recursive,40,overall,1.090992361269861,0.7877637210901637,32257,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,aki,dreamer_v3_categorical_rssm,3411,logged_action_recursive,44,overall,1.0623461834604708,0.7775427527576407,26924,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,aki,dreamer_v3_categorical_rssm,3414,logged_action_recursive,4,overall,0.8596211434920256,0.5610692607677532,53736,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,aki,dreamer_v3_categorical_rssm,3414,logged_action_recursive,8,overall,0.9013423913534724,0.5966092556661294,52024,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,aki,dreamer_v3_categorical_rssm,3414,logged_action_recursive,12,overall,0.946202604374204,0.6323156210369595,48463,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,aki,dreamer_v3_categorical_rssm,3414,logged_action_recursive,16,overall,0.9550643217790272,0.6586881241607385,43596,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,aki,dreamer_v3_categorical_rssm,3414,logged_action_recursive,20,overall,0.9793173050892192,0.6739533597565669,46112,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,aki,dreamer_v3_categorical_rssm,3414,logged_action_recursive,24,overall,0.9846356363778824,0.6844908321706904,45126,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,aki,dreamer_v3_categorical_rssm,3414,logged_action_recursive,28,overall,1.0168642063779432,0.7234690502580308,38646,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,aki,dreamer_v3_categorical_rssm,3414,logged_action_recursive,32,overall,1.030066610361899,0.7405407847427223,37961,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,aki,dreamer_v3_categorical_rssm,3414,logged_action_recursive,36,overall,1.0555553644689042,0.7651412152285175,35645,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,aki,dreamer_v3_categorical_rssm,3414,logged_action_recursive,40,overall,1.099805068156618,0.7972101698211432,32257,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,aki,dreamer_v3_categorical_rssm,3414,logged_action_recursive,44,overall,1.0708535451790553,0.7851398249816294,26924,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,aki,gaussian_transition_ensemble,3408;3411;3414,logged_action_recursive,4,overall,0.7899931575423959,0.5282157311718705,53736,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,aki,gaussian_transition_ensemble,3408;3411;3414,logged_action_recursive,8,overall,0.8183806729012283,0.5582393621177337,52024,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,aki,gaussian_transition_ensemble,3408;3411;3414,logged_action_recursive,12,overall,0.8500240629484248,0.5871599400030951,48463,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,aki,gaussian_transition_ensemble,3408;3411;3414,logged_action_recursive,16,overall,0.852622275317458,0.6090253373279295,43596,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,aki,gaussian_transition_ensemble,3408;3411;3414,logged_action_recursive,20,overall,0.8671561148397543,0.6193324965693539,46112,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,aki,gaussian_transition_ensemble,3408;3411;3414,logged_action_recursive,24,overall,0.8755650971734349,0.6261307897610535,45126,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,aki,gaussian_transition_ensemble,3408;3411;3414,logged_action_recursive,28,overall,0.8908221506508203,0.6543501859425737,38646,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,aki,gaussian_transition_ensemble,3408;3411;3414,logged_action_recursive,32,overall,0.898844683682612,0.6633015641257664,37961,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,aki,gaussian_transition_ensemble,3408;3411;3414,logged_action_recursive,36,overall,0.9232759781783508,0.688369524615196,35645,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,aki,gaussian_transition_ensemble,3408;3411;3414,logged_action_recursive,40,overall,0.9604277839404484,0.7111693940824727,32257,KDD097/KDD098R unchanged,P next-state dynamics
+KDD098R,aki,gaussian_transition_ensemble,3408;3411;3414,logged_action_recursive,44,overall,0.9353880740748493,0.6979837877447138,26924,KDD097/KDD098R unchanged,P next-state dynamics
+KDD122,sepsis,persistence_locf,3408,logged_action_recursive,4,overall,0.9308757985048156,0.5242167783868178,62271,KDD121/KDD122 large-lineage v2,"P; P=next-state, R=reward/outcome, T=trajectory termination"
+KDD122,sepsis,persistence_locf,3408,logged_action_recursive,8,overall,0.8952374812000006,0.5690559898055276,58640,KDD121/KDD122 large-lineage v2,"P; P=next-state, R=reward/outcome, T=trajectory termination"
+KDD122,sepsis,persistence_locf,3408,logged_action_recursive,12,overall,0.9587491197215868,0.5990183034122039,56256,KDD121/KDD122 large-lineage v2,"P; P=next-state, R=reward/outcome, T=trajectory termination"
+KDD122,sepsis,persistence_locf,3408,logged_action_recursive,16,overall,0.9441064454310136,0.6173060161647477,55651,KDD121/KDD122 large-lineage v2,"P; P=next-state, R=reward/outcome, T=trajectory termination"
+KDD122,sepsis,persistence_locf,3408,logged_action_recursive,20,overall,0.9516637483749746,0.6233840467593107,51664,KDD121/KDD122 large-lineage v2,"P; P=next-state, R=reward/outcome, T=trajectory termination"
+KDD122,sepsis,persistence_locf,3408,logged_action_recursive,24,overall,0.9616429588483624,0.640425495718782,48408,KDD121/KDD122 large-lineage v2,"P; P=next-state, R=reward/outcome, T=trajectory termination"
+KDD122,sepsis,persistence_locf,3408,logged_action_recursive,28,overall,0.9919226284984488,0.6665716803753077,43067,KDD121/KDD122 large-lineage v2,"P; P=next-state, R=reward/outcome, T=trajectory termination"
+KDD122,sepsis,persistence_locf,3408,logged_action_recursive,32,overall,1.0298993372122849,0.6868825172535863,37330,KDD121/KDD122 large-lineage v2,"P; P=next-state, R=reward/outcome, T=trajectory termination"
+KDD122,sepsis,persistence_locf,3408,logged_action_recursive,36,overall,23.314775494631757,0.8326593281656511,27785,KDD121/KDD122 large-lineage v2,"P; P=next-state, R=reward/outcome, T=trajectory termination"
+KDD122,sepsis,persistence_locf,3408,logged_action_recursive,40,overall,1.0460540744279831,0.6876700251499539,17943,KDD121/KDD122 large-lineage v2,"P; P=next-state, R=reward/outcome, T=trajectory termination"
+KDD122,sepsis,persistence_locf,3408,logged_action_recursive,44,overall,0.994991384314179,0.6700395657378068,10216,KDD121/KDD122 large-lineage v2,"P; P=next-state, R=reward/outcome, T=trajectory termination"
+KDD122,sepsis,hgb_residual,3408,logged_action_recursive,4,overall,0.8485958439426953,0.4802666018193389,62271,KDD121/KDD122 large-lineage v2,"P; P=next-state, R=reward/outcome, T=trajectory termination"
+KDD122,sepsis,hgb_residual,3408,logged_action_recursive,8,overall,0.777198485399759,0.5159354989537841,58640,KDD121/KDD122 large-lineage v2,"P; P=next-state, R=reward/outcome, T=trajectory termination"
+KDD122,sepsis,hgb_residual,3408,logged_action_recursive,12,overall,0.8409807856069489,0.5497205968007659,56256,KDD121/KDD122 large-lineage v2,"P; P=next-state, R=reward/outcome, T=trajectory termination"
+KDD122,sepsis,hgb_residual,3408,logged_action_recursive,16,overall,0.826664396662267,0.5775625494221405,55651,KDD121/KDD122 large-lineage v2,"P; P=next-state, R=reward/outcome, T=trajectory termination"
+KDD122,sepsis,hgb_residual,3408,logged_action_recursive,20,overall,0.8338063234307748,0.5956133693590954,51664,KDD121/KDD122 large-lineage v2,"P; P=next-state, R=reward/outcome, T=trajectory termination"
+KDD122,sepsis,hgb_residual,3408,logged_action_recursive,24,overall,0.856785874084817,0.6169803170302794,48408,KDD121/KDD122 large-lineage v2,"P; P=next-state, R=reward/outcome, T=trajectory termination"
+KDD122,sepsis,hgb_residual,3408,logged_action_recursive,28,overall,0.8882979704397175,0.6403474946367917,43067,KDD121/KDD122 large-lineage v2,"P; P=next-state, R=reward/outcome, T=trajectory termination"
+KDD122,sepsis,hgb_residual,3408,logged_action_recursive,32,overall,0.9587597350853528,0.6707262658333456,37330,KDD121/KDD122 large-lineage v2,"P; P=next-state, R=reward/outcome, T=trajectory termination"
+KDD122,sepsis,hgb_residual,3408,logged_action_recursive,36,overall,23.324360421534085,0.8241733928041407,27785,KDD121/KDD122 large-lineage v2,"P; P=next-state, R=reward/outcome, T=trajectory termination"
+KDD122,sepsis,hgb_residual,3408,logged_action_recursive,40,overall,1.0574418347074663,0.7179586075216119,17943,KDD121/KDD122 large-lineage v2,"P; P=next-state, R=reward/outcome, T=trajectory termination"
+KDD122,sepsis,hgb_residual,3408,logged_action_recursive,44,overall,1.1416366227804806,0.7398133408919161,10216,KDD121/KDD122 large-lineage v2,"P; P=next-state, R=reward/outcome, T=trajectory termination"
+KDD122,sepsis,hgb_residual,3411,logged_action_recursive,4,overall,0.8480569384996973,0.4803444066495317,62271,KDD121/KDD122 large-lineage v2,"P; P=next-state, R=reward/outcome, T=trajectory termination"
+KDD122,sepsis,hgb_residual,3411,logged_action_recursive,8,overall,0.7744691551802734,0.5131734146567434,58640,KDD121/KDD122 large-lineage v2,"P; P=next-state, R=reward/outcome, T=trajectory termination"
+KDD122,sepsis,hgb_residual,3411,logged_action_recursive,12,overall,0.837936319344401,0.5446675397852297,56256,KDD121/KDD122 large-lineage v2,"P; P=next-state, R=reward/outcome, T=trajectory termination"
+KDD122,sepsis,hgb_residual,3411,logged_action_recursive,16,overall,0.8204497578042081,0.5694517618859362,55651,KDD121/KDD122 large-lineage v2,"P; P=next-state, R=reward/outcome, T=trajectory termination"
+KDD122,sepsis,hgb_residual,3411,logged_action_recursive,20,overall,0.8328518593647699,0.5877471275490705,51664,KDD121/KDD122 large-lineage v2,"P; P=next-state, R=reward/outcome, T=trajectory termination"
+KDD122,sepsis,hgb_residual,3411,logged_action_recursive,24,overall,0.8655785937308125,0.610523527825696,48408,KDD121/KDD122 large-lineage v2,"P; P=next-state, R=reward/outcome, T=trajectory termination"
+KDD122,sepsis,hgb_residual,3411,logged_action_recursive,28,overall,0.8954200800269096,0.6347627110208833,43067,KDD121/KDD122 large-lineage v2,"P; P=next-state, R=reward/outcome, T=trajectory termination"
+KDD122,sepsis,hgb_residual,3411,logged_action_recursive,32,overall,0.988015242071381,0.6632916057584978,37330,KDD121/KDD122 large-lineage v2,"P; P=next-state, R=reward/outcome, T=trajectory termination"
+KDD122,sepsis,hgb_residual,3411,logged_action_recursive,36,overall,23.326474186638816,0.8218750869892469,27785,KDD121/KDD122 large-lineage v2,"P; P=next-state, R=reward/outcome, T=trajectory termination"
+KDD122,sepsis,hgb_residual,3411,logged_action_recursive,40,overall,1.1474286601748624,0.7227434976765951,17943,KDD121/KDD122 large-lineage v2,"P; P=next-state, R=reward/outcome, T=trajectory termination"
+KDD122,sepsis,hgb_residual,3411,logged_action_recursive,44,overall,1.2390384100974348,0.7446746014418012,10216,KDD121/KDD122 large-lineage v2,"P; P=next-state, R=reward/outcome, T=trajectory termination"
+KDD122,sepsis,hgb_residual,3414,logged_action_recursive,4,overall,0.8463440152830551,0.4789517781251483,62271,KDD121/KDD122 large-lineage v2,"P; P=next-state, R=reward/outcome, T=trajectory termination"
+KDD122,sepsis,hgb_residual,3414,logged_action_recursive,8,overall,0.7726062637303539,0.516040661366977,58640,KDD121/KDD122 large-lineage v2,"P; P=next-state, R=reward/outcome, T=trajectory termination"
+KDD122,sepsis,hgb_residual,3414,logged_action_recursive,12,overall,0.8400768584316225,0.5527052279580008,56256,KDD121/KDD122 large-lineage v2,"P; P=next-state, R=reward/outcome, T=trajectory termination"
+KDD122,sepsis,hgb_residual,3414,logged_action_recursive,16,overall,0.8236025374338125,0.5802752706424401,55651,KDD121/KDD122 large-lineage v2,"P; P=next-state, R=reward/outcome, T=trajectory termination"
+KDD122,sepsis,hgb_residual,3414,logged_action_recursive,20,overall,0.8367764090333745,0.6013380235616649,51664,KDD121/KDD122 large-lineage v2,"P; P=next-state, R=reward/outcome, T=trajectory termination"
+KDD122,sepsis,hgb_residual,3414,logged_action_recursive,24,overall,0.860882267771463,0.6251485777977726,48408,KDD121/KDD122 large-lineage v2,"P; P=next-state, R=reward/outcome, T=trajectory termination"
+KDD122,sepsis,hgb_residual,3414,logged_action_recursive,28,overall,0.8897569894754025,0.6495234312177065,43067,KDD121/KDD122 large-lineage v2,"P; P=next-state, R=reward/outcome, T=trajectory termination"
+KDD122,sepsis,hgb_residual,3414,logged_action_recursive,32,overall,0.923118371865106,0.669612263058313,37330,KDD121/KDD122 large-lineage v2,"P; P=next-state, R=reward/outcome, T=trajectory termination"
+KDD122,sepsis,hgb_residual,3414,logged_action_recursive,36,overall,23.32440574363967,0.8222878501665412,27785,KDD121/KDD122 large-lineage v2,"P; P=next-state, R=reward/outcome, T=trajectory termination"
+KDD122,sepsis,hgb_residual,3414,logged_action_recursive,40,overall,0.9763610756948008,0.7064749574518916,17943,KDD121/KDD122 large-lineage v2,"P; P=next-state, R=reward/outcome, T=trajectory termination"
+KDD122,sepsis,hgb_residual,3414,logged_action_recursive,44,overall,0.938911062822282,0.7087196722173343,10216,KDD121/KDD122 large-lineage v2,"P; P=next-state, R=reward/outcome, T=trajectory termination"
+KDD122,sepsis,grud_world_model,3408,logged_action_recursive,4,overall,0.8750071803789812,0.499003317949893,62271,KDD121/KDD122 large-lineage v2,"P; P=next-state, R=reward/outcome, T=trajectory termination"
+KDD122,sepsis,grud_world_model,3408,logged_action_recursive,8,overall,0.8021385471069868,0.5319826103223841,58640,KDD121/KDD122 large-lineage v2,"P; P=next-state, R=reward/outcome, T=trajectory termination"
+KDD122,sepsis,grud_world_model,3408,logged_action_recursive,12,overall,0.8661026118298784,0.5676010476702765,56256,KDD121/KDD122 large-lineage v2,"P; P=next-state, R=reward/outcome, T=trajectory termination"
+KDD122,sepsis,grud_world_model,3408,logged_action_recursive,16,overall,0.8558393667258775,0.5982254553935389,55651,KDD121/KDD122 large-lineage v2,"P; P=next-state, R=reward/outcome, T=trajectory termination"
+KDD122,sepsis,grud_world_model,3408,logged_action_recursive,20,overall,0.8759277551443929,0.6239396219180099,51664,KDD121/KDD122 large-lineage v2,"P; P=next-state, R=reward/outcome, T=trajectory termination"
+KDD122,sepsis,grud_world_model,3408,logged_action_recursive,24,overall,0.9057486145555,0.6584395569179362,48408,KDD121/KDD122 large-lineage v2,"P; P=next-state, R=reward/outcome, T=trajectory termination"
+KDD122,sepsis,grud_world_model,3408,logged_action_recursive,28,overall,0.9483606147047874,0.6968394447840097,43067,KDD121/KDD122 large-lineage v2,"P; P=next-state, R=reward/outcome, T=trajectory termination"
+KDD122,sepsis,grud_world_model,3408,logged_action_recursive,32,overall,1.0132247774814296,0.7414997312330257,37330,KDD121/KDD122 large-lineage v2,"P; P=next-state, R=reward/outcome, T=trajectory termination"
+KDD122,sepsis,grud_world_model,3408,logged_action_recursive,36,overall,23.32393792919476,0.9205885046890684,27785,KDD121/KDD122 large-lineage v2,"P; P=next-state, R=reward/outcome, T=trajectory termination"
+KDD122,sepsis,grud_world_model,3408,logged_action_recursive,40,overall,1.1400919165110874,0.8379417394068049,17943,KDD121/KDD122 large-lineage v2,"P; P=next-state, R=reward/outcome, T=trajectory termination"
+KDD122,sepsis,grud_world_model,3408,logged_action_recursive,44,overall,1.1502824585462768,0.8713664764554885,10216,KDD121/KDD122 large-lineage v2,"P; P=next-state, R=reward/outcome, T=trajectory termination"
+KDD122,sepsis,grud_world_model,3411,logged_action_recursive,4,overall,0.8632084475692756,0.4918919580993114,62271,KDD121/KDD122 large-lineage v2,"P; P=next-state, R=reward/outcome, T=trajectory termination"
+KDD122,sepsis,grud_world_model,3411,logged_action_recursive,8,overall,0.7938198692826046,0.5300629819778291,58640,KDD121/KDD122 large-lineage v2,"P; P=next-state, R=reward/outcome, T=trajectory termination"
+KDD122,sepsis,grud_world_model,3411,logged_action_recursive,12,overall,0.8618755455091697,0.5717607687589076,56256,KDD121/KDD122 large-lineage v2,"P; P=next-state, R=reward/outcome, T=trajectory termination"
+KDD122,sepsis,grud_world_model,3411,logged_action_recursive,16,overall,0.8547730160541994,0.6074517244969994,55651,KDD121/KDD122 large-lineage v2,"P; P=next-state, R=reward/outcome, T=trajectory termination"
+KDD122,sepsis,grud_world_model,3411,logged_action_recursive,20,overall,0.8770215595122275,0.637363518005776,51664,KDD121/KDD122 large-lineage v2,"P; P=next-state, R=reward/outcome, T=trajectory termination"
+KDD122,sepsis,grud_world_model,3411,logged_action_recursive,24,overall,0.915587865099243,0.6760204970056788,48408,KDD121/KDD122 large-lineage v2,"P; P=next-state, R=reward/outcome, T=trajectory termination"
+KDD122,sepsis,grud_world_model,3411,logged_action_recursive,28,overall,0.9683042904302296,0.7197989960607765,43067,KDD121/KDD122 large-lineage v2,"P; P=next-state, R=reward/outcome, T=trajectory termination"
+KDD122,sepsis,grud_world_model,3411,logged_action_recursive,32,overall,1.03443338532642,0.7652457817392985,37330,KDD121/KDD122 large-lineage v2,"P; P=next-state, R=reward/outcome, T=trajectory termination"
+KDD122,sepsis,grud_world_model,3411,logged_action_recursive,36,overall,23.325350095027417,0.9453598706533562,27785,KDD121/KDD122 large-lineage v2,"P; P=next-state, R=reward/outcome, T=trajectory termination"
+KDD122,sepsis,grud_world_model,3411,logged_action_recursive,40,overall,1.154995954215592,0.8540490058872561,17943,KDD121/KDD122 large-lineage v2,"P; P=next-state, R=reward/outcome, T=trajectory termination"
+KDD122,sepsis,grud_world_model,3411,logged_action_recursive,44,overall,1.1889648943335402,0.898466191507437,10216,KDD121/KDD122 large-lineage v2,"P; P=next-state, R=reward/outcome, T=trajectory termination"
+KDD122,sepsis,grud_world_model,3414,logged_action_recursive,4,overall,0.8592717058430046,0.4908240861155931,62271,KDD121/KDD122 large-lineage v2,"P; P=next-state, R=reward/outcome, T=trajectory termination"
+KDD122,sepsis,grud_world_model,3414,logged_action_recursive,8,overall,0.7894204609460054,0.5269794462525581,58640,KDD121/KDD122 large-lineage v2,"P; P=next-state, R=reward/outcome, T=trajectory termination"
+KDD122,sepsis,grud_world_model,3414,logged_action_recursive,12,overall,0.8620651854810194,0.5688810518846832,56256,KDD121/KDD122 large-lineage v2,"P; P=next-state, R=reward/outcome, T=trajectory termination"
+KDD122,sepsis,grud_world_model,3414,logged_action_recursive,16,overall,0.8534172082807561,0.6022177931530994,55651,KDD121/KDD122 large-lineage v2,"P; P=next-state, R=reward/outcome, T=trajectory termination"
+KDD122,sepsis,grud_world_model,3414,logged_action_recursive,20,overall,0.8740413755447323,0.6270477935489229,51664,KDD121/KDD122 large-lineage v2,"P; P=next-state, R=reward/outcome, T=trajectory termination"
+KDD122,sepsis,grud_world_model,3414,logged_action_recursive,24,overall,0.9035980617090612,0.6586290182901171,48408,KDD121/KDD122 large-lineage v2,"P; P=next-state, R=reward/outcome, T=trajectory termination"
+KDD122,sepsis,grud_world_model,3414,logged_action_recursive,28,overall,0.9422924048631708,0.6901966215804894,43067,KDD121/KDD122 large-lineage v2,"P; P=next-state, R=reward/outcome, T=trajectory termination"
+KDD122,sepsis,grud_world_model,3414,logged_action_recursive,32,overall,0.9870521174772676,0.7242265013502635,37330,KDD121/KDD122 large-lineage v2,"P; P=next-state, R=reward/outcome, T=trajectory termination"
+KDD122,sepsis,grud_world_model,3414,logged_action_recursive,36,overall,23.32144278425213,0.8948040827156369,27785,KDD121/KDD122 large-lineage v2,"P; P=next-state, R=reward/outcome, T=trajectory termination"
+KDD122,sepsis,grud_world_model,3414,logged_action_recursive,40,overall,1.074845727521734,0.7918443514682127,17943,KDD121/KDD122 large-lineage v2,"P; P=next-state, R=reward/outcome, T=trajectory termination"
+KDD122,sepsis,grud_world_model,3414,logged_action_recursive,44,overall,1.0745274603080264,0.8171589178323733,10216,KDD121/KDD122 large-lineage v2,"P; P=next-state, R=reward/outcome, T=trajectory termination"
+KDD122,sepsis,transformer_world_model,3408,logged_action_recursive,4,overall,0.8603665688292395,0.4914245150474925,62271,KDD121/KDD122 large-lineage v2,"P; P=next-state, R=reward/outcome, T=trajectory termination"
+KDD122,sepsis,transformer_world_model,3408,logged_action_recursive,8,overall,0.7985754513846884,0.5253986798696431,58640,KDD121/KDD122 large-lineage v2,"P; P=next-state, R=reward/outcome, T=trajectory termination"
+KDD122,sepsis,transformer_world_model,3408,logged_action_recursive,12,overall,0.8876495043735583,0.5805084603865501,56256,KDD121/KDD122 large-lineage v2,"P; P=next-state, R=reward/outcome, T=trajectory termination"
+KDD122,sepsis,transformer_world_model,3408,logged_action_recursive,16,overall,0.926148064926987,0.6527351349939944,55651,KDD121/KDD122 large-lineage v2,"P; P=next-state, R=reward/outcome, T=trajectory termination"
+KDD122,sepsis,transformer_world_model,3408,logged_action_recursive,20,overall,1.009664416700085,0.7355859474919245,51664,KDD121/KDD122 large-lineage v2,"P; P=next-state, R=reward/outcome, T=trajectory termination"
+KDD122,sepsis,transformer_world_model,3408,logged_action_recursive,24,overall,1.125604662993356,0.8431930345943536,48408,KDD121/KDD122 large-lineage v2,"P; P=next-state, R=reward/outcome, T=trajectory termination"
+KDD122,sepsis,transformer_world_model,3408,logged_action_recursive,28,overall,1.271864633854291,0.9704982864816868,43067,KDD121/KDD122 large-lineage v2,"P; P=next-state, R=reward/outcome, T=trajectory termination"
+KDD122,sepsis,transformer_world_model,3408,logged_action_recursive,32,overall,1.4277750884194889,1.0985199049848304,37330,KDD121/KDD122 large-lineage v2,"P; P=next-state, R=reward/outcome, T=trajectory termination"
+KDD122,sepsis,transformer_world_model,3408,logged_action_recursive,36,overall,23.3523759158206,1.351178137482603,27785,KDD121/KDD122 large-lineage v2,"P; P=next-state, R=reward/outcome, T=trajectory termination"
+KDD122,sepsis,transformer_world_model,3408,logged_action_recursive,40,overall,1.7131942321687244,1.32104945264207,17943,KDD121/KDD122 large-lineage v2,"P; P=next-state, R=reward/outcome, T=trajectory termination"
+KDD122,sepsis,transformer_world_model,3408,logged_action_recursive,44,overall,1.8373362747077295,1.4402694344716878,10216,KDD121/KDD122 large-lineage v2,"P; P=next-state, R=reward/outcome, T=trajectory termination"
+KDD122,sepsis,transformer_world_model,3411,logged_action_recursive,4,overall,0.8701974848718088,0.4957620713259048,62271,KDD121/KDD122 large-lineage v2,"P; P=next-state, R=reward/outcome, T=trajectory termination"
+KDD122,sepsis,transformer_world_model,3411,logged_action_recursive,8,overall,0.8180457101157592,0.5430922848418464,58640,KDD121/KDD122 large-lineage v2,"P; P=next-state, R=reward/outcome, T=trajectory termination"
+KDD122,sepsis,transformer_world_model,3411,logged_action_recursive,12,overall,0.9206843573091426,0.6103814798891342,56256,KDD121/KDD122 large-lineage v2,"P; P=next-state, R=reward/outcome, T=trajectory termination"
+KDD122,sepsis,transformer_world_model,3411,logged_action_recursive,16,overall,0.9775601504513522,0.6906202620031162,55651,KDD121/KDD122 large-lineage v2,"P; P=next-state, R=reward/outcome, T=trajectory termination"
+KDD122,sepsis,transformer_world_model,3411,logged_action_recursive,20,overall,1.0784903819997345,0.7810575680145586,51664,KDD121/KDD122 large-lineage v2,"P; P=next-state, R=reward/outcome, T=trajectory termination"
+KDD122,sepsis,transformer_world_model,3411,logged_action_recursive,24,overall,1.1994568394378864,0.8837138385886985,48408,KDD121/KDD122 large-lineage v2,"P; P=next-state, R=reward/outcome, T=trajectory termination"
+KDD122,sepsis,transformer_world_model,3411,logged_action_recursive,28,overall,1.3456724507659352,1.0016168981984128,43067,KDD121/KDD122 large-lineage v2,"P; P=next-state, R=reward/outcome, T=trajectory termination"
+KDD122,sepsis,transformer_world_model,3411,logged_action_recursive,32,overall,1.498943849678115,1.1217318885689669,37330,KDD121/KDD122 large-lineage v2,"P; P=next-state, R=reward/outcome, T=trajectory termination"
+KDD122,sepsis,transformer_world_model,3411,logged_action_recursive,36,overall,23.3669772471526,1.3773973790819094,27785,KDD121/KDD122 large-lineage v2,"P; P=next-state, R=reward/outcome, T=trajectory termination"
+KDD122,sepsis,transformer_world_model,3411,logged_action_recursive,40,overall,1.8030444661493248,1.364310572523732,17943,KDD121/KDD122 large-lineage v2,"P; P=next-state, R=reward/outcome, T=trajectory termination"
+KDD122,sepsis,transformer_world_model,3411,logged_action_recursive,44,overall,1.9508097930966712,1.5010472439519469,10216,KDD121/KDD122 large-lineage v2,"P; P=next-state, R=reward/outcome, T=trajectory termination"
+KDD122,sepsis,transformer_world_model,3414,logged_action_recursive,4,overall,0.879283147199484,0.5023961831873632,62271,KDD121/KDD122 large-lineage v2,"P; P=next-state, R=reward/outcome, T=trajectory termination"
+KDD122,sepsis,transformer_world_model,3414,logged_action_recursive,8,overall,0.8261881222348149,0.5455975531067291,58640,KDD121/KDD122 large-lineage v2,"P; P=next-state, R=reward/outcome, T=trajectory termination"
+KDD122,sepsis,transformer_world_model,3414,logged_action_recursive,12,overall,0.9132452845393824,0.6014788586041225,56256,KDD121/KDD122 large-lineage v2,"P; P=next-state, R=reward/outcome, T=trajectory termination"
+KDD122,sepsis,transformer_world_model,3414,logged_action_recursive,16,overall,0.9459232204519992,0.666240862529346,55651,KDD121/KDD122 large-lineage v2,"P; P=next-state, R=reward/outcome, T=trajectory termination"
+KDD122,sepsis,transformer_world_model,3414,logged_action_recursive,20,overall,1.014394236594018,0.7344249480701618,51664,KDD121/KDD122 large-lineage v2,"P; P=next-state, R=reward/outcome, T=trajectory termination"
+KDD122,sepsis,transformer_world_model,3414,logged_action_recursive,24,overall,1.1049497185535335,0.8163130913872476,48408,KDD121/KDD122 large-lineage v2,"P; P=next-state, R=reward/outcome, T=trajectory termination"
+KDD122,sepsis,transformer_world_model,3414,logged_action_recursive,28,overall,1.2123786745814724,0.9078760749331072,43067,KDD121/KDD122 large-lineage v2,"P; P=next-state, R=reward/outcome, T=trajectory termination"
+KDD122,sepsis,transformer_world_model,3414,logged_action_recursive,32,overall,1.3326630339645271,1.000681303537543,37330,KDD121/KDD122 large-lineage v2,"P; P=next-state, R=reward/outcome, T=trajectory termination"
+KDD122,sepsis,transformer_world_model,3414,logged_action_recursive,36,overall,23.342584208210877,1.2336236820358943,27785,KDD121/KDD122 large-lineage v2,"P; P=next-state, R=reward/outcome, T=trajectory termination"
+KDD122,sepsis,transformer_world_model,3414,logged_action_recursive,40,overall,1.5875621642435422,1.2050911472359915,17943,KDD121/KDD122 large-lineage v2,"P; P=next-state, R=reward/outcome, T=trajectory termination"
+KDD122,sepsis,transformer_world_model,3414,logged_action_recursive,44,overall,1.652611191655557,1.2757715704642054,10216,KDD121/KDD122 large-lineage v2,"P; P=next-state, R=reward/outcome, T=trajectory termination"
+KDD122,sepsis,dreamer_v3_categorical_rssm,3408,logged_action_recursive,4,overall,0.9297345614340128,0.5289110562006882,62271,KDD121/KDD122 large-lineage v2,"P; P=next-state, R=reward/outcome, T=trajectory termination"
+KDD122,sepsis,dreamer_v3_categorical_rssm,3408,logged_action_recursive,8,overall,0.8932190028920164,0.5776406447546751,58640,KDD121/KDD122 large-lineage v2,"P; P=next-state, R=reward/outcome, T=trajectory termination"
+KDD122,sepsis,dreamer_v3_categorical_rssm,3408,logged_action_recursive,12,overall,0.9583684699051952,0.6131439069752825,56256,KDD121/KDD122 large-lineage v2,"P; P=next-state, R=reward/outcome, T=trajectory termination"
+KDD122,sepsis,dreamer_v3_categorical_rssm,3408,logged_action_recursive,16,overall,0.9504518012597488,0.6387190224281843,55651,KDD121/KDD122 large-lineage v2,"P; P=next-state, R=reward/outcome, T=trajectory termination"
+KDD122,sepsis,dreamer_v3_categorical_rssm,3408,logged_action_recursive,20,overall,0.968076314254752,0.6579176136939971,51664,KDD121/KDD122 large-lineage v2,"P; P=next-state, R=reward/outcome, T=trajectory termination"
+KDD122,sepsis,dreamer_v3_categorical_rssm,3408,logged_action_recursive,24,overall,0.9916314636665016,0.6859280951997677,48408,KDD121/KDD122 large-lineage v2,"P; P=next-state, R=reward/outcome, T=trajectory termination"
+KDD122,sepsis,dreamer_v3_categorical_rssm,3408,logged_action_recursive,28,overall,1.0439564805430497,0.7349371755833878,43067,KDD121/KDD122 large-lineage v2,"P; P=next-state, R=reward/outcome, T=trajectory termination"
+KDD122,sepsis,dreamer_v3_categorical_rssm,3408,logged_action_recursive,32,overall,1.1106018049849669,0.7857576628540984,37330,KDD121/KDD122 large-lineage v2,"P; P=next-state, R=reward/outcome, T=trajectory termination"
+KDD122,sepsis,dreamer_v3_categorical_rssm,3408,logged_action_recursive,36,overall,23.31829685255399,0.9651634533890324,27785,KDD121/KDD122 large-lineage v2,"P; P=next-state, R=reward/outcome, T=trajectory termination"
+KDD122,sepsis,dreamer_v3_categorical_rssm,3408,logged_action_recursive,40,overall,1.2115374053002856,0.8652758045526175,17943,KDD121/KDD122 large-lineage v2,"P; P=next-state, R=reward/outcome, T=trajectory termination"
+KDD122,sepsis,dreamer_v3_categorical_rssm,3408,logged_action_recursive,44,overall,1.2266593544794304,0.8981912803333277,10216,KDD121/KDD122 large-lineage v2,"P; P=next-state, R=reward/outcome, T=trajectory termination"
+KDD122,sepsis,dreamer_v3_categorical_rssm,3411,logged_action_recursive,4,overall,0.9285551940167072,0.5281623347806477,62271,KDD121/KDD122 large-lineage v2,"P; P=next-state, R=reward/outcome, T=trajectory termination"
+KDD122,sepsis,dreamer_v3_categorical_rssm,3411,logged_action_recursive,8,overall,0.8918679559332833,0.5785527990660969,58640,KDD121/KDD122 large-lineage v2,"P; P=next-state, R=reward/outcome, T=trajectory termination"
+KDD122,sepsis,dreamer_v3_categorical_rssm,3411,logged_action_recursive,12,overall,0.957794731419661,0.6175166156010485,56256,KDD121/KDD122 large-lineage v2,"P; P=next-state, R=reward/outcome, T=trajectory termination"
+KDD122,sepsis,dreamer_v3_categorical_rssm,3411,logged_action_recursive,16,overall,0.9501335128866976,0.6474912099246248,55651,KDD121/KDD122 large-lineage v2,"P; P=next-state, R=reward/outcome, T=trajectory termination"
+KDD122,sepsis,dreamer_v3_categorical_rssm,3411,logged_action_recursive,20,overall,0.9688854905795982,0.6718948049478767,51664,KDD121/KDD122 large-lineage v2,"P; P=next-state, R=reward/outcome, T=trajectory termination"
+KDD122,sepsis,dreamer_v3_categorical_rssm,3411,logged_action_recursive,24,overall,0.9950532288150612,0.7086180149386548,48408,KDD121/KDD122 large-lineage v2,"P; P=next-state, R=reward/outcome, T=trajectory termination"
+KDD122,sepsis,dreamer_v3_categorical_rssm,3411,logged_action_recursive,28,overall,1.0477221251344369,0.7589258254077226,43067,KDD121/KDD122 large-lineage v2,"P; P=next-state, R=reward/outcome, T=trajectory termination"
+KDD122,sepsis,dreamer_v3_categorical_rssm,3411,logged_action_recursive,32,overall,1.1185230814324492,0.8146249047713837,37330,KDD121/KDD122 large-lineage v2,"P; P=next-state, R=reward/outcome, T=trajectory termination"
+KDD122,sepsis,dreamer_v3_categorical_rssm,3411,logged_action_recursive,36,overall,23.31488179791775,1.0008619243898655,27785,KDD121/KDD122 large-lineage v2,"P; P=next-state, R=reward/outcome, T=trajectory termination"
+KDD122,sepsis,dreamer_v3_categorical_rssm,3411,logged_action_recursive,40,overall,1.2267327559725398,0.9108627191044424,17943,KDD121/KDD122 large-lineage v2,"P; P=next-state, R=reward/outcome, T=trajectory termination"
+KDD122,sepsis,dreamer_v3_categorical_rssm,3411,logged_action_recursive,44,overall,1.2547016465715453,0.9516915450145282,10216,KDD121/KDD122 large-lineage v2,"P; P=next-state, R=reward/outcome, T=trajectory termination"
+KDD122,sepsis,dreamer_v3_categorical_rssm,3414,logged_action_recursive,4,overall,0.9281399744941836,0.5277582965590336,62271,KDD121/KDD122 large-lineage v2,"P; P=next-state, R=reward/outcome, T=trajectory termination"
+KDD122,sepsis,dreamer_v3_categorical_rssm,3414,logged_action_recursive,8,overall,0.8912073493123754,0.576764005000195,58640,KDD121/KDD122 large-lineage v2,"P; P=next-state, R=reward/outcome, T=trajectory termination"
+KDD122,sepsis,dreamer_v3_categorical_rssm,3414,logged_action_recursive,12,overall,0.9574724020567924,0.6133443928313378,56256,KDD121/KDD122 large-lineage v2,"P; P=next-state, R=reward/outcome, T=trajectory termination"
+KDD122,sepsis,dreamer_v3_categorical_rssm,3414,logged_action_recursive,16,overall,0.949940766739576,0.6408645821339386,55651,KDD121/KDD122 large-lineage v2,"P; P=next-state, R=reward/outcome, T=trajectory termination"
+KDD122,sepsis,dreamer_v3_categorical_rssm,3414,logged_action_recursive,20,overall,0.9699873940301142,0.6630559917341075,51664,KDD121/KDD122 large-lineage v2,"P; P=next-state, R=reward/outcome, T=trajectory termination"
+KDD122,sepsis,dreamer_v3_categorical_rssm,3414,logged_action_recursive,24,overall,0.9961102507879628,0.6964588245137986,48408,KDD121/KDD122 large-lineage v2,"P; P=next-state, R=reward/outcome, T=trajectory termination"
+KDD122,sepsis,dreamer_v3_categorical_rssm,3414,logged_action_recursive,28,overall,1.0479568500485092,0.7414677281041127,43067,KDD121/KDD122 large-lineage v2,"P; P=next-state, R=reward/outcome, T=trajectory termination"
+KDD122,sepsis,dreamer_v3_categorical_rssm,3414,logged_action_recursive,32,overall,1.116920990838263,0.7946697404600287,37330,KDD121/KDD122 large-lineage v2,"P; P=next-state, R=reward/outcome, T=trajectory termination"
+KDD122,sepsis,dreamer_v3_categorical_rssm,3414,logged_action_recursive,36,overall,23.31432346689372,0.9735402582781952,27785,KDD121/KDD122 large-lineage v2,"P; P=next-state, R=reward/outcome, T=trajectory termination"
+KDD122,sepsis,dreamer_v3_categorical_rssm,3414,logged_action_recursive,40,overall,1.2234335775895129,0.8816107309115807,17943,KDD121/KDD122 large-lineage v2,"P; P=next-state, R=reward/outcome, T=trajectory termination"
+KDD122,sepsis,dreamer_v3_categorical_rssm,3414,logged_action_recursive,44,overall,1.2273468085840802,0.9109904721433396,10216,KDD121/KDD122 large-lineage v2,"P; P=next-state, R=reward/outcome, T=trajectory termination"
+KDD122,sepsis,gaussian_transition_ensemble,3408;3411;3414,logged_action_recursive,4,overall,0.8624491201899582,0.4895753270076523,62271,KDD121/KDD122 large-lineage v2,"P; P=next-state, R=reward/outcome, T=trajectory termination"
+KDD122,sepsis,gaussian_transition_ensemble,3408;3411;3414,logged_action_recursive,8,overall,0.7858734573906081,0.5199732404233861,58640,KDD121/KDD122 large-lineage v2,"P; P=next-state, R=reward/outcome, T=trajectory termination"
+KDD122,sepsis,gaussian_transition_ensemble,3408;3411;3414,logged_action_recursive,12,overall,0.843992339576261,0.5500976042093423,56256,KDD121/KDD122 large-lineage v2,"P; P=next-state, R=reward/outcome, T=trajectory termination"
+KDD122,sepsis,gaussian_transition_ensemble,3408;3411;3414,logged_action_recursive,16,overall,0.8197562590769473,0.5701298759643648,55651,KDD121/KDD122 large-lineage v2,"P; P=next-state, R=reward/outcome, T=trajectory termination"
+KDD122,sepsis,gaussian_transition_ensemble,3408;3411;3414,logged_action_recursive,20,overall,0.8227872240697319,0.5811236827048181,51664,KDD121/KDD122 large-lineage v2,"P; P=next-state, R=reward/outcome, T=trajectory termination"
+KDD122,sepsis,gaussian_transition_ensemble,3408;3411;3414,logged_action_recursive,24,overall,0.8361929289207457,0.5995714866194587,48408,KDD121/KDD122 large-lineage v2,"P; P=next-state, R=reward/outcome, T=trajectory termination"
+KDD122,sepsis,gaussian_transition_ensemble,3408;3411;3414,logged_action_recursive,28,overall,0.8586901117927959,0.6183472889654491,43067,KDD121/KDD122 large-lineage v2,"P; P=next-state, R=reward/outcome, T=trajectory termination"
+KDD122,sepsis,gaussian_transition_ensemble,3408;3411;3414,logged_action_recursive,32,overall,0.8948350722613027,0.6389711233119086,37330,KDD121/KDD122 large-lineage v2,"P; P=next-state, R=reward/outcome, T=trajectory termination"
+KDD122,sepsis,gaussian_transition_ensemble,3408;3411;3414,logged_action_recursive,36,overall,23.31736308132663,0.7894675955195803,27785,KDD121/KDD122 large-lineage v2,"P; P=next-state, R=reward/outcome, T=trajectory termination"
+KDD122,sepsis,gaussian_transition_ensemble,3408;3411;3414,logged_action_recursive,40,overall,0.9456765709140004,0.6700133678374246,17943,KDD121/KDD122 large-lineage v2,"P; P=next-state, R=reward/outcome, T=trajectory termination"
+KDD122,sepsis,gaussian_transition_ensemble,3408;3411;3414,logged_action_recursive,44,overall,0.9156742650266592,0.6761425777097086,10216,KDD121/KDD122 large-lineage v2,"P; P=next-state, R=reward/outcome, T=trajectory termination"
+KDD122,heart_failure,persistence_locf,3408,logged_action_recursive,4,overall,0.8514068789617646,0.5098605000525586,63847,KDD121/KDD122 large-lineage v2,"P; P=next-state, R=reward/outcome, T=trajectory termination"
+KDD122,heart_failure,persistence_locf,3408,logged_action_recursive,8,overall,0.837139005407167,0.5124268332819892,63811,KDD121/KDD122 large-lineage v2,"P; P=next-state, R=reward/outcome, T=trajectory termination"
+KDD122,heart_failure,persistence_locf,3408,logged_action_recursive,12,overall,0.8665552211202792,0.5339198589501281,56948,KDD121/KDD122 large-lineage v2,"P; P=next-state, R=reward/outcome, T=trajectory termination"
+KDD122,heart_failure,persistence_locf,3408,logged_action_recursive,16,overall,0.8856356620894578,0.550392941673897,53040,KDD121/KDD122 large-lineage v2,"P; P=next-state, R=reward/outcome, T=trajectory termination"
+KDD122,heart_failure,persistence_locf,3408,logged_action_recursive,20,overall,0.8739950624660927,0.5378237191114666,46954,KDD121/KDD122 large-lineage v2,"P; P=next-state, R=reward/outcome, T=trajectory termination"
+KDD122,heart_failure,persistence_locf,3408,logged_action_recursive,24,overall,1.3284255362140256,0.5701393271768904,40831,KDD121/KDD122 large-lineage v2,"P; P=next-state, R=reward/outcome, T=trajectory termination"
+KDD122,heart_failure,persistence_locf,3408,logged_action_recursive,28,overall,0.925999631511756,0.5774473162986747,38822,KDD121/KDD122 large-lineage v2,"P; P=next-state, R=reward/outcome, T=trajectory termination"
+KDD122,heart_failure,persistence_locf,3408,logged_action_recursive,32,overall,0.9095743823346448,0.5685598822293153,38340,KDD121/KDD122 large-lineage v2,"P; P=next-state, R=reward/outcome, T=trajectory termination"
+KDD122,heart_failure,persistence_locf,3408,logged_action_recursive,36,overall,0.9323338110023006,0.5849354576265561,33317,KDD121/KDD122 large-lineage v2,"P; P=next-state, R=reward/outcome, T=trajectory termination"
+KDD122,heart_failure,persistence_locf,3408,logged_action_recursive,40,overall,0.955483812243273,0.597137403613188,29930,KDD121/KDD122 large-lineage v2,"P; P=next-state, R=reward/outcome, T=trajectory termination"
+KDD122,heart_failure,persistence_locf,3408,logged_action_recursive,44,overall,0.9353938383658849,0.5731190765652644,9544,KDD121/KDD122 large-lineage v2,"P; P=next-state, R=reward/outcome, T=trajectory termination"
+KDD122,heart_failure,hgb_residual,3408,logged_action_recursive,4,overall,0.695986597510426,0.4313104087779307,63847,KDD121/KDD122 large-lineage v2,"P; P=next-state, R=reward/outcome, T=trajectory termination"
+KDD122,heart_failure,hgb_residual,3408,logged_action_recursive,8,overall,0.6776341174749148,0.4404888104249918,63811,KDD121/KDD122 large-lineage v2,"P; P=next-state, R=reward/outcome, T=trajectory termination"
+KDD122,heart_failure,hgb_residual,3408,logged_action_recursive,12,overall,0.719218219976255,0.4733090200015226,56948,KDD121/KDD122 large-lineage v2,"P; P=next-state, R=reward/outcome, T=trajectory termination"
+KDD122,heart_failure,hgb_residual,3408,logged_action_recursive,16,overall,0.7458072086915706,0.5028791133918377,53040,KDD121/KDD122 large-lineage v2,"P; P=next-state, R=reward/outcome, T=trajectory termination"
+KDD122,heart_failure,hgb_residual,3408,logged_action_recursive,20,overall,0.7703263379276126,0.5173964154536793,46954,KDD121/KDD122 large-lineage v2,"P; P=next-state, R=reward/outcome, T=trajectory termination"
+KDD122,heart_failure,hgb_residual,3408,logged_action_recursive,24,overall,1.274992938280705,0.5653262401755438,40831,KDD121/KDD122 large-lineage v2,"P; P=next-state, R=reward/outcome, T=trajectory termination"
+KDD122,heart_failure,hgb_residual,3408,logged_action_recursive,28,overall,0.8616329081712638,0.5787409841163014,38822,KDD121/KDD122 large-lineage v2,"P; P=next-state, R=reward/outcome, T=trajectory termination"
+KDD122,heart_failure,hgb_residual,3408,logged_action_recursive,32,overall,0.866857668598927,0.585738631811686,38340,KDD121/KDD122 large-lineage v2,"P; P=next-state, R=reward/outcome, T=trajectory termination"
+KDD122,heart_failure,hgb_residual,3408,logged_action_recursive,36,overall,0.8936673521150801,0.5976087796411951,33317,KDD121/KDD122 large-lineage v2,"P; P=next-state, R=reward/outcome, T=trajectory termination"
+KDD122,heart_failure,hgb_residual,3408,logged_action_recursive,40,overall,0.9230103104735478,0.6195654615597673,29930,KDD121/KDD122 large-lineage v2,"P; P=next-state, R=reward/outcome, T=trajectory termination"
+KDD122,heart_failure,hgb_residual,3408,logged_action_recursive,44,overall,0.9785666046872904,0.6465292442980997,9544,KDD121/KDD122 large-lineage v2,"P; P=next-state, R=reward/outcome, T=trajectory termination"
+KDD122,heart_failure,hgb_residual,3411,logged_action_recursive,4,overall,0.6973513469301813,0.4300694751279853,63847,KDD121/KDD122 large-lineage v2,"P; P=next-state, R=reward/outcome, T=trajectory termination"
+KDD122,heart_failure,hgb_residual,3411,logged_action_recursive,8,overall,0.6843808143555243,0.4339115874191969,63811,KDD121/KDD122 large-lineage v2,"P; P=next-state, R=reward/outcome, T=trajectory termination"
+KDD122,heart_failure,hgb_residual,3411,logged_action_recursive,12,overall,0.7226546039679329,0.460990975847199,56948,KDD121/KDD122 large-lineage v2,"P; P=next-state, R=reward/outcome, T=trajectory termination"
+KDD122,heart_failure,hgb_residual,3411,logged_action_recursive,16,overall,0.7498580893388682,0.4816313978760659,53040,KDD121/KDD122 large-lineage v2,"P; P=next-state, R=reward/outcome, T=trajectory termination"
+KDD122,heart_failure,hgb_residual,3411,logged_action_recursive,20,overall,0.8183219882208682,0.5250482288959738,46954,KDD121/KDD122 large-lineage v2,"P; P=next-state, R=reward/outcome, T=trajectory termination"
+KDD122,heart_failure,hgb_residual,3411,logged_action_recursive,24,overall,1.3656344247997312,0.6266465851585995,40831,KDD121/KDD122 large-lineage v2,"P; P=next-state, R=reward/outcome, T=trajectory termination"
+KDD122,heart_failure,hgb_residual,3411,logged_action_recursive,28,overall,0.994897675286494,0.6248592996093337,38822,KDD121/KDD122 large-lineage v2,"P; P=next-state, R=reward/outcome, T=trajectory termination"
+KDD122,heart_failure,hgb_residual,3411,logged_action_recursive,32,overall,0.9783562676738012,0.6067129895999219,38340,KDD121/KDD122 large-lineage v2,"P; P=next-state, R=reward/outcome, T=trajectory termination"
+KDD122,heart_failure,hgb_residual,3411,logged_action_recursive,36,overall,1.0539911012847794,0.6299781059925389,33317,KDD121/KDD122 large-lineage v2,"P; P=next-state, R=reward/outcome, T=trajectory termination"
+KDD122,heart_failure,hgb_residual,3411,logged_action_recursive,40,overall,1.0529101002294732,0.6418731327253602,29930,KDD121/KDD122 large-lineage v2,"P; P=next-state, R=reward/outcome, T=trajectory termination"
+KDD122,heart_failure,hgb_residual,3411,logged_action_recursive,44,overall,1.3704196682249417,0.6884749126166362,9544,KDD121/KDD122 large-lineage v2,"P; P=next-state, R=reward/outcome, T=trajectory termination"
+KDD122,heart_failure,hgb_residual,3414,logged_action_recursive,4,overall,0.692157928595939,0.4291508867477096,63847,KDD121/KDD122 large-lineage v2,"P; P=next-state, R=reward/outcome, T=trajectory termination"
+KDD122,heart_failure,hgb_residual,3414,logged_action_recursive,8,overall,0.6728599602435557,0.4380107832242543,63811,KDD121/KDD122 large-lineage v2,"P; P=next-state, R=reward/outcome, T=trajectory termination"
+KDD122,heart_failure,hgb_residual,3414,logged_action_recursive,12,overall,0.7060718054305494,0.4697430148698239,56948,KDD121/KDD122 large-lineage v2,"P; P=next-state, R=reward/outcome, T=trajectory termination"
+KDD122,heart_failure,hgb_residual,3414,logged_action_recursive,16,overall,0.7240257911151187,0.493058175931695,53040,KDD121/KDD122 large-lineage v2,"P; P=next-state, R=reward/outcome, T=trajectory termination"
+KDD122,heart_failure,hgb_residual,3414,logged_action_recursive,20,overall,0.7502926859821261,0.5080040975176829,46954,KDD121/KDD122 large-lineage v2,"P; P=next-state, R=reward/outcome, T=trajectory termination"
+KDD122,heart_failure,hgb_residual,3414,logged_action_recursive,24,overall,1.2566681580853667,0.5512664892480148,40831,KDD121/KDD122 large-lineage v2,"P; P=next-state, R=reward/outcome, T=trajectory termination"
+KDD122,heart_failure,hgb_residual,3414,logged_action_recursive,28,overall,0.8238558663025821,0.5607400647009619,38822,KDD121/KDD122 large-lineage v2,"P; P=next-state, R=reward/outcome, T=trajectory termination"
+KDD122,heart_failure,hgb_residual,3414,logged_action_recursive,32,overall,0.8290971772980082,0.5667849977915705,38340,KDD121/KDD122 large-lineage v2,"P; P=next-state, R=reward/outcome, T=trajectory termination"
+KDD122,heart_failure,hgb_residual,3414,logged_action_recursive,36,overall,0.8494137102066798,0.577669152550564,33317,KDD121/KDD122 large-lineage v2,"P; P=next-state, R=reward/outcome, T=trajectory termination"
+KDD122,heart_failure,hgb_residual,3414,logged_action_recursive,40,overall,0.869417554222246,0.597620129338326,29930,KDD121/KDD122 large-lineage v2,"P; P=next-state, R=reward/outcome, T=trajectory termination"
+KDD122,heart_failure,hgb_residual,3414,logged_action_recursive,44,overall,0.8967397817723213,0.617935262185825,9544,KDD121/KDD122 large-lineage v2,"P; P=next-state, R=reward/outcome, T=trajectory termination"
+KDD122,heart_failure,grud_world_model,3408,logged_action_recursive,4,overall,0.7005676217785515,0.4346148748664391,63847,KDD121/KDD122 large-lineage v2,"P; P=next-state, R=reward/outcome, T=trajectory termination"
+KDD122,heart_failure,grud_world_model,3408,logged_action_recursive,8,overall,0.6817780680423211,0.4391791767875993,63811,KDD121/KDD122 large-lineage v2,"P; P=next-state, R=reward/outcome, T=trajectory termination"
+KDD122,heart_failure,grud_world_model,3408,logged_action_recursive,12,overall,0.717408876179021,0.4736632566213427,56948,KDD121/KDD122 large-lineage v2,"P; P=next-state, R=reward/outcome, T=trajectory termination"
+KDD122,heart_failure,grud_world_model,3408,logged_action_recursive,16,overall,0.7330212558439345,0.5000737624039979,53040,KDD121/KDD122 large-lineage v2,"P; P=next-state, R=reward/outcome, T=trajectory termination"
+KDD122,heart_failure,grud_world_model,3408,logged_action_recursive,20,overall,0.7708598269413215,0.525896840394721,46954,KDD121/KDD122 large-lineage v2,"P; P=next-state, R=reward/outcome, T=trajectory termination"
+KDD122,heart_failure,grud_world_model,3408,logged_action_recursive,24,overall,1.2699203940970898,0.571389421923103,40831,KDD121/KDD122 large-lineage v2,"P; P=next-state, R=reward/outcome, T=trajectory termination"
+KDD122,heart_failure,grud_world_model,3408,logged_action_recursive,28,overall,0.8543703406810347,0.5920548151347371,38822,KDD121/KDD122 large-lineage v2,"P; P=next-state, R=reward/outcome, T=trajectory termination"
+KDD122,heart_failure,grud_world_model,3408,logged_action_recursive,32,overall,0.8656312139500701,0.6053474501724483,38340,KDD121/KDD122 large-lineage v2,"P; P=next-state, R=reward/outcome, T=trajectory termination"
+KDD122,heart_failure,grud_world_model,3408,logged_action_recursive,36,overall,0.9028965605401728,0.6361049556857699,33317,KDD121/KDD122 large-lineage v2,"P; P=next-state, R=reward/outcome, T=trajectory termination"
+KDD122,heart_failure,grud_world_model,3408,logged_action_recursive,40,overall,0.9331492678360676,0.6606161710249455,29930,KDD121/KDD122 large-lineage v2,"P; P=next-state, R=reward/outcome, T=trajectory termination"
+KDD122,heart_failure,grud_world_model,3408,logged_action_recursive,44,overall,1.0189968887601717,0.7235659346884372,9544,KDD121/KDD122 large-lineage v2,"P; P=next-state, R=reward/outcome, T=trajectory termination"
+KDD122,heart_failure,grud_world_model,3411,logged_action_recursive,4,overall,0.7006984489212258,0.4346058111960704,63847,KDD121/KDD122 large-lineage v2,"P; P=next-state, R=reward/outcome, T=trajectory termination"
+KDD122,heart_failure,grud_world_model,3411,logged_action_recursive,8,overall,0.6831774897068725,0.4396799137751386,63811,KDD121/KDD122 large-lineage v2,"P; P=next-state, R=reward/outcome, T=trajectory termination"
+KDD122,heart_failure,grud_world_model,3411,logged_action_recursive,12,overall,0.7156823194003047,0.4705390793130572,56948,KDD121/KDD122 large-lineage v2,"P; P=next-state, R=reward/outcome, T=trajectory termination"
+KDD122,heart_failure,grud_world_model,3411,logged_action_recursive,16,overall,0.7297762438941439,0.494285388173689,53040,KDD121/KDD122 large-lineage v2,"P; P=next-state, R=reward/outcome, T=trajectory termination"
+KDD122,heart_failure,grud_world_model,3411,logged_action_recursive,20,overall,0.7681764330166947,0.5211511742078769,46954,KDD121/KDD122 large-lineage v2,"P; P=next-state, R=reward/outcome, T=trajectory termination"
+KDD122,heart_failure,grud_world_model,3411,logged_action_recursive,24,overall,1.2687757156859634,0.5642713682009379,40831,KDD121/KDD122 large-lineage v2,"P; P=next-state, R=reward/outcome, T=trajectory termination"
+KDD122,heart_failure,grud_world_model,3411,logged_action_recursive,28,overall,0.8529798738979832,0.5843591484094479,38822,KDD121/KDD122 large-lineage v2,"P; P=next-state, R=reward/outcome, T=trajectory termination"
+KDD122,heart_failure,grud_world_model,3411,logged_action_recursive,32,overall,0.8683383820706374,0.6016908893931816,38340,KDD121/KDD122 large-lineage v2,"P; P=next-state, R=reward/outcome, T=trajectory termination"
+KDD122,heart_failure,grud_world_model,3411,logged_action_recursive,36,overall,0.9018246406024136,0.6262832672397021,33317,KDD121/KDD122 large-lineage v2,"P; P=next-state, R=reward/outcome, T=trajectory termination"
+KDD122,heart_failure,grud_world_model,3411,logged_action_recursive,40,overall,0.9296767989547512,0.6469502462927944,29930,KDD121/KDD122 large-lineage v2,"P; P=next-state, R=reward/outcome, T=trajectory termination"
+KDD122,heart_failure,grud_world_model,3411,logged_action_recursive,44,overall,1.0245392233030588,0.7126690941549194,9544,KDD121/KDD122 large-lineage v2,"P; P=next-state, R=reward/outcome, T=trajectory termination"
+KDD122,heart_failure,grud_world_model,3414,logged_action_recursive,4,overall,0.6981234710236883,0.4345686068988666,63847,KDD121/KDD122 large-lineage v2,"P; P=next-state, R=reward/outcome, T=trajectory termination"
+KDD122,heart_failure,grud_world_model,3414,logged_action_recursive,8,overall,0.6792630325491082,0.4390053320991892,63811,KDD121/KDD122 large-lineage v2,"P; P=next-state, R=reward/outcome, T=trajectory termination"
+KDD122,heart_failure,grud_world_model,3414,logged_action_recursive,12,overall,0.7170939330865079,0.4728419800233302,56948,KDD121/KDD122 large-lineage v2,"P; P=next-state, R=reward/outcome, T=trajectory termination"
+KDD122,heart_failure,grud_world_model,3414,logged_action_recursive,16,overall,0.7385600368096054,0.5023759637300089,53040,KDD121/KDD122 large-lineage v2,"P; P=next-state, R=reward/outcome, T=trajectory termination"
+KDD122,heart_failure,grud_world_model,3414,logged_action_recursive,20,overall,0.7841877638533169,0.5342160331111925,46954,KDD121/KDD122 large-lineage v2,"P; P=next-state, R=reward/outcome, T=trajectory termination"
+KDD122,heart_failure,grud_world_model,3414,logged_action_recursive,24,overall,1.284349320834606,0.5880644096424021,40831,KDD121/KDD122 large-lineage v2,"P; P=next-state, R=reward/outcome, T=trajectory termination"
+KDD122,heart_failure,grud_world_model,3414,logged_action_recursive,28,overall,0.8888485627541985,0.6194476084413485,38822,KDD121/KDD122 large-lineage v2,"P; P=next-state, R=reward/outcome, T=trajectory termination"
+KDD122,heart_failure,grud_world_model,3414,logged_action_recursive,32,overall,0.9176398979483904,0.644780344423315,38340,KDD121/KDD122 large-lineage v2,"P; P=next-state, R=reward/outcome, T=trajectory termination"
+KDD122,heart_failure,grud_world_model,3414,logged_action_recursive,36,overall,0.9751648324268766,0.692348965558574,33317,KDD121/KDD122 large-lineage v2,"P; P=next-state, R=reward/outcome, T=trajectory termination"
+KDD122,heart_failure,grud_world_model,3414,logged_action_recursive,40,overall,1.0294313460533209,0.7370479991740523,29930,KDD121/KDD122 large-lineage v2,"P; P=next-state, R=reward/outcome, T=trajectory termination"
+KDD122,heart_failure,grud_world_model,3414,logged_action_recursive,44,overall,1.1168641947055111,0.7988500112956901,9544,KDD121/KDD122 large-lineage v2,"P; P=next-state, R=reward/outcome, T=trajectory termination"
+KDD122,heart_failure,transformer_world_model,3408,logged_action_recursive,4,overall,0.6927948975119507,0.4277388571545881,63847,KDD121/KDD122 large-lineage v2,"P; P=next-state, R=reward/outcome, T=trajectory termination"
+KDD122,heart_failure,transformer_world_model,3408,logged_action_recursive,8,overall,0.6950840318667552,0.4448498116260964,63811,KDD121/KDD122 large-lineage v2,"P; P=next-state, R=reward/outcome, T=trajectory termination"
+KDD122,heart_failure,transformer_world_model,3408,logged_action_recursive,12,overall,0.7739313570403028,0.5142253643656237,56948,KDD121/KDD122 large-lineage v2,"P; P=next-state, R=reward/outcome, T=trajectory termination"
+KDD122,heart_failure,transformer_world_model,3408,logged_action_recursive,16,overall,0.861557086433112,0.6010568930348448,53040,KDD121/KDD122 large-lineage v2,"P; P=next-state, R=reward/outcome, T=trajectory termination"
+KDD122,heart_failure,transformer_world_model,3408,logged_action_recursive,20,overall,0.996557465904486,0.7097639007099035,46954,KDD121/KDD122 large-lineage v2,"P; P=next-state, R=reward/outcome, T=trajectory termination"
+KDD122,heart_failure,transformer_world_model,3408,logged_action_recursive,24,overall,1.512282407623143,0.8497151992918671,40831,KDD121/KDD122 large-lineage v2,"P; P=next-state, R=reward/outcome, T=trajectory termination"
+KDD122,heart_failure,transformer_world_model,3408,logged_action_recursive,28,overall,1.2969866912407209,0.956693821227137,38822,KDD121/KDD122 large-lineage v2,"P; P=next-state, R=reward/outcome, T=trajectory termination"
+KDD122,heart_failure,transformer_world_model,3408,logged_action_recursive,32,overall,1.4292226149391822,1.0631525318600548,38340,KDD121/KDD122 large-lineage v2,"P; P=next-state, R=reward/outcome, T=trajectory termination"
+KDD122,heart_failure,transformer_world_model,3408,logged_action_recursive,36,overall,1.600612304486498,1.2108472294756074,33317,KDD121/KDD122 large-lineage v2,"P; P=next-state, R=reward/outcome, T=trajectory termination"
+KDD122,heart_failure,transformer_world_model,3408,logged_action_recursive,40,overall,1.7570952048460018,1.342617403188069,29930,KDD121/KDD122 large-lineage v2,"P; P=next-state, R=reward/outcome, T=trajectory termination"
+KDD122,heart_failure,transformer_world_model,3408,logged_action_recursive,44,overall,1.926458205237363,1.4935751058419449,9544,KDD121/KDD122 large-lineage v2,"P; P=next-state, R=reward/outcome, T=trajectory termination"
+KDD122,heart_failure,transformer_world_model,3411,logged_action_recursive,4,overall,0.7009958364334016,0.4323430228980458,63847,KDD121/KDD122 large-lineage v2,"P; P=next-state, R=reward/outcome, T=trajectory termination"
+KDD122,heart_failure,transformer_world_model,3411,logged_action_recursive,8,overall,0.6872960066682579,0.4366263418196634,63811,KDD121/KDD122 large-lineage v2,"P; P=next-state, R=reward/outcome, T=trajectory termination"
+KDD122,heart_failure,transformer_world_model,3411,logged_action_recursive,12,overall,0.7369165915599648,0.4841093325304944,56948,KDD121/KDD122 large-lineage v2,"P; P=next-state, R=reward/outcome, T=trajectory termination"
+KDD122,heart_failure,transformer_world_model,3411,logged_action_recursive,16,overall,0.7835533848492463,0.5392118657452396,53040,KDD121/KDD122 large-lineage v2,"P; P=next-state, R=reward/outcome, T=trajectory termination"
+KDD122,heart_failure,transformer_world_model,3411,logged_action_recursive,20,overall,0.87019726782817,0.6058199681496714,46954,KDD121/KDD122 large-lineage v2,"P; P=next-state, R=reward/outcome, T=trajectory termination"
+KDD122,heart_failure,transformer_world_model,3411,logged_action_recursive,24,overall,1.3806262668499958,0.7011400380708304,40831,KDD121/KDD122 large-lineage v2,"P; P=next-state, R=reward/outcome, T=trajectory termination"
+KDD122,heart_failure,transformer_world_model,3411,logged_action_recursive,28,overall,1.0742979602078218,0.774653767975715,38822,KDD121/KDD122 large-lineage v2,"P; P=next-state, R=reward/outcome, T=trajectory termination"
+KDD122,heart_failure,transformer_world_model,3411,logged_action_recursive,32,overall,1.1672640650674693,0.8514483645845858,38340,KDD121/KDD122 large-lineage v2,"P; P=next-state, R=reward/outcome, T=trajectory termination"
+KDD122,heart_failure,transformer_world_model,3411,logged_action_recursive,36,overall,1.2658225930278315,0.9318562137994564,33317,KDD121/KDD122 large-lineage v2,"P; P=next-state, R=reward/outcome, T=trajectory termination"
+KDD122,heart_failure,transformer_world_model,3411,logged_action_recursive,40,overall,1.364384909920105,1.0115450166759048,29930,KDD121/KDD122 large-lineage v2,"P; P=next-state, R=reward/outcome, T=trajectory termination"
+KDD122,heart_failure,transformer_world_model,3411,logged_action_recursive,44,overall,1.4776008683352877,1.1060158633707442,9544,KDD121/KDD122 large-lineage v2,"P; P=next-state, R=reward/outcome, T=trajectory termination"
+KDD122,heart_failure,transformer_world_model,3414,logged_action_recursive,4,overall,0.695030358830792,0.4304703215970885,63847,KDD121/KDD122 large-lineage v2,"P; P=next-state, R=reward/outcome, T=trajectory termination"
+KDD122,heart_failure,transformer_world_model,3414,logged_action_recursive,8,overall,0.6817776034823554,0.4369946305556588,63811,KDD121/KDD122 large-lineage v2,"P; P=next-state, R=reward/outcome, T=trajectory termination"
+KDD122,heart_failure,transformer_world_model,3414,logged_action_recursive,12,overall,0.7302166154258323,0.4814807216657459,56948,KDD121/KDD122 large-lineage v2,"P; P=next-state, R=reward/outcome, T=trajectory termination"
+KDD122,heart_failure,transformer_world_model,3414,logged_action_recursive,16,overall,0.7656636624605067,0.527794481169268,53040,KDD121/KDD122 large-lineage v2,"P; P=next-state, R=reward/outcome, T=trajectory termination"
+KDD122,heart_failure,transformer_world_model,3414,logged_action_recursive,20,overall,0.8297370640404873,0.5789179788249696,46954,KDD121/KDD122 large-lineage v2,"P; P=next-state, R=reward/outcome, T=trajectory termination"
+KDD122,heart_failure,transformer_world_model,3414,logged_action_recursive,24,overall,1.337992404924988,0.6605977518821736,40831,KDD121/KDD122 large-lineage v2,"P; P=next-state, R=reward/outcome, T=trajectory termination"
+KDD122,heart_failure,transformer_world_model,3414,logged_action_recursive,28,overall,0.998114808889246,0.7248650603310492,38822,KDD121/KDD122 large-lineage v2,"P; P=next-state, R=reward/outcome, T=trajectory termination"
+KDD122,heart_failure,transformer_world_model,3414,logged_action_recursive,32,overall,1.0654840950399689,0.7884408719373083,38340,KDD121/KDD122 large-lineage v2,"P; P=next-state, R=reward/outcome, T=trajectory termination"
+KDD122,heart_failure,transformer_world_model,3414,logged_action_recursive,36,overall,1.142373356529474,0.855956456474179,33317,KDD121/KDD122 large-lineage v2,"P; P=next-state, R=reward/outcome, T=trajectory termination"
+KDD122,heart_failure,transformer_world_model,3414,logged_action_recursive,40,overall,1.2237892176978675,0.930490852580277,29930,KDD121/KDD122 large-lineage v2,"P; P=next-state, R=reward/outcome, T=trajectory termination"
+KDD122,heart_failure,transformer_world_model,3414,logged_action_recursive,44,overall,1.3495824705421398,1.0285189789617113,9544,KDD121/KDD122 large-lineage v2,"P; P=next-state, R=reward/outcome, T=trajectory termination"
+KDD122,heart_failure,dreamer_v3_categorical_rssm,3408,logged_action_recursive,4,overall,0.7893629307857729,0.4863635324131394,63847,KDD121/KDD122 large-lineage v2,"P; P=next-state, R=reward/outcome, T=trajectory termination"
+KDD122,heart_failure,dreamer_v3_categorical_rssm,3408,logged_action_recursive,8,overall,0.7772770420222538,0.4944780432217015,63811,KDD121/KDD122 large-lineage v2,"P; P=next-state, R=reward/outcome, T=trajectory termination"
+KDD122,heart_failure,dreamer_v3_categorical_rssm,3408,logged_action_recursive,12,overall,0.8099154282189609,0.5239294658991531,56948,KDD121/KDD122 large-lineage v2,"P; P=next-state, R=reward/outcome, T=trajectory termination"
+KDD122,heart_failure,dreamer_v3_categorical_rssm,3408,logged_action_recursive,16,overall,0.8180017962638386,0.5421713608506025,53040,KDD121/KDD122 large-lineage v2,"P; P=next-state, R=reward/outcome, T=trajectory termination"
+KDD122,heart_failure,dreamer_v3_categorical_rssm,3408,logged_action_recursive,20,overall,0.8380823818036408,0.5519550732557706,46954,KDD121/KDD122 large-lineage v2,"P; P=next-state, R=reward/outcome, T=trajectory termination"
+KDD122,heart_failure,dreamer_v3_categorical_rssm,3408,logged_action_recursive,24,overall,1.3081045526335882,0.5858988864184688,40831,KDD121/KDD122 large-lineage v2,"P; P=next-state, R=reward/outcome, T=trajectory termination"
+KDD122,heart_failure,dreamer_v3_categorical_rssm,3408,logged_action_recursive,28,overall,0.8981878185615197,0.5987821717173991,38822,KDD121/KDD122 large-lineage v2,"P; P=next-state, R=reward/outcome, T=trajectory termination"
+KDD122,heart_failure,dreamer_v3_categorical_rssm,3408,logged_action_recursive,32,overall,0.902178199122557,0.6061054077852591,38340,KDD121/KDD122 large-lineage v2,"P; P=next-state, R=reward/outcome, T=trajectory termination"
+KDD122,heart_failure,dreamer_v3_categorical_rssm,3408,logged_action_recursive,36,overall,0.9215130605811388,0.6226496922512544,33317,KDD121/KDD122 large-lineage v2,"P; P=next-state, R=reward/outcome, T=trajectory termination"
+KDD122,heart_failure,dreamer_v3_categorical_rssm,3408,logged_action_recursive,40,overall,0.9418575333132418,0.6414111209291729,29930,KDD121/KDD122 large-lineage v2,"P; P=next-state, R=reward/outcome, T=trajectory termination"
+KDD122,heart_failure,dreamer_v3_categorical_rssm,3408,logged_action_recursive,44,overall,0.981522690024366,0.6660241437704906,9544,KDD121/KDD122 large-lineage v2,"P; P=next-state, R=reward/outcome, T=trajectory termination"
+KDD122,heart_failure,dreamer_v3_categorical_rssm,3411,logged_action_recursive,4,overall,0.7900159457842959,0.4863224953159745,63847,KDD121/KDD122 large-lineage v2,"P; P=next-state, R=reward/outcome, T=trajectory termination"
+KDD122,heart_failure,dreamer_v3_categorical_rssm,3411,logged_action_recursive,8,overall,0.7762810645427128,0.4915018808048269,63811,KDD121/KDD122 large-lineage v2,"P; P=next-state, R=reward/outcome, T=trajectory termination"
+KDD122,heart_failure,dreamer_v3_categorical_rssm,3411,logged_action_recursive,12,overall,0.8092718150896234,0.5177830604479458,56948,KDD121/KDD122 large-lineage v2,"P; P=next-state, R=reward/outcome, T=trajectory termination"
+KDD122,heart_failure,dreamer_v3_categorical_rssm,3411,logged_action_recursive,16,overall,0.8158042111574386,0.5329736430842467,53040,KDD121/KDD122 large-lineage v2,"P; P=next-state, R=reward/outcome, T=trajectory termination"
+KDD122,heart_failure,dreamer_v3_categorical_rssm,3411,logged_action_recursive,20,overall,0.8357699473539458,0.5403570806029884,46954,KDD121/KDD122 large-lineage v2,"P; P=next-state, R=reward/outcome, T=trajectory termination"
+KDD122,heart_failure,dreamer_v3_categorical_rssm,3411,logged_action_recursive,24,overall,1.3077362709725406,0.5755648894804144,40831,KDD121/KDD122 large-lineage v2,"P; P=next-state, R=reward/outcome, T=trajectory termination"
+KDD122,heart_failure,dreamer_v3_categorical_rssm,3411,logged_action_recursive,28,overall,0.899919201589292,0.5909589762521835,38822,KDD121/KDD122 large-lineage v2,"P; P=next-state, R=reward/outcome, T=trajectory termination"
+KDD122,heart_failure,dreamer_v3_categorical_rssm,3411,logged_action_recursive,32,overall,0.914616049831388,0.6075263014961677,38340,KDD121/KDD122 large-lineage v2,"P; P=next-state, R=reward/outcome, T=trajectory termination"
+KDD122,heart_failure,dreamer_v3_categorical_rssm,3411,logged_action_recursive,36,overall,0.9424174869087928,0.6290011090101315,33317,KDD121/KDD122 large-lineage v2,"P; P=next-state, R=reward/outcome, T=trajectory termination"
+KDD122,heart_failure,dreamer_v3_categorical_rssm,3411,logged_action_recursive,40,overall,0.9711855930280644,0.6544203917550535,29930,KDD121/KDD122 large-lineage v2,"P; P=next-state, R=reward/outcome, T=trajectory termination"
+KDD122,heart_failure,dreamer_v3_categorical_rssm,3411,logged_action_recursive,44,overall,1.0267083068288347,0.6922176070860989,9544,KDD121/KDD122 large-lineage v2,"P; P=next-state, R=reward/outcome, T=trajectory termination"
+KDD122,heart_failure,dreamer_v3_categorical_rssm,3414,logged_action_recursive,4,overall,0.7831344469984974,0.4839806410376278,63847,KDD121/KDD122 large-lineage v2,"P; P=next-state, R=reward/outcome, T=trajectory termination"
+KDD122,heart_failure,dreamer_v3_categorical_rssm,3414,logged_action_recursive,8,overall,0.769231975921418,0.487061086972698,63811,KDD121/KDD122 large-lineage v2,"P; P=next-state, R=reward/outcome, T=trajectory termination"
+KDD122,heart_failure,dreamer_v3_categorical_rssm,3414,logged_action_recursive,12,overall,0.8017585463597257,0.5113950871632417,56948,KDD121/KDD122 large-lineage v2,"P; P=next-state, R=reward/outcome, T=trajectory termination"
+KDD122,heart_failure,dreamer_v3_categorical_rssm,3414,logged_action_recursive,16,overall,0.8064173131816665,0.5235355577324041,53040,KDD121/KDD122 large-lineage v2,"P; P=next-state, R=reward/outcome, T=trajectory termination"
+KDD122,heart_failure,dreamer_v3_categorical_rssm,3414,logged_action_recursive,20,overall,0.8277244785233714,0.5299298838709109,46954,KDD121/KDD122 large-lineage v2,"P; P=next-state, R=reward/outcome, T=trajectory termination"
+KDD122,heart_failure,dreamer_v3_categorical_rssm,3414,logged_action_recursive,24,overall,1.3008076882888375,0.5618060148184221,40831,KDD121/KDD122 large-lineage v2,"P; P=next-state, R=reward/outcome, T=trajectory termination"
+KDD122,heart_failure,dreamer_v3_categorical_rssm,3414,logged_action_recursive,28,overall,0.8856690056472916,0.5723016961329154,38822,KDD121/KDD122 large-lineage v2,"P; P=next-state, R=reward/outcome, T=trajectory termination"
+KDD122,heart_failure,dreamer_v3_categorical_rssm,3414,logged_action_recursive,32,overall,0.8948704514063734,0.5798127491121958,38340,KDD121/KDD122 large-lineage v2,"P; P=next-state, R=reward/outcome, T=trajectory termination"
+KDD122,heart_failure,dreamer_v3_categorical_rssm,3414,logged_action_recursive,36,overall,0.9212603580320188,0.5999755027923255,33317,KDD121/KDD122 large-lineage v2,"P; P=next-state, R=reward/outcome, T=trajectory termination"
+KDD122,heart_failure,dreamer_v3_categorical_rssm,3414,logged_action_recursive,40,overall,0.9419400568457326,0.6166062841184128,29930,KDD121/KDD122 large-lineage v2,"P; P=next-state, R=reward/outcome, T=trajectory termination"
+KDD122,heart_failure,dreamer_v3_categorical_rssm,3414,logged_action_recursive,44,overall,0.9840565404702492,0.6372729119645509,9544,KDD121/KDD122 large-lineage v2,"P; P=next-state, R=reward/outcome, T=trajectory termination"
+KDD122,heart_failure,gaussian_transition_ensemble,3408;3411;3414,logged_action_recursive,4,overall,0.6968606942265281,0.4315860723380433,63847,KDD121/KDD122 large-lineage v2,"P; P=next-state, R=reward/outcome, T=trajectory termination"
+KDD122,heart_failure,gaussian_transition_ensemble,3408;3411;3414,logged_action_recursive,8,overall,0.6746620228024475,0.4330293859592277,63811,KDD121/KDD122 large-lineage v2,"P; P=next-state, R=reward/outcome, T=trajectory termination"
+KDD122,heart_failure,gaussian_transition_ensemble,3408;3411;3414,logged_action_recursive,12,overall,0.7032745098260152,0.4603099815872756,56948,KDD121/KDD122 large-lineage v2,"P; P=next-state, R=reward/outcome, T=trajectory termination"
+KDD122,heart_failure,gaussian_transition_ensemble,3408;3411;3414,logged_action_recursive,16,overall,0.7116364344575807,0.4802015839325396,53040,KDD121/KDD122 large-lineage v2,"P; P=next-state, R=reward/outcome, T=trajectory termination"
+KDD122,heart_failure,gaussian_transition_ensemble,3408;3411;3414,logged_action_recursive,20,overall,0.743767207414939,0.5013641255748459,46954,KDD121/KDD122 large-lineage v2,"P; P=next-state, R=reward/outcome, T=trajectory termination"
+KDD122,heart_failure,gaussian_transition_ensemble,3408;3411;3414,logged_action_recursive,24,overall,1.2492417821683854,0.5426258972751783,40831,KDD121/KDD122 large-lineage v2,"P; P=next-state, R=reward/outcome, T=trajectory termination"
+KDD122,heart_failure,gaussian_transition_ensemble,3408;3411;3414,logged_action_recursive,28,overall,0.8157198744161965,0.5591713329577536,38822,KDD121/KDD122 large-lineage v2,"P; P=next-state, R=reward/outcome, T=trajectory termination"
+KDD122,heart_failure,gaussian_transition_ensemble,3408;3411;3414,logged_action_recursive,32,overall,0.8198056654977608,0.5653519161740711,38340,KDD121/KDD122 large-lineage v2,"P; P=next-state, R=reward/outcome, T=trajectory termination"
+KDD122,heart_failure,gaussian_transition_ensemble,3408;3411;3414,logged_action_recursive,36,overall,0.8503530070609066,0.594115734122856,33317,KDD121/KDD122 large-lineage v2,"P; P=next-state, R=reward/outcome, T=trajectory termination"
+KDD122,heart_failure,gaussian_transition_ensemble,3408;3411;3414,logged_action_recursive,40,overall,0.8711525429093149,0.614439429997627,29930,KDD121/KDD122 large-lineage v2,"P; P=next-state, R=reward/outcome, T=trajectory termination"
+KDD122,heart_failure,gaussian_transition_ensemble,3408;3411;3414,logged_action_recursive,44,overall,0.9379528317634764,0.6668093878663762,9544,KDD121/KDD122 large-lineage v2,"P; P=next-state, R=reward/outcome, T=trajectory termination"

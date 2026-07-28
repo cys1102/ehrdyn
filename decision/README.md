@@ -1,5 +1,9 @@
 # EHRDyn-ICU multi-cohort decision-evaluation benchmark
 
+> KDD125 successor: the additive lineage-consistent release candidate is in
+> [`kdd125/`](kdd125/README.md). This document is preserved as the pre-KDD125
+> release receipt and is not relabeled.
+
 This directory is the anonymous release surface for the paper
 *A Multi-Cohort Decision-Evaluation Benchmark for EHR World-Model
 Components and Offline Reinforcement Learning*.
