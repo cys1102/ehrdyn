@@ -19,8 +19,8 @@ ROOT = Path(__file__).resolve().parents[1]
 class KDD245V2MMinimalReleaseTests(unittest.TestCase):
     def test_packaging_version_changes_without_scientific_version_change(self) -> None:
         project = tomllib.loads((ROOT / "pyproject.toml").read_text(encoding="utf-8"))["project"]
-        self.assertEqual(project["version"], "2.1.0")
-        self.assertEqual(kdd2027_benchmark.PACKAGE_VERSION, "2.1.0")
+        self.assertEqual(project["version"], "2.1.1")
+        self.assertEqual(kdd2027_benchmark.PACKAGE_VERSION, "2.1.1")
         self.assertEqual(EHR_COMPONENT_BENCHMARK_VERSION, "ehrdyn-icu-canonical-v2.0.0")
         self.assertEqual(EHR_COMPONENT_EVALUATOR_VERSION, "ehr-component-scorer-v2.0.0")
 

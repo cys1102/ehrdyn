@@ -2,8 +2,8 @@ cff-version: 1.2.0
 message: "If you use this repository, please cite the accompanying paper."
 title: "EHRDyn: A Benchmark for Offline Reinforcement Learning from EHRs with Complementary Simulators"
 type: software
-date-released: 2026-07-26
-version: 2.1.0
+date-released: 2026-07-28
+version: 2.1.1
 license: MIT
 authors:
   - family-names: Chung

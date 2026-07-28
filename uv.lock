@@ -21,7 +21,7 @@ wheels = [
 
 [[package]]
 name = "ehrdyn-icu"
-version = "2.1.0"
+version = "2.1.1"
 source = { editable = "." }
 dependencies = [
     { name = "jsonschema" },
@@ -38,6 +38,12 @@ fitted = [
     { name = "scipy" },
     { name = "torch" },
 ]
+test = [
+    { name = "pandas" },
+    { name = "scikit-learn" },
+    { name = "scipy" },
+    { name = "torch" },
+]
 
 [package.metadata]
 requires-dist = [
@@ -45,11 +51,15 @@ requires-dist = [
     { name = "numpy", specifier = "==2.3.3" },
     { name = "pandas", marker = "extra == 'credentialed'", specifier = "==3.0.3" },
     { name = "pandas", marker = "extra == 'fitted'", specifier = "==3.0.3" },
+    { name = "pandas", marker = "extra == 'test'", specifier = "==3.0.3" },
     { name = "scikit-learn", marker = "extra == 'fitted'", specifier = "==1.8.0" },
+    { name = "scikit-learn", marker = "extra == 'test'", specifier = "==1.8.0" },
     { name = "scipy", marker = "extra == 'fitted'", specifier = "==1.17.0" },
+    { name = "scipy", marker = "extra == 'test'", specifier = "==1.17.0" },
     { name = "torch", marker = "extra == 'fitted'", specifier = "==2.9.0" },
+    { name = "torch", marker = "extra == 'test'", specifier = "==2.9.0" },
 ]
-provides-extras = ["credentialed", "fitted"]
+provides-extras = ["credentialed", "test", "fitted"]
 
 [[package]]
 name = "filelock"

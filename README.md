@@ -42,6 +42,9 @@ schema.
 ## Installation
 
 Python 3.11, 3.12, or 3.13 is required. Dependencies are frozen in `uv.lock`.
+The base install supports the public CLI, component scorer, controlled
+environments, and entrant smokes. Installed defaults are package resources, so
+these commands do not depend on the repository being the working directory.
 
 ```bash
 python -m venv .venv
@@ -50,16 +53,41 @@ python -m pip install .
 
 ehrdyn-icu --help
 ehrdyn-icu --version
-ehrdyn-icu validate-config --config-dir configs/tasks
-ehrdyn-icu validate-schemas --schema-dir schemas
+ehrdyn-icu validate-paper-tasks
+ehrdyn-icu validate-schemas
 ehrdyn-icu method-inventory
+ehrdyn-icu score-ehr-components \
+  --output build/ehr-component-score.json
+ehrdyn-icu generate-full-suite \
+  --output build/controlled-suite.csv
+ehrdyn-icu evaluate-world-model-smoke \
+  --output build/world-model-smoke \
+  --episodes 8
+```
+
+The five-task manifest used by `validate-paper-tasks` is the current
+paper-facing taxonomy. The seven JSON files in `configs/tasks/` retain an older
+action-abstraction configuration surface for compatibility; they are not the
+default paper identity. They can still be checked explicitly:
+
+```bash
+ehrdyn-icu validate-config --config-dir configs/tasks
+```
+
+Install the test extra before running the complete source-checkout suite. It
+includes `pandas` for the synthetic five-task constructor tests and the fitted
+stack required by the 21-method regression tests.
+
+```bash
+python -m pip install '.[test]'
 python -m unittest discover -s tests
 ehrdyn-icu scan-release --root .
 ehrdyn-icu verify-checksums --root .
+git diff --check
 ```
 
-`ehrdyn-icu --version` reports the frozen benchmark contract identifier.
-Package metadata reports `2.1.0`. The manuscript-facing workflow is documented
+`ehrdyn-icu --version` and package metadata report `2.1.1`. The
+manuscript-facing workflow is documented
 in [PAPER_ARTIFACT.md](PAPER_ARTIFACT.md).
 
 ## Credentialed MIMIC-IV construction
@@ -94,6 +122,9 @@ ehrdyn-icu score-ehr-components \
   --output build/ehr-component-score.json
 ```
 
+The default submission is an installed synthetic example. An explicit
+`--submission` path always overrides it.
+
 See [EHR_COMPONENT_SCORER.md](EHR_COMPONENT_SCORER.md),
 [SCHEMA_VALIDATION.md](SCHEMA_VALIDATION.md), and
 [CANONICAL_SERIALIZATION.md](CANONICAL_SERIALIZATION.md).
@@ -105,12 +136,13 @@ fixtures. A bounded smoke is:
 
 ```bash
 ehrdyn-icu evaluate-world-model-smoke \
-  --entrant world_model_entrant_example/point.json \
-  --entrant world_model_entrant_example/gaussian.json \
-  --entrant world_model_entrant_example/ensemble.json \
   --output build/world-model-smoke \
   --episodes 8
 ```
+
+Without `--entrant`, this command uses the three installed point, Gaussian, and
+ensemble demonstration entrants. One or more explicit `--entrant` arguments
+always override those examples.
 
 The full 40-environment workflow is documented in
 [RECURSIVE_WORLD_MODEL_ENTRANT.md](RECURSIVE_WORLD_MODEL_ENTRANT.md). The
@@ -135,8 +167,11 @@ ehrdyn-icu controlled-21-method-smoke \
 Both smokes execute all 21 named methods in the frozen order and all six OPE
 estimators. The controlled OPE inventory also contains exactly those 21
 methods; there is no severity-rule exception. These are nonclinical capability
-checks and do not provide return, rank, or algorithm-family superiority
-evidence. See
+checks. They do not regenerate the paper's full numerical 21-method by
+40-environment return and OPE aggregates and do not provide return, rank, or
+algorithm-family superiority evidence. `generate-full-suite` enumerates the
+controlled contracts, while `evaluate-world-model-full` evaluates one external
+entrant; neither command reconstructs the bundled paper result tables. See
 [the 21-method quickstart](docs/21_method_quickstart.md).
 
 ## Included interfaces
@@ -148,6 +183,10 @@ evidence. See
   fixtures.
 - `dictionaries/`, `task_cards/`, and `submission/`: public contract metadata.
 - `tests/`: synthetic-only schema, scorer, entrant, privacy, and replay tests.
+
+Transition, policy, and world-model entrants use isolated subprocess
+interfaces. The six OPE estimators are built-in benchmark implementations, not
+an open estimator-submission API.
 
 ## Data and claim boundary
 

@@ -5,6 +5,17 @@ credentialed constructor and component scorer, the five EHR-fitted simulator
 workflow, 40 controlled environments, a shared 21-policy inventory, and six
 OPE estimators.
 
+The paper-facing public identity starts with:
+
+```bash
+ehrdyn-icu validate-paper-tasks
+ehrdyn-icu method-inventory
+```
+
+The first command validates the five submitted EHR task contracts. The seven
+files under `configs/tasks/` remain available only as a legacy compatibility
+surface and are not the default reader taxonomy.
+
 An authorized MIMIC-IV v3.1 user can construct the five task interfaces,
 obtain disjoint `source_model_train` and `source_model_calibration` roles,
 train and calibrate the Gaussian recurrent source simulator, freeze the
@@ -49,6 +60,18 @@ The synthetic smoke path checks executable source fitting, calibrated rollout,
 method ordering, policy-probability validity, and availability of all six OPE
 estimators. It does not reproduce the MIMIC-derived results, establish
 algorithm-family superiority, or validate a clinical policy.
+
+The public 21-method smoke is capability reproducibility, not full numerical
+result reproducibility. It uses bounded smoke budgets and writes conformance
+receipts rather than the paper's full 21-method by 40-environment return and OPE
+tables. `generate-full-suite` validates and enumerates all 40 controlled
+contracts, and `evaluate-world-model-full` evaluates one external recursive
+entrant. The release does not claim that either command regenerates the paper
+figures or scientific aggregate tables.
+
+Transition, policy, and world-model entrants have isolated interfaces. The six
+OPE estimators are built-in implementations and are not an isolated
+estimator-submission track.
 
 Versioned provenance and audit receipts remain under `release/`. They are
 retained for artifact verification but are not part of the reader-facing

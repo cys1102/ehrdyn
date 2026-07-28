@@ -4,13 +4,19 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "ehrdyn-icu"
-version = "2.1.0"
+version = "2.1.1"
 description = "EHRDyn benchmark workflows for offline reinforcement learning from EHRs"
 requires-python = ">=3.11,<3.14"
 dependencies = ["jsonschema==4.26.0", "numpy==2.3.3"]
 
 [project.optional-dependencies]
 credentialed = ["pandas==3.0.3"]
+test = [
+    "pandas==3.0.3",
+    "scipy==1.17.0",
+    "scikit-learn==1.8.0",
+    "torch==2.9.0",
+]
 fitted = [
     "pandas==3.0.3",
     "scipy==1.17.0",
@@ -31,6 +37,23 @@ include-package-data = true
 "kdd2027_benchmark" = ["package_schemas/*.json"]
 "kdd2027_benchmark.current_five_task" = ["runtime_config.json"]
 "kdd2027_benchmark.fitted" = ["configs/*.json"]
+
+[tool.setuptools.data-files]
+"share/ehrdyn/configs/full_benchmark" = [
+    "configs/full_benchmark/kdd198_v2_generator_contract.json",
+]
+"share/ehrdyn/fixtures/kdd245v2r" = [
+    "fixtures/kdd245v2r/gaussian.json",
+]
+"share/ehrdyn/paper" = [
+    "expected/canonical_v2_five_task_manifest.json",
+]
+"share/ehrdyn/world_model_entrant_example" = [
+    "world_model_entrant_example/entrant.py",
+    "world_model_entrant_example/point.json",
+    "world_model_entrant_example/gaussian.json",
+    "world_model_entrant_example/ensemble.json",
+]
 
 [tool.setuptools.packages.find]
 where = ["src"]

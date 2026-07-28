@@ -2,6 +2,8 @@ from __future__ import annotations
 
 import csv
 import hashlib
+import json
+import shutil
 import tempfile
 import unittest
 from pathlib import Path
@@ -56,11 +58,21 @@ class KDD235BTest(unittest.TestCase):
     def test_reduced_full_runner_and_deterministic_overlap(self) -> None:
         with tempfile.TemporaryDirectory() as directory:
             root = Path(directory)
+            custom_entrant = root / "custom_entrant"
+            shutil.copytree(ENTRANT.parent, custom_entrant)
+            declaration = custom_entrant / "entrant.json"
+            payload = json.loads(declaration.read_text(encoding="utf-8"))
+            payload["entrant_id"] = "custom_identity_regression_v1"
+            declaration.write_text(
+                json.dumps(payload, sort_keys=True, separators=(",", ":"))
+                + "\n",
+                encoding="utf-8",
+            )
             first = root / "first"
             second = root / "second"
             arguments = dict(
                 manifest=MANIFEST,
-                declaration=ENTRANT,
+                declaration=declaration,
                 forecast_episodes=4,
                 direct_episodes=8,
                 ope_datasets=2,
@@ -81,6 +93,13 @@ class KDD235BTest(unittest.TestCase):
                 "repeated_ope_summary.csv",
             ):
                 self.assertEqual(digest(first / name), digest(second / name), name)
+                with (first / name).open(newline="", encoding="utf-8") as handle:
+                    identity_rows = list(csv.DictReader(handle))
+                self.assertEqual(
+                    {row["entrant_id"] for row in identity_rows},
+                    {"custom_identity_regression_v1"},
+                    name,
+                )
             with (first / "repeated_ope_summary.csv").open(newline="", encoding="utf-8") as handle:
                 rows = list(csv.DictReader(handle))
             self.assertEqual({row["estimator"] for row in rows}, {"IS", "WIS", "CWPDIS", "DR", "WDR", "FQE"})

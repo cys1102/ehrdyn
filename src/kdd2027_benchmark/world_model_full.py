@@ -13,7 +13,7 @@ from typing import Any
 
 import numpy as np
 
-from .entrant_runtime import IsolatedEntrant
+from .entrant_runtime import IsolatedEntrant, load_entrant
 from .full_direct_evaluator import collect_repaired_dataset, evaluate_repaired_policy_batch
 from .full_ope import ESTIMATORS, collect_observed_history_dataset, point_policy_groups
 from .full_suite import environments
@@ -115,7 +115,16 @@ def _constant_policy(probability: np.ndarray):
 
 
 def _ope_one_environment(arguments: tuple[Any, ...]) -> list[dict[str, Any]]:
-    environment, probability, direct_return, profile_index, environment_index, datasets, episodes = arguments
+    (
+        entrant_id,
+        environment,
+        probability,
+        direct_return,
+        profile_index,
+        environment_index,
+        datasets,
+        episodes,
+    ) = arguments
     policy = _constant_policy(np.asarray(probability, dtype=float))
     by_estimator: dict[str, list[float]] = {name: [] for name in ESTIMATORS}
     ess: list[float] = []
@@ -154,7 +163,7 @@ def _ope_one_environment(arguments: tuple[Any, ...]) -> list[dict[str, Any]]:
         values = np.asarray(by_estimator[estimator], dtype=float)
         error = values - direct_return
         rows.append({
-            "entrant_id": "kdd235b_recurrent_gaussian_v1",
+            "entrant_id": entrant_id,
             "profile": environment.contract.profile,
             "environment_seed": environment.seed,
             "estimator": estimator,
@@ -189,6 +198,12 @@ def run_world_model_full(
     environment_seeds: tuple[int, ...] | None = None,
 ) -> dict[str, Any]:
     started = time.monotonic()
+    entrant_id = str(
+        load_entrant(
+            declaration,
+            schema_name="world_model_entrant",
+        )["entrant_id"]
+    )
     selected = [
         environment for environment in environments(manifest)
         if (profiles is None or environment.contract.profile in profiles)
@@ -308,7 +323,7 @@ def run_world_model_full(
             TRAIN_REWARD_SEED_BASE + profile_index * 10_000 + environment.seed,
         )
         direct_rows.append({
-            "entrant_id": "kdd235b_recurrent_gaussian_v1",
+            "entrant_id": entrant_id,
             "profile": environment.contract.profile,
             "environment_seed": environment.seed,
             "planner": frozen_h4_contract()["name"],
@@ -324,6 +339,7 @@ def run_world_model_full(
             "terminal_emission_max": int(direct["terminal_emission_max"]),
         })
         ope_arguments.append((
+            entrant_id,
             environment,
             probability,
             direct_return,

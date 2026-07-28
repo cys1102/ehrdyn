@@ -28,6 +28,14 @@ from .transition_entrant import validate_transition_submission
 from .world_model_smoke import run_world_model_smoke
 from .world_model_full import run_world_model_full
 from .kdd267_inventory import inventory_receipt
+from .paper_tasks import validate_paper_task_manifest
+from .resources import (
+    PACKAGE_SCHEMA_DIRECTORY,
+    controlled_manifest_path,
+    ehr_component_example_path,
+    paper_task_manifest_path,
+    world_model_example_paths,
+)
 from .full_suite import (
     generate_full_suite,
     run_component_forecasting,
@@ -37,16 +45,9 @@ from .full_suite import (
     validate_entrant_conformance,
 )
 
-REPOSITORY_ROOT = Path(__file__).resolve().parents[2]
-DEFAULT_CONTROLLED_MANIFEST = (
-    REPOSITORY_ROOT
-    / "configs"
-    / "full_benchmark"
-    / "kdd198_v2_generator_contract.json"
-)
-DEFAULT_EHR_COMPONENT_EXAMPLE = (
-    REPOSITORY_ROOT / "fixtures" / "kdd245v2r" / "gaussian.json"
-)
+DEFAULT_CONTROLLED_MANIFEST = controlled_manifest_path()
+DEFAULT_EHR_COMPONENT_EXAMPLE = ehr_component_example_path()
+DEFAULT_PAPER_TASK_MANIFEST = paper_task_manifest_path()
 
 
 @dataclass(slots=True)
@@ -94,6 +95,7 @@ class CliArgs(argparse.Namespace):
     restricted_root: Path = Path()
     device: str = "cpu"
     pilot: bool = False
+    paper_manifest: Path = Path()
 
 
 def build_parser() -> argparse.ArgumentParser:
@@ -139,7 +141,21 @@ def build_parser() -> argparse.ArgumentParser:
     checksums = commands.add_parser("verify-checksums", help="Verify the frozen public artifact manifest.")
     _ = checksums.add_argument("--root", type=Path, required=True)
     schemas = commands.add_parser("validate-schemas", help="Validate every released JSON Schema as Draft 2020-12.")
-    _ = schemas.add_argument("--schema-dir", type=Path, required=True)
+    _ = schemas.add_argument(
+        "--schema-dir",
+        type=Path,
+        default=PACKAGE_SCHEMA_DIRECTORY,
+    )
+    paper_tasks = commands.add_parser(
+        "validate-paper-tasks",
+        help="Validate the five paper-facing EHR task contracts.",
+    )
+    _ = paper_tasks.add_argument(
+        "--manifest",
+        dest="paper_manifest",
+        type=Path,
+        default=DEFAULT_PAPER_TASK_MANIFEST,
+    )
     submission = commands.add_parser("validate-submission", help="Validate an aggregate leaderboard submission.")
     _ = submission.add_argument("--submission", type=Path, required=True)
     _ = submission.add_argument("--config-dir", type=Path, required=True)
@@ -151,14 +167,18 @@ def build_parser() -> argparse.ArgumentParser:
     _ = manifest.add_argument("--contract-manifest", type=Path, required=True)
     _ = manifest.add_argument("--evidence", type=Path, required=True)
     pomdp = commands.add_parser("pomdp-smoke", help="Run the public controlled-environment entrant smoke.")
-    _ = pomdp.add_argument("--config", type=Path, default=DEFAULT_CONTROLLED_MANIFEST)
+    _ = pomdp.add_argument(
+        "--config", type=Path, default=DEFAULT_CONTROLLED_MANIFEST
+    )
     _ = pomdp.add_argument("--profile", required=True)
     _ = pomdp.add_argument("--environment-seed", type=int, default=21201)
     _ = pomdp.add_argument("--episodes", type=int, default=64)
     _ = pomdp.add_argument("--seed", type=int, default=3408)
     _ = pomdp.add_argument("--output", type=Path, required=True)
     ope = commands.add_parser("ope-smoke", help="Run the bounded repeated-dataset OPE smoke.")
-    _ = ope.add_argument("--config", type=Path, default=DEFAULT_CONTROLLED_MANIFEST)
+    _ = ope.add_argument(
+        "--config", type=Path, default=DEFAULT_CONTROLLED_MANIFEST
+    )
     _ = ope.add_argument("--profile", required=True)
     _ = ope.add_argument("--environment-seed", type=int, default=21201)
     _ = ope.add_argument("--datasets", type=int, default=4)
@@ -173,28 +193,40 @@ def build_parser() -> argparse.ArgumentParser:
     _ = rebuild.add_argument("--bundle", type=Path, required=True)
     _ = rebuild.add_argument("--output", type=Path, required=True)
     full = commands.add_parser("generate-full-suite", help="Verify and enumerate the authoritative 40-environment/320-dataset suite.")
-    _ = full.add_argument("--manifest", type=Path, default=DEFAULT_CONTROLLED_MANIFEST)
+    _ = full.add_argument(
+        "--manifest", type=Path, default=DEFAULT_CONTROLLED_MANIFEST
+    )
     _ = full.add_argument("--output", type=Path, required=True)
     _ = full.add_argument("--cache-dir", type=Path)
     entrant = commands.add_parser("validate-entrant", help="Validate and sandbox-probe an entrant.")
     _ = entrant.add_argument("--entrant", type=Path, required=True)
-    _ = entrant.add_argument("--manifest", type=Path, default=DEFAULT_CONTROLLED_MANIFEST)
+    _ = entrant.add_argument(
+        "--manifest", type=Path, default=DEFAULT_CONTROLLED_MANIFEST
+    )
     train = commands.add_parser("train-entrant", help="Validate the entrant training boundary and public role contract.")
     _ = train.add_argument("--entrant", type=Path, required=True)
-    _ = train.add_argument("--manifest", type=Path, default=DEFAULT_CONTROLLED_MANIFEST)
+    _ = train.add_argument(
+        "--manifest", type=Path, default=DEFAULT_CONTROLLED_MANIFEST
+    )
     _ = train.add_argument("--output", type=Path, required=True)
     transition_full = commands.add_parser("evaluate-transition", help="Evaluate a component entrant on all 40 environments.")
     _ = transition_full.add_argument("--entrant", type=Path, required=True)
-    _ = transition_full.add_argument("--manifest", type=Path, default=DEFAULT_CONTROLLED_MANIFEST)
+    _ = transition_full.add_argument(
+        "--manifest", type=Path, default=DEFAULT_CONTROLLED_MANIFEST
+    )
     _ = transition_full.add_argument("--output", type=Path, required=True)
     direct = commands.add_parser("evaluate-policy-return", help="Evaluate a policy entrant by paired full-suite direct return.")
     _ = direct.add_argument("--entrant", type=Path, required=True)
-    _ = direct.add_argument("--manifest", type=Path, default=DEFAULT_CONTROLLED_MANIFEST)
+    _ = direct.add_argument(
+        "--manifest", type=Path, default=DEFAULT_CONTROLLED_MANIFEST
+    )
     _ = direct.add_argument("--output", type=Path, required=True)
     _ = direct.add_argument("--contrasts", type=Path, required=True)
     full_ope = commands.add_parser("evaluate-policy-ope", help="Run the frozen 320-dataset repeated-OPE protocol.")
     _ = full_ope.add_argument("--entrant", type=Path, required=True)
-    _ = full_ope.add_argument("--manifest", type=Path, default=DEFAULT_CONTROLLED_MANIFEST)
+    _ = full_ope.add_argument(
+        "--manifest", type=Path, default=DEFAULT_CONTROLLED_MANIFEST
+    )
     _ = full_ope.add_argument("--direct-returns", type=Path, required=True)
     _ = full_ope.add_argument("--workers", type=int, default=1)
     _ = full_ope.add_argument("--output", type=Path, required=True)
@@ -202,15 +234,21 @@ def build_parser() -> argparse.ArgumentParser:
     _ = summarize.add_argument("--input", type=Path, required=True)
     _ = summarize.add_argument("--output", type=Path, required=True)
     world_model = commands.add_parser("evaluate-world-model-smoke", help="Run the public recursive world-model entrant smoke.")
-    _ = world_model.add_argument("--manifest", type=Path, default=DEFAULT_CONTROLLED_MANIFEST)
-    _ = world_model.add_argument("--entrant", dest="entrants", action="append", type=Path, required=True)
+    _ = world_model.add_argument(
+        "--manifest", type=Path, default=DEFAULT_CONTROLLED_MANIFEST
+    )
+    _ = world_model.add_argument(
+        "--entrant", dest="entrants", action="append", type=Path
+    )
     _ = world_model.add_argument("--episodes", type=int, default=8)
     _ = world_model.add_argument("--output", type=Path, required=True)
     world_model_full = commands.add_parser(
         "evaluate-world-model-full",
         help="Run a recursive entrant over all 40 controlled environments.",
     )
-    _ = world_model_full.add_argument("--manifest", type=Path, default=DEFAULT_CONTROLLED_MANIFEST)
+    _ = world_model_full.add_argument(
+        "--manifest", type=Path, default=DEFAULT_CONTROLLED_MANIFEST
+    )
     _ = world_model_full.add_argument("--entrant", type=Path, required=True)
     _ = world_model_full.add_argument("--output", type=Path, required=True)
     _ = world_model_full.add_argument("--forecast-episodes", type=int, default=32)
@@ -222,7 +260,9 @@ def build_parser() -> argparse.ArgumentParser:
         "score-ehr-components",
         help="Score local canonical-v2 EHR component predictions and write aggregate-only metrics.",
     )
-    _ = ehr_components.add_argument("--submission", type=Path, default=DEFAULT_EHR_COMPONENT_EXAMPLE)
+    _ = ehr_components.add_argument(
+        "--submission", type=Path, default=DEFAULT_EHR_COMPONENT_EXAMPLE
+    )
     _ = ehr_components.add_argument("--output", type=Path, required=True)
     constructor = commands.add_parser(
         "construct-ehr",
@@ -257,7 +297,9 @@ def build_parser() -> argparse.ArgumentParser:
         "controlled-21-method-smoke",
         help="Run all 21 policies and six OPE estimators in a public controlled environment.",
     )
-    _ = controlled_smoke.add_argument("--config", type=Path, default=DEFAULT_CONTROLLED_MANIFEST)
+    _ = controlled_smoke.add_argument(
+        "--config", type=Path, default=DEFAULT_CONTROLLED_MANIFEST
+    )
     _ = controlled_smoke.add_argument("--profile", required=True)
     _ = controlled_smoke.add_argument("--environment-seed", type=int, default=171901)
     _ = controlled_smoke.add_argument("--seed", type=int, default=3408)
@@ -310,6 +352,8 @@ def _dispatch(args: CliArgs) -> int:
         _print_json(verify_checksums(args.root))
     elif args.command == "validate-schemas":
         _print_json({"schemas": validate_schema_directory(args.schema_dir), "pass": True})
+    elif args.command == "validate-paper-tasks":
+        _print_json(validate_paper_task_manifest(args.paper_manifest))
     elif args.command == "validate-submission":
         _print_json(validate_submission(args.submission, _required_path(args.config_dir)))
     elif args.command == "validate-manifest":
@@ -339,7 +383,19 @@ def _dispatch(args: CliArgs) -> int:
     elif args.command == "summarize-submission":
         _print_json({"rows": len(summarize_ope(args.input, args.output))})
     elif args.command == "evaluate-world-model-smoke":
-        _print_json(run_world_model_smoke(args.manifest, args.entrants or [], args.output, args.episodes))
+        entrants = (
+            tuple(args.entrants)
+            if args.entrants
+            else world_model_example_paths()
+        )
+        _print_json(
+            run_world_model_smoke(
+                args.manifest,
+                list(entrants),
+                args.output,
+                args.episodes,
+            )
+        )
     elif args.command == "evaluate-world-model-full":
         _print_json(run_world_model_full(
             args.manifest,
