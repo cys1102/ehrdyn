@@ -1,0 +1,21 @@
+{
+  "schema_version": "ehrdyn_paper_snapshot_v2_1_1",
+  "artifact_version": "2.1.1",
+  "artifact_base_commit": "b81491d89e9ffb5495cd66b5634312e00d11a82f",
+  "authoritative_researchwiki_commit": "e05c94e696d3af0e6e4f1e3db72bbcbb1cdcee4c",
+  "authoritative_researchwiki_ref": "refs/heads/main",
+  "authoritative_manuscript_path": "writing/kdd-benchmark-final/manuscript.tex",
+  "authoritative_appendix_path": "writing/kdd-benchmark-final/appendix.tex",
+  "authoritative_pdf_path": "writing/kdd-benchmark-final/manuscript.pdf",
+  "authoritative_manuscript_tex_sha256": "3687d1d70d899ed22dd5847a274b8f08ebbffe24e40ff1bb8f8f1bac690ae5af",
+  "authoritative_appendix_tex_sha256": "ed9d27a85888c88c9afb3a49809e6a55744e2ca260b1227c461c626e2c8256b8",
+  "authoritative_pdf_sha256": "5ed66459c82a9ed72bf156512053eca908c377c0a21db8818b7e83513e4b89dd",
+  "observed_local_researchwiki_head": "e05c94e696d3af0e6e4f1e3db72bbcbb1cdcee4c",
+  "observed_local_researchwiki_worktree_clean": true,
+  "observed_local_manuscript_tex_sha256": "3687d1d70d899ed22dd5847a274b8f08ebbffe24e40ff1bb8f8f1bac690ae5af",
+  "observed_local_appendix_tex_sha256": "ed9d27a85888c88c9afb3a49809e6a55744e2ca260b1227c461c626e2c8256b8",
+  "observed_local_pdf_sha256": "5ed66459c82a9ed72bf156512053eca908c377c0a21db8818b7e83513e4b89dd",
+  "paper_binding_status": "exact_remote_main_identity_verified",
+  "terminal_decision": "complete_paper_bound_v2_1_1_release",
+  "scientific_contract_changed": false
+}

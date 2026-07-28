@@ -1,0 +1,85 @@
+{
+  "schema_version": "ehrdyn_post_submission_verification_v1",
+  "artifact_version": "2.1.1",
+  "frozen_base_commit": "b81491d89e9ffb5495cd66b5634312e00d11a82f",
+  "candidate_git_commit": "e079a471122ce037cbc7b9ba594c193a384e8abc",
+  "candidate_release_tag": "v2.1.1",
+  "terminal_decision": "complete_paper_bound_v2_1_1_release",
+  "build": {
+    "sdist": {
+      "filename": "ehrdyn_icu-2.1.1.tar.gz",
+      "sha256": "ae47f64e770f01423a354e84fd4337734fea154a341a2dccb1041344e213dc14",
+      "status": "pass"
+    },
+    "wheel": {
+      "filename": "ehrdyn_icu-2.1.1-py3-none-any.whl",
+      "sha256": "d1950af05726d91f51d9c5a7432b972b2601eae8c06f6d8d8d36d35e48a1235d",
+      "status": "pass"
+    }
+  },
+  "clean_install": {
+    "python_version": "3.13.11",
+    "non_editable_wheel": true,
+    "base_only_environment": {
+      "heavy_fitted_or_test_extra_installed": false,
+      "readme_public_commands": 8,
+      "readme_public_commands_passed": 8,
+      "default_component_scorer": "pass",
+      "default_controlled_manifest": "pass",
+      "three_entrant_world_model_smoke": {
+        "status": "pass",
+        "entrant_count": 3,
+        "profiles": [
+          "sepsis",
+          "aki"
+        ],
+        "rows": 6
+      }
+    },
+    "test_extra_environment": {
+      "full_suite_run": 93,
+      "passed": 92,
+      "skipped": 1,
+      "failures": 0,
+      "errors": 0,
+      "skip_reason": "immutable v2.0.1 manifest receipt",
+      "custom_entrant_identity_regression": "pass",
+      "deterministic_replay_checks": "pass"
+    }
+  },
+  "scientific_surface": {
+    "paper_task_count": 5,
+    "legacy_compatibility_config_count": 7,
+    "controlled_environment_count": 40,
+    "logged_dataset_count": 320,
+    "fitted_method_count": 21,
+    "controlled_method_count": 21,
+    "controlled_ope_policy_count": 21,
+    "shared_method_order": true,
+    "ope_estimator_count": 6,
+    "severity_rule_included": false,
+    "fitted_synthetic_smoke": "pass",
+    "controlled_21_method_smoke": "pass",
+    "scientific_contract_changed": false
+  },
+  "validation": {
+    "draft_2020_12_schemas_checked": 16,
+    "schema_failures": 0,
+    "privacy_files_scanned": 302,
+    "privacy_findings": 0,
+    "checksum_files_checked": 300,
+    "checksum_mismatches": 0,
+    "git_diff_check": "pass"
+  },
+  "paper_binding": {
+    "researchwiki_worktree_clean": true,
+    "immutable_commit_bound": true,
+    "researchwiki_commit": "e05c94e696d3af0e6e4f1e3db72bbcbb1cdcee4c",
+    "manuscript_tex_sha256": "3687d1d70d899ed22dd5847a274b8f08ebbffe24e40ff1bb8f8f1bac690ae5af",
+    "appendix_tex_sha256": "ed9d27a85888c88c9afb3a49809e6a55744e2ca260b1227c461c626e2c8256b8",
+    "pdf_sha256": "5ed66459c82a9ed72bf156512053eca908c377c0a21db8818b7e83513e4b89dd",
+    "manuscript_files_modified": false,
+    "publication_state": "authorized_for_v2.1.1_tag_and_release"
+  },
+  "claim_boundary": "Public smokes verify clean-install conformance and executable capability. They do not regenerate the complete paper result tables or support clinical, causal, or algorithm-family superiority claims."
+}

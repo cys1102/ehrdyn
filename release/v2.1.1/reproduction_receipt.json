@@ -1,0 +1,26 @@
+{
+  "schema_version": "ehrdyn_post_submission_reproduction_v1",
+  "base_commit": "b81491d89e9ffb5495cd66b5634312e00d11a82f",
+  "python_version": "3.13.11",
+  "installation": "non_editable_base_install",
+  "installed_package_version": "2.1.0",
+  "component_scorer_default": {
+    "status": "reproduced_failure",
+    "failure_class": "missing_installed_default_fixture"
+  },
+  "controlled_manifest_default": {
+    "status": "reproduced_failure",
+    "failure_class": "missing_installed_default_manifest"
+  },
+  "world_model_smoke_default": {
+    "status": "reproduced_failure",
+    "failure_class": "missing_installed_default_manifest"
+  },
+  "documented_base_test_suite": {
+    "status": "reproduced_failure",
+    "import_errors": 2,
+    "missing_dependency": "pandas"
+  },
+  "clinical_data_accessed": false,
+  "private_results_accessed": false
+}
