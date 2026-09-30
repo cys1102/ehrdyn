@@ -91,6 +91,7 @@ class CliArgs(argparse.Namespace):
     ope_episodes: int = 256
     aggregate_only: bool = False
     fitted_mode: str = "dry-run"
+    reward_emission_mode: str | None = None
     constructor_root: Path = Path()
     restricted_root: Path = Path()
     device: str = "cpu"
@@ -284,11 +285,13 @@ def build_parser() -> argparse.ArgumentParser:
     _ = fitted.add_argument("--output", type=Path, required=True)
     _ = fitted.add_argument("--device", default="cpu")
     _ = fitted.add_argument("--pilot", action="store_true")
+    _ = fitted.add_argument("--reward-emission-mode", choices=("terminal_once", "per_step_head"), help="Override the configured reward emission mode for every task.")
     smoke = commands.add_parser(
         "fitted-synthetic-smoke",
         help="Run the shared 21-method fitted/OPE workflow on synthetic fixtures only.",
     )
     _ = smoke.add_argument("--output", type=Path, required=True)
+    _ = smoke.add_argument("--reward-emission-mode", choices=("terminal_once", "per_step_head"), help="Override the configured reward emission mode for the smoke task.")
     _ = commands.add_parser(
         "method-inventory",
         help="Print the shared 21-method inventory receipt.",
@@ -428,7 +431,7 @@ def _dispatch(args: CliArgs) -> int:
     elif args.command == "fitted-synthetic-smoke":
         from .fitted.workflow import run_synthetic_smoke
 
-        _print_json(run_synthetic_smoke(args.output))
+        _print_json(run_synthetic_smoke(args.output, args.reward_emission_mode))
     elif args.command == "method-inventory":
         _print_json(inventory_receipt())
     elif args.command == "controlled-21-method-smoke":
@@ -462,10 +465,10 @@ def _dispatch(args: CliArgs) -> int:
             if args.fitted_mode == "train":
                 _print_json(train_credentialed(args.constructor_root, restricted, args.output, args.device, args.pilot))
             elif args.fitted_mode == "evaluate":
-                _print_json(evaluate_credentialed(args.constructor_root, restricted, args.output, args.device, args.pilot))
+                _print_json(evaluate_credentialed(args.constructor_root, restricted, args.output, args.device, args.pilot, args.reward_emission_mode))
             else:
                 _ = train_credentialed(args.constructor_root, restricted, args.output / "training_receipt.json", args.device, args.pilot)
-                _print_json(evaluate_credentialed(args.constructor_root, restricted, args.output / "evaluation", args.device, args.pilot))
+                _print_json(evaluate_credentialed(args.constructor_root, restricted, args.output / "evaluation", args.device, args.pilot, args.reward_emission_mode))
     return 0
 
 

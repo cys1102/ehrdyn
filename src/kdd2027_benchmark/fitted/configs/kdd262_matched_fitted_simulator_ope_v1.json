@@ -14,6 +14,19 @@
     "aki": [33, 4, 11],
     "heart_failure": [33, 2, 11]
   },
+  "reward_channels": {
+    "sepsis": "terminal_discharge_origin_90d_proxy",
+    "respiratory_support": "resp_meddreamer_spo2_mbp",
+    "shock": "shock_next_mbp_component",
+    "aki": "terminal_discharge_origin_90d_proxy",
+    "heart_failure": "terminal_discharge_origin_90d_proxy"
+  },
+  "reward_emission_modes": {
+    "terminal_discharge_origin_90d_proxy": "terminal_once",
+    "resp_meddreamer_spo2_mbp": "per_step_head",
+    "shock_next_mbp_component": "per_step_head"
+  },
+  "reward_emission_overrides": {},
   "common_methods": [
     "fitted_behavior",
     "supported_random",

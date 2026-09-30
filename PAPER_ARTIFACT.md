@@ -48,6 +48,27 @@ checkpoints, trajectories, or result tables. The synthetic smoke path is the
 public end-to-end proof of the same source-fit, calibrated rollout, matched
 method, and six-estimator workflow.
 
+Release v2.2.0 changes fitted reward emission. Sepsis, AKI, and heart failure
+default to `terminal_once`: one sampled -1 or +1 terminal-outcome proxy at the
+final valid transition, zero earlier, NaN after termination. Discounted returns
+lie in [-1, 1] for discounts in (0, 1]. The reward-head mean at the final current
+context defines `clip((1 + mean) / 2, 0, 1)`; a uniform stream seeded by
+`[seed, 277003]` draws the outcome. Each response regime uses the same action
+conditioning as its rollout. The observed regime matches the authors' oracle.
+
+Respiratory support and shock retain `per_step_head`: Gaussian samples from
+the learned head on current values, masks, recency, and conditioned action.
+Their recorded physiological reward formulas are training targets, not
+formulas applied to simulated next states.
+
+The submitted paper and release v2.1.1 used `per_step_head` for all fitted tasks.
+To reproduce that reward semantics with the original inputs and budgets, append
+`--reward-emission-mode per_step_head` to the evaluate command above. The same
+flag works for `--mode all` and `fitted-synthetic-smoke`. The default correction
+does not regenerate or revise submitted numerical results. Receipts record
+the selected task modes; historical paper and release receipts remain frozen.
+See [the fitted quickstart](docs/fitted_simulator_quickstart.md).
+
 The fitted, controlled, and controlled-OPE inventories contain exactly 21
 methods in one order. Discrete XQL and compact Dreamer V1--V3 are source-backed
 benchmark adaptations. Dreamer policies use sampled actor probabilities as the

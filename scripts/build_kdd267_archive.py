@@ -13,7 +13,7 @@ from pathlib import Path
 
 
 ROOT = Path(__file__).resolve().parents[1]
-PREFIX = "ehrdyn-icu-2.1.1"
+PREFIX = "ehrdyn-icu-2.2.0"
 
 
 def _sha256(path: Path) -> str:

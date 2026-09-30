@@ -27,6 +27,12 @@
     "aki": "terminal_discharge_origin_90d_proxy",
     "heart_failure": "terminal_discharge_origin_90d_proxy"
   },
+  "reward_emission_modes": {
+    "terminal_discharge_origin_90d_proxy": "terminal_once",
+    "resp_meddreamer_spo2_mbp": "per_step_head",
+    "shock_next_mbp_component": "per_step_head"
+  },
+  "reward_emission_overrides": {},
   "source_model": {
     "family": "gaussian_recurrent",
     "candidate_seeds": [3408, 3411, 3414],

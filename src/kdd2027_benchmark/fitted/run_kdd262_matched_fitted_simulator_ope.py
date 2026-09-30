@@ -49,6 +49,7 @@ from .kdd248_full_episode import (
     OnlinePolicy,
     ResponseRegime,
     TaskShape,
+    resolve_reward_emission_mode,
 )
 from .kdd248_plugin_policy_evaluation import (
     MarkovPolicy,
@@ -290,6 +291,7 @@ def _load_frozen_tasks(
                     components,
                     sensitivity_bound=float(contract["sensitivity_bound"]),
                     rollout_profile=profile,
+                    reward_emission_mode=resolve_reward_emission_mode(config, task),
                 ),
                 profile,
                 checkpoint_digest,
@@ -1818,6 +1820,9 @@ def run(args: argparse.Namespace) -> str:
             "runner_sha256": sha256(Path(__file__)),
             "source_e4r_tree_sha256": config["e4r"]["result_tree_sha256"],
             "task_names": [task.name for task in tasks],
+            "reward_emission_modes": {
+                task.name: task.simulator.reward_emission_mode for task in tasks
+            },
             "common_methods": config["common_methods"],
             "fitted_specific_methods": config["fitted_specific_methods"],
             "controlled_only_not_applicable": config[

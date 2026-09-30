@@ -10,7 +10,7 @@ import hashlib
 import math
 from dataclasses import dataclass
 from enum import Enum
-from typing import Callable, Iterable, Literal
+from typing import Any, Callable, Iterable, Literal
 
 import numpy as np
 import torch
@@ -23,9 +23,26 @@ from .kdd069_sequence_models import GRUDTransition
 
 EPISODE_SCHEMA_VERSION = "kdd248_full_episode_v1"
 ModelFamily = Literal["gaussian_recurrent", "categorical_rssm"]
+RewardEmissionMode = Literal["terminal_once", "per_step_head"]
+REWARD_EMISSION_MODES = ("terminal_once", "per_step_head")
 OnlinePolicy = Callable[
     [np.ndarray, np.ndarray, np.ndarray, np.ndarray, int], np.ndarray
 ]
+
+
+def resolve_reward_emission_mode(
+    config: dict[str, Any], task_name: str, override: str | None = None
+) -> RewardEmissionMode:
+    """Select an explicit override or the configured reward-channel mode."""
+    mode = override
+    if mode is None:
+        mode = config.get("reward_emission_overrides", {}).get(task_name)
+    if mode is None:
+        channel = config["reward_channels"][task_name]
+        mode = config["reward_emission_modes"][channel]
+    if mode not in REWARD_EMISSION_MODES:
+        raise ValueError(f"unsupported reward emission mode: {mode}")
+    return mode
 
 
 class ResponseRegime(str, Enum):
@@ -518,11 +535,16 @@ class LearnedSourceSimulator:
         components: SourceSimulatorComponents,
         sensitivity_bound: float = 0.10,
         rollout_profile: CalibratedRolloutProfile | None = None,
+        *,
+        reward_emission_mode: RewardEmissionMode,
     ) -> None:
+        if reward_emission_mode not in REWARD_EMISSION_MODES:
+            raise ValueError(f"unsupported reward emission mode: {reward_emission_mode}")
         self.task = task
         self.components = components
         self.sensitivity_bound = float(sensitivity_bound)
         self.rollout_profile = rollout_profile
+        self.reward_emission_mode = reward_emission_mode
         if self.sensitivity_bound < 0:
             raise ValueError("sensitivity bound must be nonnegative")
         if self.rollout_profile is not None:
@@ -1018,6 +1040,29 @@ class LearnedSourceSimulator:
                     ],
                     dim=1,
                 )
+
+        if self.reward_emission_mode == "terminal_once":
+            rows = np.arange(episodes)
+            last = valid_steps.sum(axis=1) - 1
+            terminal_actions = torch.as_tensor(actions[rows, last].astype(np.int64))
+            context = torch.cat(
+                [
+                    torch.as_tensor(observations[rows, last], dtype=torch.float32),
+                    torch.as_tensor(masks[rows, last], dtype=torch.float32),
+                    torch.as_tensor(recency[rows, last], dtype=torch.float32),
+                    self._condition_action(terminal_actions, regime),
+                ],
+                dim=-1,
+            )
+            with torch.inference_mode():
+                mean, _ = self.components.reward(context)
+            probability = np.clip(
+                (1.0 + mean.numpy().astype(np.float64)) / 2.0, 0.0, 1.0
+            )
+            uniform = np.random.default_rng([int(seed), 277003]).random(episodes)
+            # Preserve rollout RNG consumption before replacing the legacy rewards.
+            rewards = np.where(valid_steps, 0.0, np.nan).astype(np.float32)
+            rewards[rows, last] = np.where(uniform < probability, 1.0, -1.0)
 
         output = FullEpisodeBatch(
             schema_version=EPISODE_SCHEMA_VERSION,

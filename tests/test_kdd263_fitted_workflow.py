@@ -21,6 +21,7 @@ class KDD263FittedWorkflowTests(unittest.TestCase):
             receipt_path = Path(directory) / "receipt.json"
             receipt = run_synthetic_smoke(receipt_path)
             self.assertEqual(receipt["status"], "pass")
+            self.assertEqual(receipt["reward_emission_modes"], {"sepsis": "terminal_once"})
             self.assertEqual(
                 receipt["schema_version"], "kdd267_fitted_smoke_receipt_v1"
             )

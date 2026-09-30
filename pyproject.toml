@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "ehrdyn-icu"
-version = "2.1.1"
+version = "2.2.0"
 description = "EHRDyn benchmark workflows for offline reinforcement learning from EHRs"
 requires-python = ">=3.11,<3.14"
 dependencies = ["jsonschema==4.26.0", "numpy==2.3.3"]

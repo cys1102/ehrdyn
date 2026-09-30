@@ -86,7 +86,7 @@ ehrdyn-icu verify-checksums --root .
 git diff --check
 ```
 
-`ehrdyn-icu --version` and package metadata report `2.1.1`. The
+`ehrdyn-icu --version` and package metadata report `2.2.0`. The
 manuscript-facing workflow is documented
 in [PAPER_ARTIFACT.md](PAPER_ARTIFACT.md).
 
@@ -173,6 +173,18 @@ algorithm-family superiority evidence. `generate-full-suite` enumerates the
 controlled contracts, while `evaluate-world-model-full` evaluates one external
 entrant; neither command reconstructs the bundled paper result tables. See
 [the 21-method quickstart](docs/21_method_quickstart.md).
+
+Fitted sepsis, AKI, and heart-failure simulators default to `terminal_once`:
+zero reward before the final valid transition, then one sampled -1 or +1
+terminal proxy. Discounted returns lie in [-1, 1]. Respiratory support and
+shock retain `per_step_head`: Gaussian reward samples from a learned head on
+the current values, masks, recency, and conditioned action, rather than a
+formula evaluated on the simulated next state. Release v2.1.1 and the submitted
+paper used `per_step_head` for every fitted task. Pass
+`--reward-emission-mode per_step_head` to `fitted-simulator --mode evaluate`
+or `fitted-synthetic-smoke` to select that legacy behavior explicitly. See
+[the fitted quickstart](docs/fitted_simulator_quickstart.md) and
+[CHANGELOG.md](CHANGELOG.md).
 
 ## Included interfaces
 

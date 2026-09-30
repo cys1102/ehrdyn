@@ -24,6 +24,7 @@ from .kdd248_full_episode import (
     LearnedSourceSimulator,
     ResponseRegime,
     TaskShape,
+    resolve_reward_emission_mode,
 )
 from .kdd248_source_training import (
     build_calibrated_rollout_profile,
@@ -222,7 +223,9 @@ def _fit_profile(
     )
 
 
-def run_synthetic_smoke(output: Path) -> dict[str, Any]:
+def run_synthetic_smoke(
+    output: Path, reward_emission_mode: str | None = None
+) -> dict[str, Any]:
     workflow = _load(WORKFLOW_CONFIG)
     matched = _load(MATCHED_CONFIG)
     contract = _load(CONTRACT_CONFIG)
@@ -236,6 +239,10 @@ def run_synthetic_smoke(output: Path) -> dict[str, Any]:
     source["hidden_dim"] = 8
     source["latent_dim"] = 8
     matched = _effective_config(matched, pilot=True)
+    emission_modes = {
+        name: resolve_reward_emission_mode(workflow, name, reward_emission_mode)
+        for name in matched["tasks"]
+    }
     device = "cpu"
     with tempfile.TemporaryDirectory(prefix="ehrdyn-kdd263-smoke-") as directory:
         restricted = Path(directory)
@@ -247,7 +254,10 @@ def run_synthetic_smoke(output: Path) -> dict[str, Any]:
             validation = _synthetic_role(task, 32, 28000 + task_index, "validation")
             fit = _fit_one(task, train, calibration, validation, source, 3408 + task_index, restricted / "checkpoints", device)
             profile = _fit_profile(task, fit, calibration, contract, workflow["rollout_profile"], device)
-            simulator = LearnedSourceSimulator(task, fit.components, rollout_profile=profile)
+            simulator = LearnedSourceSimulator(
+                task, fit.components, rollout_profile=profile,
+                reward_emission_mode=emission_modes[name],
+            )
             tasks.append(FrozenTask(name, task, simulator, profile, fit.checkpoint_sha256, "synthetic"))
         policy_count = 0
         estimator_count = 0
@@ -280,6 +290,7 @@ def run_synthetic_smoke(output: Path) -> dict[str, Any]:
         "status": "pass",
         "synthetic": True,
         "tasks": len(tasks),
+        "reward_emission_modes": emission_modes,
         "matched_methods_per_task": len(SHARED_METHODS),
         "method_ids": list(SHARED_METHODS),
         "additional_fitted_methods_per_task": 0,
@@ -344,9 +355,13 @@ def train_credentialed(constructor_root: Path, restricted_root: Path, output: Pa
     return receipt
 
 
-def evaluate_credentialed(constructor_root: Path, restricted_root: Path, output: Path, device: str, pilot: bool) -> dict[str, Any]:
+def evaluate_credentialed(constructor_root: Path, restricted_root: Path, output: Path, device: str, pilot: bool, reward_emission_mode: str | None = None) -> dict[str, Any]:
     workflow = _load(WORKFLOW_CONFIG)
     matched = _effective_config(_load(MATCHED_CONFIG), pilot=pilot)
+    emission_modes = {
+        name: resolve_reward_emission_mode(workflow, name, reward_emission_mode)
+        for name in matched["tasks"]
+    }
     source = workflow["source_model"]
     tasks: list[FrozenTask] = []
     for name in matched["tasks"]:
@@ -360,7 +375,11 @@ def evaluate_credentialed(constructor_root: Path, restricted_root: Path, output:
         training.update({"hidden_dim": int(source["hidden_dim"]), "latent_dim": int(source["latent_dim"])})
         components, _ = load_source_components(checkpoint, task, "gaussian_recurrent", selected_seed, int(source["hidden_dim"]), int(source["latent_dim"]), torch.device(device))
         profile = _profile_from_path(profile_path)
-        tasks.append(FrozenTask(name, task, LearnedSourceSimulator(task, components, rollout_profile=profile), profile, _sha256(checkpoint), _sha256(profile_path)))
+        simulator = LearnedSourceSimulator(
+            task, components, rollout_profile=profile,
+            reward_emission_mode=emission_modes[name],
+        )
+        tasks.append(FrozenTask(name, task, simulator, profile, _sha256(checkpoint), _sha256(profile_path)))
     output.mkdir(parents=True, exist_ok=True)
     direct_count = 0
     ope_count = 0
@@ -388,6 +407,7 @@ def evaluate_credentialed(constructor_root: Path, restricted_root: Path, output:
         "schema_version": "kdd267_fitted_evaluation_receipt_v1",
         "status": "pass",
         "tasks": len(tasks),
+        "reward_emission_modes": emission_modes,
         "matched_methods_per_task": len(SHARED_METHODS),
         "method_ids": list(SHARED_METHODS),
         "severity_rule_included": False,
