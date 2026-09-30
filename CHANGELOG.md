@@ -32,3 +32,10 @@ or `--reward-emission-mode per_step_head`. This preserves the v2.1.1 sampler for
 submitted-number reproduction and sensitivity analysis; full numerical
 reproduction still requires the original credentialed inputs and run budgets.
 Frozen historical release receipts and paper identities remain unchanged.
+
+API change: `LearnedSourceSimulator` now requires the keyword-only argument
+`reward_emission_mode` (`"terminal_once"` or `"per_step_head"`). Code that
+constructs the simulator directly must pass it; omitting it raises a
+`TypeError`. `resolve_reward_emission_mode(config, task_name, override)` returns
+the explicit override, then any per-task `reward_emission_overrides` entry, then
+the mode configured for the task's reward channel.
